@@ -160,11 +160,11 @@ Todas las etiquetas `<img>` tienen un atributo `onerror` con URL alternativa de 
 
 ## Créditos
 
-- Diseño y desarrollo: **Claude (Anthropic)** + **Sistema MARED**
+- Diseño y desarrollo: **Sistema MARED**
 - Tipografías: Google Fonts
 - Fotografías: Unsplash (licencia libre para uso comercial)
 - Ilustración portada: SVG generativo original
 
 ---
 
-© 2025 Sistema MARED™ · Todos los derechos reservados
+© 2026 Sistema MARED™ · Todos los derechos reservados
