@@ -111,7 +111,7 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 .pain-tag{position:absolute;bottom:24px;left:20px;right:20px;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-radius:14px;padding:18px 20px;border:1px solid rgba(0,200,150,.18);}
 .pain-tag h4{font-family:'Cormorant Garamond',serif;font-size:1.08rem;color:var(--dk);margin-bottom:4px;font-style:italic;}
 .pain-tag p{font-size:.83rem;color:var(--dk-muted);line-height:1.5;}
-.pain-res{text-align:center;background:linear-gradient(135deg,rgba(0,200,150,.08),rgba(0,200,150,.03));border:1px solid rgba(0,200,150,.22);border-radius:22px;padding:80px 72px;max-width:920px;margin:64px auto 0;}
+.pain-res{text-align:center;background:linear-gradient(135deg,rgba(0,200,150,.08),rgba(0,200,150,.03));border:1px solid rgba(0,200,150,.22);border-radius:22px;padding:80px 120px;max-width:1000px;margin:64px auto 0;}
 .pain-res h3{font-size:clamp(2.2rem,4vw,3.6rem);font-weight:300;margin-bottom:20px;}
 .pain-res h3 em{font-style:italic;color:var(--em-soft);}
 .pain-res p{font-size:1.15rem;color:var(--dk-muted);max-width:660px;margin:0 auto;line-height:1.85;}
@@ -135,9 +135,9 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 .tf-card h3 em{font-style:italic;}
 .tf-card p{font-size:.92rem;color:rgba(255,255,255,.72);line-height:1.65;}
 .tf-arrow{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:10;width:52px;height:52px;background:var(--fu);border-radius:50%;box-shadow:0 0 30px var(--fu-glow),0 0 60px rgba(255,38,128,.2);display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:700;color:#fff;}
-.cost-strip{background:rgba(255,38,128,.06);border-top:1px solid rgba(255,38,128,.12);border-bottom:1px solid rgba(255,38,128,.12);padding:40px 36px;text-align:center;position:relative;z-index:1;}
-.cost-strip p{font-size:1.15rem;font-style:italic;font-family:'Cormorant Garamond',serif;color:rgba(255,255,255,.75);max-width:720px;margin:0 auto;}
-.cost-strip strong{color:var(--text);}
+.cost-strip{background:var(--fu);border-top:none;border-bottom:none;padding:52px 36px;text-align:center;position:relative;z-index:1;}
+.cost-strip p{font-size:1.18rem;font-style:italic;font-family:'Cormorant Garamond',serif;color:#fff;max-width:720px;margin:0 auto;}
+.cost-strip strong{color:#fff;font-weight:700;}
 
 /* PRODUCT — two column grid */
 .prod-sec{background:var(--lt2);}
@@ -188,13 +188,16 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 .sec-h h2{font-size:clamp(2rem,3.2vw,2.8rem);font-weight:300;margin-bottom:16px;}
 .sec-h p{color:var(--muted);font-size:1.02rem;line-height:1.8;}
 .ben-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px;max-width:1000px;margin:0 auto;}
-.ben{background:rgba(0,200,150,.05);border:1px solid rgba(0,200,150,.13);border-radius:22px;padding:34px 28px;transition:all .4s;position:relative;overflow:hidden;}
-.ben::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--fu),transparent);opacity:0;transition:.3s;}
+.ben{background:linear-gradient(145deg,rgba(255,38,128,.18),rgba(255,38,128,.08));border:1px solid rgba(255,38,128,.3);border-radius:22px;padding:34px 28px;transition:all .4s cubic-bezier(.23,1,.32,1);position:relative;overflow:hidden;}
+.ben::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--fu),rgba(255,38,128,.4),var(--fu));background-size:200% 100%;opacity:0;transition:opacity .3s;animation:none;}
+.ben::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(255,38,128,.08),transparent);opacity:0;transition:opacity .4s;}
 .ben:hover::before{opacity:1;}
-.ben:hover{transform:translateY(-7px);border-color:rgba(0,200,150,.35);box-shadow:0 24px 60px rgba(0,0,0,.3);}
-.ben-ico{width:54px;height:54px;background:rgba(255,38,128,.08);border:1px solid rgba(255,38,128,.22);border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:22px;}
-.ben h3{font-family:'Montserrat',sans-serif;font-size:.96rem;font-weight:700;margin-bottom:10px;}
-.ben p{color:var(--muted);font-size:.92rem;line-height:1.72;}
+.ben:hover::after{opacity:1;}
+.ben:hover{transform:translateY(-9px) scale(1.02);border-color:rgba(255,38,128,.6);box-shadow:0 24px 60px rgba(255,38,128,.2),0 0 0 1px rgba(255,38,128,.15);}
+.ben-ico{width:54px;height:54px;background:rgba(255,38,128,.2);border:1px solid rgba(255,38,128,.4);border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:22px;transition:transform .3s,box-shadow .3s;}
+.ben:hover .ben-ico{transform:scale(1.1) rotate(-4deg);box-shadow:0 0 20px rgba(255,38,128,.35);}
+.ben h3{font-family:'Montserrat',sans-serif;font-size:.96rem;font-weight:700;margin-bottom:10px;color:#fff;}
+.ben p{color:rgba(255,255,255,.78);font-size:.92rem;line-height:1.72;}
 
 /* HOW IT WORKS light */
 .how-sec{background:var(--lt);}
@@ -263,6 +266,164 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 .cta-in h2 em{font-style:italic;color:var(--em);}
 .cta-in .cta-sub{color:var(--muted);font-size:1.08rem;margin-bottom:46px;line-height:1.8;}
 .cta-meta{margin-top:20px;font-family:'Montserrat',sans-serif;font-size:.76rem;color:rgba(255,255,255,.28);}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   EXIT INTENT POPUP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#exit-overlay{display:none;}
+#exit-overlay.active{display:flex !important;}
+
+.ep-card{
+  background:linear-gradient(145deg,#071A14 0%,#0D2B20 60%,#071A14 100%);
+  border:1px solid rgba(0,200,150,.22);
+  border-radius:28px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  max-width:920px;
+  width:100%;
+  overflow:hidden;
+  position:relative;
+  box-shadow:0 0 80px rgba(255,38,128,.18),0 40px 100px rgba(0,0,0,.7);
+  max-height:92vh;
+  overflow-y:auto;
+}
+.ep-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--em),var(--fu),var(--em));background-size:200% 100%;animation:shimmer 3s linear infinite;z-index:10;}
+@keyframes shimmer{0%{background-position:0% 0}100%{background-position:200% 0}}
+
+.ep-close{position:absolute;top:18px;right:18px;z-index:20;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.6);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.ep-close:hover{background:rgba(255,38,128,.2);color:#fff;border-color:var(--fu);}
+
+.ep-orb{position:absolute;border-radius:50%;filter:blur(55px);pointer-events:none;z-index:0;}
+.ep-orb1{width:320px;height:320px;background:rgba(0,200,150,.08);top:-80px;left:-60px;}
+.ep-orb2{width:280px;height:280px;background:rgba(255,38,128,.07);bottom:-60px;right:-40px;}
+.ep-orb3{width:200px;height:200px;background:rgba(0,200,150,.06);top:40%;right:30%;}
+
+/* LEFT COLUMN */
+.ep-visual{
+  background:linear-gradient(160deg,rgba(0,200,150,.06),rgba(255,38,128,.04));
+  border-right:1px solid rgba(0,200,150,.12);
+  padding:52px 36px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:32px;
+  position:relative;
+  z-index:1;
+}
+
+/* Mini book mockup */
+.ep-kit-wrap{position:relative;display:flex;justify-content:center;}
+.ep-book{position:relative;width:160px;flex-shrink:0;}
+.ep-book-spine{position:absolute;top:0;left:0;bottom:0;width:10px;background:linear-gradient(to right,#010605,#041510);border-radius:3px 0 0 3px;box-shadow:-4px 4px 14px rgba(0,0,0,.6);}
+.ep-book-face{
+  width:160px;height:220px;
+  border-radius:2px 10px 10px 2px;
+  background:linear-gradient(155deg,#071A14,#0D3024 45%,#071A14);
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:16px 14px;
+  box-shadow:-6px 6px 0 #020C07,-10px 10px 0 #030E09,-14px 14px 20px rgba(0,0,0,.6),0 0 30px rgba(0,200,150,.1);
+}
+.ep-book-badge{background:var(--fu);color:#fff;font-family:'Montserrat',sans-serif;font-size:.48rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;padding:4px 9px;border-radius:4px;display:inline-block;margin-bottom:8px;box-shadow:0 0 12px rgba(255,38,128,.5);}
+.ep-book-title{font-family:'Cormorant Garamond',serif;font-size:.88rem;font-weight:300;color:rgba(255,255,255,.9);line-height:1.1;}
+.ep-book-title span{font-weight:600;color:var(--em);display:block;font-size:1.35rem;letter-spacing:-.01em;text-shadow:0 0 20px rgba(0,200,150,.4);}
+.ep-nerve-svg{width:100%;margin:4px 0;}
+.ep-book-brand{font-family:'Montserrat',sans-serif;font-size:.52rem;font-weight:800;color:var(--em);letter-spacing:.14em;text-transform:uppercase;}
+
+/* Floating tags */
+.ep-tag{position:absolute;background:rgba(7,26,20,.92);border:1px solid rgba(0,200,150,.25);border-radius:50px;padding:7px 13px;font-family:'Montserrat',sans-serif;font-size:.66rem;font-weight:600;color:var(--text);white-space:nowrap;backdrop-filter:blur(10px);box-shadow:0 4px 16px rgba(0,0,0,.3);}
+.ep-tag1{top:-12px;right:-20px;animation:flt 3.5s ease-in-out infinite;}
+.ep-tag2{bottom:30px;right:-30px;animation:flt 3.5s ease-in-out infinite .8s;}
+.ep-tag3{bottom:-12px;left:10px;animation:flt 3.5s ease-in-out infinite 1.6s;}
+
+/* Includes list */
+.ep-includes{width:100%;display:flex;flex-direction:column;gap:10px;}
+.ep-inc-item{display:flex;align-items:center;gap:10px;font-size:.84rem;color:var(--muted);}
+.ep-inc-dot{width:7px;height:7px;border-radius:50%;background:var(--fu);box-shadow:0 0 8px var(--fu);flex-shrink:0;}
+
+/* RIGHT COLUMN */
+.ep-content{padding:52px 44px;position:relative;z-index:1;display:flex;flex-direction:column;}
+.ep-badge-row{margin-bottom:18px;}
+.ep-top-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,200,150,.1);border:1px solid rgba(0,200,150,.25);color:var(--em);padding:6px 16px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;}
+.ep-top-dot{width:6px;height:6px;border-radius:50%;background:var(--em);box-shadow:0 0 8px var(--em);animation:pulse 1.5s ease-in-out infinite;}
+.ep-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--text);margin-bottom:16px;line-height:1.15;}
+.ep-text{font-size:.96rem;color:var(--muted);line-height:1.75;margin-bottom:24px;}
+.ep-text strong{color:var(--em);font-weight:600;}
+
+/* Value props */
+.ep-val-box{display:flex;flex-direction:column;gap:12px;margin-bottom:28px;}
+.ep-val-item{display:flex;align-items:flex-start;gap:12px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:12px 16px;}
+.ep-val-icon{font-size:1.1rem;flex-shrink:0;margin-top:1px;}
+.ep-val-text{font-size:.85rem;color:var(--muted);line-height:1.55;}
+.ep-val-text em{color:var(--em);font-style:italic;font-weight:600;}
+
+/* Form */
+.ep-form{display:flex;flex-direction:column;gap:12px;margin-bottom:16px;}
+.ep-input{background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 18px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:.94rem;outline:none;transition:border-color .3s;}
+.ep-input::placeholder{color:rgba(255,255,255,.35);}
+.ep-input:focus{border-color:rgba(0,200,150,.5);}
+.ep-submit{background:var(--fu);color:#fff;padding:17px 28px;border-radius:50px;border:none;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:.92rem;font-weight:700;letter-spacing:.04em;transition:all .3s;box-shadow:0 0 30px var(--fu-glow);position:relative;overflow:hidden;}
+.ep-submit::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);transition:left .5s;}
+.ep-submit:hover::after{left:100%;}
+.ep-submit:hover{transform:translateY(-2px) scale(1.01);box-shadow:0 0 50px var(--fu-glow);}
+.ep-fine{font-family:'Montserrat',sans-serif;font-size:.7rem;color:rgba(255,255,255,.3);text-align:center;margin-top:4px;}
+
+/* Thanks state */
+.ep-thanks{text-align:center;padding:20px 0;}
+.ep-thanks-circle{font-size:3rem;margin-bottom:16px;}
+.ep-thanks h3{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--em);margin-bottom:10px;}
+.ep-thanks p{color:var(--muted);font-size:.96rem;line-height:1.7;margin-bottom:24px;}
+.ep-thanks-btn{background:transparent;border:1.5px solid var(--em);color:var(--em);padding:12px 28px;border-radius:50px;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:.86rem;font-weight:600;transition:all .3s;}
+.ep-thanks-btn:hover{background:var(--em);color:var(--bg);}
+
+.ep-skip{background:none;border:none;color:rgba(255,255,255,.22);font-family:'Montserrat',sans-serif;font-size:.72rem;cursor:pointer;text-decoration:underline;margin-top:10px;transition:color .2s;text-align:center;}
+.ep-skip:hover{color:rgba(255,255,255,.5);}
+
+/* Responsive popup */
+@media(max-width:720px){
+  .ep-card{grid-template-columns:1fr;}
+  .ep-visual{display:none;}
+  .ep-content{padding:48px 28px;}
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   NEWSLETTER / COMUNIDAD
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.newsletter-sec{background:var(--bg2);padding:80px 36px;}
+.nl-card{background:linear-gradient(135deg,var(--fu) 0%,#C4005C 55%,#8B0043 100%);border-radius:32px;padding:72px 80px;position:relative;overflow:hidden;max-width:860px;margin:0 auto;box-shadow:0 0 80px rgba(255,38,128,.35),0 32px 80px rgba(0,0,0,.4);}
+.nl-orb{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none;}
+.nl-orb1{width:400px;height:400px;background:rgba(255,255,255,.08);top:-120px;right:-80px;}
+.nl-orb2{width:300px;height:300px;background:rgba(0,0,0,.15);bottom:-80px;left:-60px;}
+.nl-inner{position:relative;z-index:2;text-align:center;}
+.nl-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5vw,4rem);font-weight:300;color:#fff;line-height:1.15;margin-bottom:20px;}
+.nl-title em{font-style:italic;color:rgba(255,255,255,.85);}
+.nl-sub{font-size:1.06rem;color:rgba(255,255,255,.82);max-width:580px;margin:0 auto 32px;line-height:1.8;}
+.nl-pills{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:40px;}
+.nl-pill{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.28);color:#fff;padding:8px 20px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.76rem;font-weight:600;letter-spacing:.06em;}
+.nl-form{max-width:520px;margin:0 auto 28px;}
+.nl-input-wrap{display:flex;gap:0;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.3);border-radius:50px;padding:6px 6px 6px 24px;align-items:center;backdrop-filter:blur(8px);transition:border-color .3s;}
+.nl-input-wrap:focus-within{border-color:rgba(255,255,255,.7);}
+.nl-input{flex:1;background:transparent;border:none;outline:none;color:#fff;font-family:'Montserrat',sans-serif;font-size:.9rem;padding:10px 0;}
+.nl-input::placeholder{color:rgba(255,255,255,.5);}
+.nl-btn{background:#fff;color:var(--fu);padding:13px 28px;border-radius:50px;border:none;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:.86rem;font-weight:700;letter-spacing:.04em;white-space:nowrap;transition:all .3s;}
+.nl-btn:hover{background:var(--em);color:#fff;transform:scale(1.04);}
+.nl-fine{font-family:'Montserrat',sans-serif;font-size:.72rem;color:rgba(255,255,255,.45);margin-top:12px;text-align:center;}
+.nl-thanks{text-align:center;padding:20px;}
+.nl-thanks-icon{width:56px;height:56px;background:rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:#fff;margin:0 auto 16px;}
+.nl-thanks p{color:#fff;font-size:1.05rem;font-family:'Cormorant Garamond',serif;font-style:italic;}
+.nl-social-proof{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:32px;}
+.nl-av-row{display:flex;}
+.nl-av{width:30px;height:30px;border-radius:50%;border:2px solid rgba(255,255,255,.4);}
+.nl-av+.nl-av{margin-left:-8px;}
+.nl-sp-text{font-family:'Montserrat',sans-serif;font-size:.82rem;color:rgba(255,255,255,.75);}
+.nl-sp-text strong{color:#fff;font-weight:700;}
+@media(max-width:700px){
+  .nl-card{padding:52px 32px;}
+  .nl-input-wrap{flex-direction:column;border-radius:18px;padding:12px;}
+  .nl-input{width:100%;text-align:center;padding:8px 0;}
+  .nl-btn{width:100%;border-radius:50px;padding:14px;}
+}
 
 /* FOOTER */
 footer{background:#020A07;padding:48px 28px;text-align:center;border-top:1px solid rgba(255,255,255,.04);}
@@ -676,6 +837,151 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
   </div>
 </section>
 
+<!-- ━━━━━━━━ COMUNIDAD / NEWSLETTER ━━━━━━━━ -->
+<section class="newsletter-sec sec rv">
+  <div class="container">
+    <div class="nl-card">
+      <!-- Decorative orbs -->
+      <div class="nl-orb nl-orb1"></div>
+      <div class="nl-orb nl-orb2"></div>
+
+      <div class="nl-inner">
+        <span class="lbl" style="color:#fff;opacity:.7;">Únete gratis</span>
+        <h2 class="nl-title">Entra a la comunidad<br><em>Reset Nervioso™</em></h2>
+        <p class="nl-sub">Cada semana: herramientas de regulación, recordatorios de que no estás sola y contenido que no encontrarás en ningún otro lado. Sin spam. Solo lo que de verdad sirve.</p>
+
+        <div class="nl-pills">
+          <div class="nl-pill">✦ Técnicas semanales</div>
+          <div class="nl-pill">✦ Comunidad privada</div>
+          <div class="nl-pill">✦ Contenido exclusivo</div>
+        </div>
+
+        <form class="nl-form" onsubmit="handleNL(event)">
+          <div class="nl-input-wrap">
+            <input type="email" class="nl-input" placeholder="Tu correo electrónico" required>
+            <button type="submit" class="nl-btn">Quiero entrar →</button>
+          </div>
+          <p class="nl-fine">Sin spam. Puedes darte de baja cuando quieras. Tu información está segura.</p>
+        </form>
+
+        <div id="nl-thanks" class="nl-thanks" style="display:none;">
+          <div class="nl-thanks-icon">✓</div>
+          <p>¡Ya eres parte de la comunidad! Revisa tu correo para confirmar.</p>
+        </div>
+
+        <div class="nl-social-proof">
+          <div class="nl-av-row">
+            <div class="nl-av" style="background:#1a4a38"></div>
+            <div class="nl-av" style="background:#2a3a4a"></div>
+            <div class="nl-av" style="background:#3a1a3a"></div>
+            <div class="nl-av" style="background:#1a3a2a"></div>
+            <div class="nl-av" style="background:#4a2a1a"></div>
+          </div>
+          <span class="nl-sp-text"><strong>+2,400 mujeres</strong> ya son parte de la comunidad</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━ EXIT INTENT POPUP ━━━━━━━━ -->
+<div id="exit-overlay" style="display:none;position:fixed;inset:0;background:rgba(4,12,9,.88);backdrop-filter:blur(8px);z-index:9000;align-items:center;justify-content:center;padding:20px;">
+  <div class="ep-card rv">
+
+    <!-- Close -->
+    <button class="ep-close" onclick="closePopup()" aria-label="Cerrar">✕</button>
+
+    <!-- Decorative orbs -->
+    <div class="ep-orb ep-orb1"></div>
+    <div class="ep-orb ep-orb2"></div>
+    <div class="ep-orb ep-orb3"></div>
+
+    <!-- Left visual column -->
+    <div class="ep-visual">
+      <div class="ep-kit-wrap">
+        <!-- KIT SOS book mockup -->
+        <div class="ep-book">
+          <div class="ep-book-spine"></div>
+          <div class="ep-book-face">
+            <div class="ep-book-badge">GRATIS</div>
+            <div class="ep-book-title">KIT SOS<span>Sistema<br>Nervioso</span></div>
+            <svg class="ep-nerve-svg" viewBox="0 0 160 60" fill="none">
+              <path d="M5 30 C35 30 45 12 80 12 C115 12 125 48 155 48" stroke="rgba(0,200,150,.6)" stroke-width="1.4" stroke-dasharray="4 3"/>
+              <path d="M5 38 C35 38 45 20 80 20 C115 20 125 56 155 56" stroke="rgba(0,200,150,.28)" stroke-width=".9"/>
+              <path d="M5 22 C35 22 45 4 80 4 C115 4 125 40 155 40" stroke="rgba(255,38,128,.32)" stroke-width="1" stroke-dasharray="3 4"/>
+              <circle cx="80" cy="12" r="4" fill="rgba(0,200,150,.8)"/>
+              <circle cx="80" cy="12" r="7" fill="rgba(0,200,150,.18)"/>
+              <circle cx="125" cy="48" r="3" fill="rgba(255,38,128,.7)"/>
+              <circle cx="42" cy="26" r="2.5" fill="rgba(0,200,150,.6)"/>
+              <circle cx="118" cy="14" r="2" fill="rgba(255,38,128,.5)"/>
+            </svg>
+            <div class="ep-book-brand">MARED™</div>
+          </div>
+        </div>
+        <!-- Floating benefit tags around book -->
+        <div class="ep-tag ep-tag1">📄 PDF descargable</div>
+        <div class="ep-tag ep-tag2">🎥 Videos exclusivos</div>
+        <div class="ep-tag ep-tag3">💬 Comunidad</div>
+      </div>
+
+      <div class="ep-includes">
+        <div class="ep-inc-item"><span class="ep-inc-dot"></span>Kit SOS del Sistema Nervioso PDF</div>
+        <div class="ep-inc-item"><span class="ep-inc-dot"></span>Técnicas de regulación inmediata</div>
+        <div class="ep-inc-item"><span class="ep-inc-dot"></span>Videos y material exclusivo</div>
+        <div class="ep-inc-item"><span class="ep-inc-dot"></span>Testimonios reales de la comunidad</div>
+        <div class="ep-inc-item"><span class="ep-inc-dot"></span>Acceso a comunidad MARED™</div>
+      </div>
+    </div>
+
+    <!-- Right form column -->
+    <div class="ep-content">
+      <div class="ep-badge-row">
+        <span class="ep-top-badge"><span class="ep-top-dot"></span>Completamente gratis</span>
+      </div>
+
+      <h2 class="ep-title">Espera —<br>hay algo para ti.</h2>
+
+      <p class="ep-text">
+        Antes de irte, queremos regalarte el <strong>Kit SOS del Sistema Nervioso</strong> — nuestro material más descargado, con las herramientas que necesitas justo ahora.
+      </p>
+
+      <div class="ep-val-box">
+        <div class="ep-val-item">
+          <div class="ep-val-icon">🧠</div>
+          <div class="ep-val-text">Técnicas que puedes aplicar <em>hoy mismo</em>, en menos de 5 minutos</div>
+        </div>
+        <div class="ep-val-item">
+          <div class="ep-val-icon">🎥</div>
+          <div class="ep-val-text">Videos cortos explicados con calidez, sin tecnicismos</div>
+        </div>
+        <div class="ep-val-item">
+          <div class="ep-val-icon">🤝</div>
+          <div class="ep-val-text">Una comunidad creada para cuidarnos y querernos — juntas</div>
+        </div>
+      </div>
+
+      <form class="ep-form" onsubmit="handleEP(event)">
+        <input type="text"  class="ep-input" id="ep-name"  placeholder="¿Cómo te llamas?" required>
+        <input type="email" class="ep-input" id="ep-email" placeholder="Tu correo electrónico" required>
+        <button type="submit" class="ep-submit">
+          <span>Sí, quiero mi Kit SOS gratis →</span>
+        </button>
+        <p class="ep-fine">Tu información está segura. Sin spam, te lo prometemos.</p>
+      </form>
+
+      <div id="ep-thanks" class="ep-thanks" style="display:none;">
+        <div class="ep-thanks-circle">🎉</div>
+        <h3>¡Ya eres parte de MARED!</h3>
+        <p>Revisa tu correo — tu Kit SOS está en camino. Bienvenida a la comunidad.</p>
+        <button onclick="closePopup()" class="ep-thanks-btn">Seguir explorando →</button>
+      </div>
+
+      <button class="ep-skip" onclick="closePopup()">No gracias, prefiero seguir sin el regalo</button>
+    </div>
+
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer>
   <div class="ft-brand">MARED · Reset Nervioso™</div>
@@ -821,6 +1127,68 @@ function liveCounter(id,base,range,interval){
 liveCounter('live-view',23,5,11000);
 liveCounter('today-buy',47,4,17000);
 liveCounter('hero-viewers',23,4,9000);
+/* NEWSLETTER */
+function handleNL(e){
+  e.preventDefault();
+  document.querySelector('.nl-form').style.display='none';
+  document.getElementById('nl-thanks').style.display='block';
+}
+
+/* EXIT INTENT POPUP */
+let popupShown = false;
+let popupDismissed = false;
+
+function showPopup(){
+  if(popupShown || popupDismissed) return;
+  popupShown = true;
+  const overlay = document.getElementById('exit-overlay');
+  overlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  // Animate card in
+  setTimeout(()=>{ const card = overlay.querySelector('.ep-card'); if(card) card.classList.add('in'); }, 50);
+}
+
+function closePopup(){
+  popupDismissed = true;
+  const overlay = document.getElementById('exit-overlay');
+  overlay.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function handleEP(e){
+  e.preventDefault();
+  document.querySelector('.ep-form').style.display = 'none';
+  document.getElementById('ep-thanks').style.display = 'block';
+}
+
+// Trigger 1: Exit intent — mouse leaves viewport toward top
+document.addEventListener('mouseleave', e => {
+  if(e.clientY < 30) showPopup();
+});
+
+// Trigger 2: Scroll to bottom of page
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY + window.innerHeight;
+  const total = document.documentElement.scrollHeight;
+  if(scrolled >= total - 80) showPopup();
+}, { passive: true });
+
+// Trigger 3: Time on page — 45 seconds without action
+let idleTimer = setTimeout(showPopup, 45000);
+['mousemove','keydown','scroll','click'].forEach(ev => {
+  window.addEventListener(ev, () => {
+    clearTimeout(idleTimer);
+    idleTimer = setTimeout(showPopup, 45000);
+  }, { passive: true });
+});
+
+// Close on overlay click outside card
+document.getElementById('exit-overlay').addEventListener('click', function(e){
+  if(e.target === this) closePopup();
+});
+
+// Close on ESC
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closePopup(); });
 </script>
 </body>
 </html>
