@@ -82,7 +82,7 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 .hero-right{position:relative;z-index:2;height:100%;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden;}
 .hero-woman{position:relative;width:100%;height:100%;min-height:100vh;}
 .hero-woman img{width:100%;height:100%;object-fit:cover;object-position:center top;min-height:100vh;}
-.hero-woman-fade{position:absolute;inset:0;background:linear-gradient(to right,var(--bg) 0%,rgba(5,15,12,.25) 25%,transparent 55%),linear-gradient(to top,var(--bg) 0%,transparent 30%);}
+.hero-woman-fade{position:absolute;inset:0;background:linear-gradient(to right,var(--bg) 0%,rgba(5,15,12,.6) 12%,transparent 38%),linear-gradient(to top,var(--bg) 0%,transparent 28%);}
 .hero-woman-card{position:absolute;bottom:44px;right:36px;background:rgba(7,26,20,.88);backdrop-filter:blur(20px);border:1px solid rgba(0,200,150,.22);border-radius:18px;padding:20px 24px;min-width:220px;}
 .hwc-label{font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
 .hwc-stat{font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:800;color:var(--em);line-height:1;margin-bottom:4px;}
@@ -111,10 +111,10 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 .pain-tag{position:absolute;bottom:24px;left:20px;right:20px;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-radius:14px;padding:18px 20px;border:1px solid rgba(0,200,150,.18);}
 .pain-tag h4{font-family:'Cormorant Garamond',serif;font-size:1.08rem;color:var(--dk);margin-bottom:4px;font-style:italic;}
 .pain-tag p{font-size:.83rem;color:var(--dk-muted);line-height:1.5;}
-.pain-res{text-align:center;background:linear-gradient(135deg,rgba(0,200,150,.08),rgba(0,200,150,.03));border:1px solid rgba(0,200,150,.22);border-radius:22px;padding:56px 52px;max-width:840px;margin:64px auto 0;}
-.pain-res h3{font-size:clamp(1.8rem,3.2vw,2.8rem);font-weight:300;margin-bottom:16px;}
+.pain-res{text-align:center;background:linear-gradient(135deg,rgba(0,200,150,.08),rgba(0,200,150,.03));border:1px solid rgba(0,200,150,.22);border-radius:22px;padding:80px 72px;max-width:920px;margin:64px auto 0;}
+.pain-res h3{font-size:clamp(2.2rem,4vw,3.6rem);font-weight:300;margin-bottom:20px;}
 .pain-res h3 em{font-style:italic;color:var(--em-soft);}
-.pain-res p{font-size:1.05rem;color:var(--dk-muted);max-width:600px;margin:0 auto;}
+.pain-res p{font-size:1.15rem;color:var(--dk-muted);max-width:660px;margin:0 auto;line-height:1.85;}
 
 /* TRANSFORMATION dark */
 .tf-sec{background:var(--bg);position:relative;overflow:hidden;}
@@ -184,8 +184,8 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 
 /* BENEFITS dark */
 .ben-sec{background:var(--bg2);}
-.sec-h{text-align:center;max-width:640px;margin:0 auto 64px;}
-.sec-h h2{font-size:clamp(2rem,4vw,3.4rem);font-weight:300;margin-bottom:16px;}
+.sec-h{text-align:center;max-width:860px;margin:0 auto 64px;}
+.sec-h h2{font-size:clamp(2rem,3.2vw,2.8rem);font-weight:300;margin-bottom:16px;}
 .sec-h p{color:var(--muted);font-size:1.02rem;line-height:1.8;}
 .ben-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px;max-width:1000px;margin:0 auto;}
 .ben{background:rgba(0,200,150,.05);border:1px solid rgba(0,200,150,.13);border-radius:22px;padding:34px 28px;transition:all .4s;position:relative;overflow:hidden;}
@@ -768,6 +768,36 @@ const buyers=[
   {name:'Laura M.',initials:'LM',country:'Rep. Dominicana',flag:'🇩🇴'},
   {name:'Carmen R.',initials:'CR',country:'Paraguay',flag:'🇵🇾'},
   {name:'Paola N.',initials:'PN',country:'Colombia',flag:'🇨🇴'},
+  {name:'Gabriela W.',initials:'GW',country:'Texas, USA',flag:'🇺🇸'},
+  {name:'Rebeca S.',initials:'RS',country:'Honduras',flag:'🇭🇳'},
+  {name:'Adriana Q.',initials:'AQ',country:'Argentina',flag:'🇦🇷'},
+  {name:'Verónica M.',initials:'VM',country:'México',flag:'🇲🇽'},
+  {name:'Catalina R.',initials:'CR',country:'Colombia',flag:'🇨🇴'},
+  {name:'Bianca T.',initials:'BT',country:'Brasil',flag:'🇧🇷'},
+  {name:'Isadora F.',initials:'IF',country:'Chile',flag:'🇨🇱'},
+  {name:'Renata L.',initials:'RL',country:'México',flag:'🇲🇽'},
+  {name:'Luciana P.',initials:'LP',country:'Argentina',flag:'🇦🇷'},
+  {name:'Xiomara C.',initials:'XC',country:'Venezuela',flag:'🇻🇪'},
+  {name:'Karla E.',initials:'KE',country:'El Salvador',flag:'🇸🇻'},
+  {name:'Nadia B.',initials:'NB',country:'Ecuador',flag:'🇪🇨'},
+  {name:'Vanessa O.',initials:'VO',country:'Perú',flag:'🇵🇪'},
+  {name:'Stephania G.',initials:'SG',country:'Colombia',flag:'🇨🇴'},
+  {name:'Melissa A.',initials:'MA',country:'Chicago, USA',flag:'🇺🇸'},
+  {name:'Rocío H.',initials:'RH',country:'España',flag:'🇪🇸'},
+  {name:'Antonella V.',initials:'AV',country:'Uruguay',flag:'🇺🇾'},
+  {name:'Priscila M.',initials:'PM',country:'Bolivia',flag:'🇧🇴'},
+  {name:'Florencia D.',initials:'FD',country:'Argentina',flag:'🇦🇷'},
+  {name:'Yolanda S.',initials:'YS',country:'México',flag:'🇲🇽'},
+  {name:'Tatiana R.',initials:'TR',country:'Colombia',flag:'🇨🇴'},
+  {name:'Miriam C.',initials:'MC',country:'Guatemala',flag:'🇬🇹'},
+  {name:'Alejandro R.',initials:'AR',country:'México',flag:'🇲🇽'},
+  {name:'Sebastián M.',initials:'SM',country:'Colombia',flag:'🇨🇴'},
+  {name:'Diego F.',initials:'DF',country:'Argentina',flag:'🇦🇷'},
+  {name:'Ingrid L.',initials:'IL',country:'Houston, USA',flag:'🇺🇸'},
+  {name:'Estefanía N.',initials:'EN',country:'Chile',flag:'🇨🇱'},
+  {name:'Marcela Q.',initials:'MQ',country:'Panamá',flag:'🇵🇦'},
+  {name:'Daniela O.',initials:'DO',country:'Costa Rica',flag:'🇨🇷'},
+  {name:'Angélica P.',initials:'AP',country:'Perú',flag:'🇵🇪'},
 ];
 const popup=document.getElementById('notif-popup');
 let lastIdx=-1;
