@@ -311,7 +311,7 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
   position:relative;
   z-index:1;
 }
-.ep-inc-item{display:flex;align-items:center;gap:10px;font-size:.84rem;color:var(--dk-muted);}
+.ep-inc-item{display:flex;align-items:center;gap:10px;font-size:.86rem;color:var(--dk);font-weight:500;}
 .ep-inc-dot{width:7px;height:7px;border-radius:50%;background:var(--fu);box-shadow:0 0 8px var(--fu);flex-shrink:0;}
 
 /* Mini book mockup */
@@ -334,10 +334,10 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 .ep-book-brand{font-family:'Montserrat',sans-serif;font-size:.52rem;font-weight:800;color:var(--em);letter-spacing:.14em;text-transform:uppercase;}
 
 /* Floating tags */
-.ep-tag{position:absolute;background:rgba(255,255,255,.95);border:1px solid rgba(0,200,150,.28);border-radius:50px;padding:7px 13px;font-family:'Montserrat',sans-serif;font-size:.66rem;font-weight:600;color:var(--dk);white-space:nowrap;backdrop-filter:blur(10px);box-shadow:0 4px 16px rgba(0,0,0,.12);}
-.ep-tag1{top:-12px;right:-20px;animation:flt 3.5s ease-in-out infinite;}
-.ep-tag2{bottom:30px;right:-30px;animation:flt 3.5s ease-in-out infinite .8s;}
-.ep-tag3{bottom:-12px;left:10px;animation:flt 3.5s ease-in-out infinite 1.6s;}
+.ep-tag{position:absolute;background:rgba(255,255,255,.97);border:1.5px solid rgba(0,200,150,.28);border-radius:50px;padding:8px 16px;font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;color:var(--dk);white-space:nowrap;box-shadow:0 4px 18px rgba(0,0,0,.1);}
+.ep-tag1{top:8%;right:-28px;animation:flt 3.5s ease-in-out infinite;}
+.ep-tag2{bottom:30%;right:-28px;animation:flt 3.5s ease-in-out infinite .8s;}
+.ep-tag3{bottom:-14px;left:50%;transform:translateX(-50%);animation:flt 3.5s ease-in-out infinite 1.4s;}
 
 /* Includes list */
 .ep-includes{width:100%;display:flex;flex-direction:column;gap:10px;}
@@ -902,8 +902,7 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
     <div class="ep-visual">
       <div class="ep-kit-wrap">
           <img src="IMG/pdfkitsos.png" alt="Kit SOS del Sistema Nervioso"
-            style="width:200px;max-width:100%;display:block;border-radius:6px;filter:drop-shadow(-8px 8px 20px rgba(0,0,0,.25)) drop-shadow(0 4px 16px rgba(255,38,128,.1));">
-          <!-- Floating benefit tags around book -->
+            style="width:280px;max-width:100%;display:block;border-radius:6px;filter:drop-shadow(-10px 10px 24px rgba(0,0,0,.3)) drop-shadow(0 4px 20px rgba(255,38,128,.12));position:relative;z-index:1;">
           <div class="ep-tag ep-tag1">📄 PDF descargable</div>
           <div class="ep-tag ep-tag2">🎥 Videos exclusivos</div>
           <div class="ep-tag ep-tag3">💬 Comunidad</div>
