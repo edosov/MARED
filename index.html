@@ -135,8 +135,8 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 .tf-card h3 em{font-style:italic;}
 .tf-card p{font-size:.92rem;color:rgba(255,255,255,.72);line-height:1.65;}
 .tf-arrow{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:10;width:52px;height:52px;background:var(--fu);border-radius:50%;box-shadow:0 0 30px var(--fu-glow),0 0 60px rgba(255,38,128,.2);display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:700;color:#fff;}
-.cost-strip{background:var(--fu);border-top:none;border-bottom:none;padding:52px 36px;text-align:center;position:relative;z-index:1;}
-.cost-strip p{font-size:1.18rem;font-style:italic;font-family:'Cormorant Garamond',serif;color:#fff;max-width:720px;margin:0 auto;}
+.cost-strip{background:var(--fu);border-top:none;border-bottom:none;padding:72px 120px;text-align:center;position:relative;z-index:1;}
+.cost-strip p{font-size:1.55rem;font-style:italic;font-family:'Cormorant Garamond',serif;color:#fff;max-width:780px;margin:0 auto;line-height:1.7;}
 .cost-strip strong{color:#fff;font-weight:700;}
 
 /* PRODUCT — two column grid */
@@ -300,7 +300,7 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 
 /* LEFT COLUMN */
 .ep-visual{
-  background:linear-gradient(160deg,rgba(0,200,150,.06),rgba(255,38,128,.04));
+  background:var(--lt2);
   border-right:1px solid rgba(0,200,150,.12);
   padding:52px 36px;
   display:flex;
@@ -311,6 +311,8 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
   position:relative;
   z-index:1;
 }
+.ep-inc-item{display:flex;align-items:center;gap:10px;font-size:.84rem;color:var(--dk-muted);}
+.ep-inc-dot{width:7px;height:7px;border-radius:50%;background:var(--fu);box-shadow:0 0 8px var(--fu);flex-shrink:0;}
 
 /* Mini book mockup */
 .ep-kit-wrap{position:relative;display:flex;justify-content:center;}
@@ -332,7 +334,7 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 .ep-book-brand{font-family:'Montserrat',sans-serif;font-size:.52rem;font-weight:800;color:var(--em);letter-spacing:.14em;text-transform:uppercase;}
 
 /* Floating tags */
-.ep-tag{position:absolute;background:rgba(7,26,20,.92);border:1px solid rgba(0,200,150,.25);border-radius:50px;padding:7px 13px;font-family:'Montserrat',sans-serif;font-size:.66rem;font-weight:600;color:var(--text);white-space:nowrap;backdrop-filter:blur(10px);box-shadow:0 4px 16px rgba(0,0,0,.3);}
+.ep-tag{position:absolute;background:rgba(255,255,255,.95);border:1px solid rgba(0,200,150,.28);border-radius:50px;padding:7px 13px;font-family:'Montserrat',sans-serif;font-size:.66rem;font-weight:600;color:var(--dk);white-space:nowrap;backdrop-filter:blur(10px);box-shadow:0 4px 16px rgba(0,0,0,.12);}
 .ep-tag1{top:-12px;right:-20px;animation:flt 3.5s ease-in-out infinite;}
 .ep-tag2{bottom:30px;right:-30px;animation:flt 3.5s ease-in-out infinite .8s;}
 .ep-tag3{bottom:-12px;left:10px;animation:flt 3.5s ease-in-out infinite 1.6s;}
@@ -899,30 +901,13 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
     <!-- Left visual column -->
     <div class="ep-visual">
       <div class="ep-kit-wrap">
-        <!-- KIT SOS book mockup -->
-        <div class="ep-book">
-          <div class="ep-book-spine"></div>
-          <div class="ep-book-face">
-            <div class="ep-book-badge">GRATIS</div>
-            <div class="ep-book-title">KIT SOS<span>Sistema<br>Nervioso</span></div>
-            <svg class="ep-nerve-svg" viewBox="0 0 160 60" fill="none">
-              <path d="M5 30 C35 30 45 12 80 12 C115 12 125 48 155 48" stroke="rgba(0,200,150,.6)" stroke-width="1.4" stroke-dasharray="4 3"/>
-              <path d="M5 38 C35 38 45 20 80 20 C115 20 125 56 155 56" stroke="rgba(0,200,150,.28)" stroke-width=".9"/>
-              <path d="M5 22 C35 22 45 4 80 4 C115 4 125 40 155 40" stroke="rgba(255,38,128,.32)" stroke-width="1" stroke-dasharray="3 4"/>
-              <circle cx="80" cy="12" r="4" fill="rgba(0,200,150,.8)"/>
-              <circle cx="80" cy="12" r="7" fill="rgba(0,200,150,.18)"/>
-              <circle cx="125" cy="48" r="3" fill="rgba(255,38,128,.7)"/>
-              <circle cx="42" cy="26" r="2.5" fill="rgba(0,200,150,.6)"/>
-              <circle cx="118" cy="14" r="2" fill="rgba(255,38,128,.5)"/>
-            </svg>
-            <div class="ep-book-brand">MARED™</div>
-          </div>
+          <img src="IMG/pdfkitsos.png" alt="Kit SOS del Sistema Nervioso"
+            style="width:200px;max-width:100%;display:block;border-radius:6px;filter:drop-shadow(-8px 8px 20px rgba(0,0,0,.25)) drop-shadow(0 4px 16px rgba(255,38,128,.1));">
+          <!-- Floating benefit tags around book -->
+          <div class="ep-tag ep-tag1">📄 PDF descargable</div>
+          <div class="ep-tag ep-tag2">🎥 Videos exclusivos</div>
+          <div class="ep-tag ep-tag3">💬 Comunidad</div>
         </div>
-        <!-- Floating benefit tags around book -->
-        <div class="ep-tag ep-tag1">📄 PDF descargable</div>
-        <div class="ep-tag ep-tag2">🎥 Videos exclusivos</div>
-        <div class="ep-tag ep-tag3">💬 Comunidad</div>
-      </div>
 
       <div class="ep-includes">
         <div class="ep-inc-item"><span class="ep-inc-dot"></span>Kit SOS del Sistema Nervioso PDF</div>
