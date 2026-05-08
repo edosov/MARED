@@ -310,12 +310,13 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
   gap:32px;
   position:relative;
   z-index:1;
+  overflow:visible;
 }
-.ep-inc-item{display:flex;align-items:center;gap:10px;font-size:.9rem;color:#0C1E18;font-weight:600;}
+.ep-inc-item{display:flex;align-items:center;gap:10px;font-size:.9rem;color:#0C1E18 !important;font-weight:600;}
 .ep-inc-dot{width:7px;height:7px;border-radius:50%;background:var(--fu);box-shadow:0 0 8px var(--fu);flex-shrink:0;}
 
 /* Mini book mockup */
-.ep-kit-wrap{position:relative;display:flex;justify-content:center;padding:10px 160px 10px 140px;}
+.ep-kit-wrap{position:relative;display:flex;justify-content:center;overflow:visible;}
 .ep-book{position:relative;width:160px;flex-shrink:0;}
 .ep-book-spine{position:absolute;top:0;left:0;bottom:0;width:10px;background:linear-gradient(to right,#010605,#041510);border-radius:3px 0 0 3px;box-shadow:-4px 4px 14px rgba(0,0,0,.6);}
 .ep-book-face{
@@ -335,13 +336,12 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 
 /* Floating tags */
 .ep-tag{position:absolute;background:rgba(255,255,255,.97);border:1.5px solid rgba(0,200,150,.28);border-radius:50px;padding:8px 16px;font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;color:var(--dk);white-space:nowrap;box-shadow:0 4px 18px rgba(0,0,0,.15);z-index:5;}
-.ep-tag1{top:12%;right:-140px;animation:flt 3.5s ease-in-out infinite;}
-.ep-tag2{top:42%;right:-150px;animation:flt 3.5s ease-in-out infinite .8s;}
-.ep-tag3{bottom:14%;left:-130px;animation:flt 3.5s ease-in-out infinite 1.4s;}
+.ep-tag1{top:10%;right:-148px;animation:flt 3.5s ease-in-out infinite;}
+.ep-tag2{top:44%;right:-156px;animation:flt 3.5s ease-in-out infinite .8s;}
+.ep-tag3{bottom:16%;left:-138px;animation:flt 3.5s ease-in-out infinite 1.4s;}
 
 /* Includes list */
 .ep-includes{width:100%;display:flex;flex-direction:column;gap:10px;}
-.ep-inc-item{display:flex;align-items:center;gap:10px;font-size:.84rem;color:var(--muted);}
 .ep-inc-dot{width:7px;height:7px;border-radius:50%;background:var(--fu);box-shadow:0 0 8px var(--fu);flex-shrink:0;}
 
 /* RIGHT COLUMN */
