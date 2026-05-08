@@ -161,7 +161,7 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 @keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 
 /* Book image — clean, no shadow */
-.book-img-wrap{width:320px;max-width:85vw;}
+.book-img-wrap{width:420px;max-width:85vw;}
 .book-img-wrap img{width:100%;display:block;border-radius:4px;}
 
 /* Chapter card */
@@ -294,6 +294,9 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
 .d1{transition-delay:.1s;}.d2{transition-delay:.22s;}.d3{transition-delay:.35s;}
 
 /* RESPONSIVE */
+@media(max-width:1280px){
+  .fbadge{display:none;}
+}
 @media(max-width:960px){
   .hero{grid-template-columns:1fr;min-height:auto;padding-bottom:60px;}
   .hero-right{display:none;}
@@ -303,7 +306,6 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
   .tf-grid{grid-template-columns:1fr;}
   .tf-arrow{display:none;}
   .book-stage{grid-template-columns:1fr;justify-items:center;gap:48px;}
-  .fbadge{display:none;}
   .sec-h,.prod-head,.tf-head{margin-bottom:44px;}
   .cc{max-width:420px;}
 }
