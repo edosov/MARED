@@ -316,7 +316,7 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 .ep-inc-dot{width:7px;height:7px;border-radius:50%;background:var(--fu);box-shadow:0 0 8px var(--fu);flex-shrink:0;}
 
 /* Mini book mockup */
-.ep-kit-wrap{position:relative;display:flex;justify-content:center;overflow:visible;}
+.ep-kit-wrap{position:relative;display:flex;flex-direction:column;align-items:center;gap:16px;}
 .ep-book{position:relative;width:160px;flex-shrink:0;}
 .ep-book-spine{position:absolute;top:0;left:0;bottom:0;width:10px;background:linear-gradient(to right,#010605,#041510);border-radius:3px 0 0 3px;box-shadow:-4px 4px 14px rgba(0,0,0,.6);}
 .ep-book-face{
@@ -335,10 +335,10 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 .ep-book-brand{font-family:'Montserrat',sans-serif;font-size:.52rem;font-weight:800;color:var(--em);letter-spacing:.14em;text-transform:uppercase;}
 
 /* Floating tags */
-.ep-tag{position:absolute;background:rgba(255,255,255,.97);border:1.5px solid rgba(0,200,150,.28);border-radius:50px;padding:8px 16px;font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;color:var(--dk);white-space:nowrap;box-shadow:0 4px 18px rgba(0,0,0,.15);z-index:5;}
-.ep-tag1{top:10%;right:-148px;animation:flt 3.5s ease-in-out infinite;}
-.ep-tag2{top:44%;right:-156px;animation:flt 3.5s ease-in-out infinite .8s;}
-.ep-tag3{bottom:16%;left:-138px;animation:flt 3.5s ease-in-out infinite 1.4s;}
+.ep-tag{background:rgba(255,255,255,.97);border:1.5px solid rgba(0,200,150,.28);border-radius:50px;padding:8px 14px;font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:700;color:var(--dk);white-space:nowrap;box-shadow:0 3px 12px rgba(0,0,0,.1);}
+.ep-tag1{animation:flt 3.5s ease-in-out infinite;}
+.ep-tag2{animation:flt 3.5s ease-in-out infinite .8s;}
+.ep-tag3{animation:flt 3.5s ease-in-out infinite 1.4s;}
 
 /* Includes list */
 .ep-includes{width:100%;display:flex;flex-direction:column;gap:10px;}
@@ -347,8 +347,8 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 /* RIGHT COLUMN */
 .ep-content{padding:52px 44px;position:relative;z-index:1;display:flex;flex-direction:column;}
 .ep-badge-row{margin-bottom:18px;}
-.ep-top-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,200,150,.1);border:1px solid rgba(0,200,150,.25);color:var(--em);padding:6px 16px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;}
-.ep-top-dot{width:6px;height:6px;border-radius:50%;background:var(--em);box-shadow:0 0 8px var(--em);animation:pulse 1.5s ease-in-out infinite;}
+.ep-top-badge{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,rgba(255,38,128,.18),rgba(255,38,128,.08));border:1.5px solid rgba(255,38,128,.5);color:#fff;padding:11px 26px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.8rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 0 24px rgba(255,38,128,.22),0 0 48px rgba(255,38,128,.1);}
+.ep-top-dot{width:10px;height:10px;border-radius:50%;background:var(--fu);box-shadow:0 0 12px var(--fu),0 0 28px rgba(255,38,128,.6);animation:pulse 1.1s ease-in-out infinite;flex-shrink:0;}
 .ep-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--text);margin-bottom:16px;line-height:1.15;}
 .ep-text{font-size:.96rem;color:var(--muted);line-height:1.75;margin-bottom:24px;}
 .ep-text strong{color:var(--em);font-weight:600;}
@@ -903,9 +903,11 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
       <div class="ep-kit-wrap">
           <img src="IMG/pdfkitsos.png" alt="Kit SOS del Sistema Nervioso"
             style="width:320px;max-width:100%;display:block;border-radius:6px;filter:drop-shadow(-10px 10px 24px rgba(0,0,0,.3)) drop-shadow(0 4px 20px rgba(255,38,128,.12));position:relative;z-index:1;">
-          <div class="ep-tag ep-tag1">📄 PDF descargable</div>
-          <div class="ep-tag ep-tag2">🎥 Videos exclusivos</div>
-          <div class="ep-tag ep-tag3">💬 Comunidad</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:4px;">
+            <div class="ep-tag ep-tag1">📄 PDF descargable</div>
+            <div class="ep-tag ep-tag2">🎥 Videos exclusivos</div>
+            <div class="ep-tag ep-tag3">💬 Comunidad</div>
+          </div>
         </div>
 
       <div class="ep-includes">
