@@ -25,9 +25,7 @@ img{display:block;max-width:100%;}
 .sec{padding:112px 36px;}
 .lbl{display:inline-block;font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--fu);margin-bottom:20px;}
 
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   BUTTONS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* BUTTONS */
 .btn{display:inline-block;background:var(--fu);color:#fff;padding:20px 50px;border-radius:50px;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.95rem;letter-spacing:.04em;transition:all .3s;box-shadow:0 0 40px var(--fu-glow),0 0 80px rgba(255,38,128,.15);position:relative;overflow:hidden;}
 .btn::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.24),transparent);transition:left .5s;}
 .btn:hover::after{left:100%;}
@@ -36,12 +34,8 @@ img{display:block;max-width:100%;}
 .btn-outline{display:inline-block;background:transparent;padding:16px 36px;border-radius:50px;border:1.5px solid;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:600;font-size:.88rem;letter-spacing:.04em;transition:all .3s;}
 .btn-em{border-color:var(--em);color:var(--em);}
 .btn-em:hover{background:var(--em);color:var(--bg);}
-.btn-dk{border-color:rgba(12,30,24,.35);color:var(--dk);}
-.btn-dk:hover{background:var(--dk);color:var(--lt);}
 
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   TOP ANNOUNCEMENT BANNER
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* TOP BANNER */
 .top-banner{position:fixed;top:0;left:0;right:0;height:var(--banner-h);background:linear-gradient(90deg,#071A14 0%,#0D2B20 40%,#071A14 100%);border-bottom:1px solid rgba(0,200,150,.22);z-index:200;overflow:hidden;display:flex;align-items:center;}
 .tb-track{display:flex;animation:tbScroll 38s linear infinite;white-space:nowrap;will-change:transform;}
 .tb-item{display:flex;align-items:center;gap:14px;padding:0 52px;font-family:'Montserrat',sans-serif;font-size:.76rem;letter-spacing:.04em;color:rgba(255,255,255,.8);}
@@ -54,9 +48,7 @@ img{display:block;max-width:100%;}
 @keyframes tbScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @keyframes pulse{0%,100%{opacity:.6;transform:scale(1)}50%{opacity:1;transform:scale(1.25)}}
 
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   NAV
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* NAV */
 nav{position:fixed;top:var(--banner-h);left:0;right:0;z-index:100;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;transition:all .4s;}
 nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bottom:1px solid rgba(0,200,150,.1);padding:13px 40px;}
 .nav-brand{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--text);text-decoration:none;}
@@ -64,36 +56,29 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 .nav-pill{background:rgba(255,38,128,.1);border:1px solid rgba(255,38,128,.35);color:var(--fu);padding:10px 24px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.04em;text-decoration:none;transition:all .3s;}
 .nav-pill:hover{background:var(--fu);color:#fff;box-shadow:0 0 20px var(--fu-glow);}
 
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   HERO  — DARK, SPLIT IMPACT
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* HERO */
 .hero{min-height:100vh;display:grid;grid-template-columns:1.1fr 1fr;gap:0;align-items:center;position:relative;overflow:hidden;padding-top:calc(var(--banner-h) + 70px);}
 #nc{position:absolute;inset:0;z-index:0;}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 90% 70% at 20% 50%,rgba(0,200,150,.11) 0%,transparent 60%),radial-gradient(ellipse 60% 60% at 90% 80%,rgba(255,38,128,.1) 0%,transparent 50%),radial-gradient(ellipse 50% 50% at 80% 20%,rgba(0,200,150,.07) 0%,transparent 50%);z-index:0;}
-
 .hero-left{position:relative;z-index:2;padding:60px 64px 60px 52px;}
 .hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,38,128,.1);border:1px solid rgba(255,38,128,.32);color:var(--fu);padding:8px 20px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;margin-bottom:36px;}
 .hero-badge-dot{width:7px;height:7px;border-radius:50%;background:var(--fu);box-shadow:0 0 10px var(--fu);animation:pulse 1.5s ease-in-out infinite;}
-
 .hero h1{font-size:clamp(3rem,5.5vw,5.6rem);font-weight:300;margin-bottom:10px;color:var(--text);}
 .hero h1 .accent{display:block;font-style:italic;color:var(--em);font-weight:300;}
 .hero-line{width:60px;height:2px;background:linear-gradient(to right,var(--fu),var(--em));margin:28px 0;border-radius:2px;}
 .hero-sub{font-size:1.15rem;color:var(--muted);max-width:520px;margin-bottom:16px;font-weight:300;line-height:1.8;}
 .hero-sub strong{color:var(--text);font-weight:500;}
 .hero-txt{font-size:.97rem;color:var(--muted);max-width:480px;margin-bottom:44px;line-height:1.75;}
-
 .hero-proof{display:flex;align-items:center;gap:14px;margin-bottom:42px;padding:14px 20px;background:rgba(0,200,150,.06);border:1px solid rgba(0,200,150,.16);border-radius:14px;max-width:fit-content;}
 .hp-avatars{display:flex;}
-.hp-av{width:32px;height:32px;border-radius:50%;border:2px solid var(--bg);background:var(--bg3);overflow:hidden;margin-left:-8px;first-child{margin-left:0;}position:relative;}
+.hp-av{width:32px;height:32px;border-radius:50%;border:2px solid var(--bg);background:var(--bg3);overflow:hidden;position:relative;}
 .hp-av:first-child{margin-left:0;}
+.hp-av+.hp-av{margin-left:-8px;}
 .hp-av img{width:100%;height:100%;object-fit:cover;object-position:center top;}
 .hp-text{font-size:.88rem;color:var(--muted);}
 .hp-text strong{color:var(--em);font-family:'Montserrat',sans-serif;font-weight:700;}
-
 .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;align-items:center;}
 .hero-cta-note{font-size:.78rem;color:rgba(255,255,255,.3);margin-top:12px;font-family:'Montserrat',sans-serif;}
-
-/* Hero RIGHT — woman image */
 .hero-right{position:relative;z-index:2;height:100%;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden;}
 .hero-woman{position:relative;width:100%;height:100%;min-height:100vh;}
 .hero-woman img{width:100%;height:100%;object-fit:cover;object-position:center top;min-height:100vh;}
@@ -102,17 +87,13 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 .hwc-label{font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
 .hwc-stat{font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:800;color:var(--em);line-height:1;margin-bottom:4px;}
 .hwc-desc{font-size:.82rem;color:rgba(255,255,255,.5);}
-
 .scroll-hint{position:absolute;bottom:32px;left:52px;z-index:3;display:flex;align-items:center;gap:10px;color:var(--muted);font-family:'Montserrat',sans-serif;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;}
 .scroll-line{width:36px;height:1px;background:linear-gradient(to right,var(--em),transparent);}
 
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   DOLOR  light
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* DOLOR light */
 .s-lt{background:var(--lt);color:var(--dk);}
 .s-lt h2,.s-lt h3,.s-lt h4{color:var(--dk);}
 .s-lt p{color:var(--dk-muted);}
-
 .pain-layout{display:grid;grid-template-columns:1fr 440px;gap:72px;align-items:start;max-width:1060px;margin:0 auto;}
 .pain-left h2{font-size:clamp(2rem,3.8vw,3.2rem);font-weight:300;margin-bottom:8px;}
 .pain-left h2 em{font-style:italic;color:var(--fu);}
@@ -124,22 +105,18 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 .pc-ico{width:42px;min-width:42px;height:42px;background:rgba(255,38,128,.08);border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;}
 .pc h4{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.88rem;margin-bottom:4px;color:var(--dk);}
 .pc p{font-size:.9rem;line-height:1.65;color:var(--dk-muted);}
-
 .pain-photo{position:relative;border-radius:22px;overflow:hidden;height:610px;}
 .pain-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;}
 .pain-photo-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,30,24,.7) 0%,transparent 45%);}
 .pain-tag{position:absolute;bottom:24px;left:20px;right:20px;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-radius:14px;padding:18px 20px;border:1px solid rgba(0,200,150,.18);}
 .pain-tag h4{font-family:'Cormorant Garamond',serif;font-size:1.08rem;color:var(--dk);margin-bottom:4px;font-style:italic;}
 .pain-tag p{font-size:.83rem;color:var(--dk-muted);line-height:1.5;}
-
 .pain-res{text-align:center;background:linear-gradient(135deg,rgba(0,200,150,.08),rgba(0,200,150,.03));border:1px solid rgba(0,200,150,.22);border-radius:22px;padding:56px 52px;max-width:840px;margin:64px auto 0;}
 .pain-res h3{font-size:clamp(1.8rem,3.2vw,2.8rem);font-weight:300;margin-bottom:16px;}
 .pain-res h3 em{font-style:italic;color:var(--em-soft);}
 .pain-res p{font-size:1.05rem;color:var(--dk-muted);max-width:600px;margin:0 auto;}
 
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   TRANSFORMATION  dark
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* TRANSFORMATION dark */
 .tf-sec{background:var(--bg);position:relative;overflow:hidden;}
 .tf-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(0,200,150,.05),transparent);}
 .tf-head{text-align:center;max-width:640px;margin:0 auto 64px;position:relative;z-index:1;}
@@ -158,90 +135,37 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 .tf-card h3 em{font-style:italic;}
 .tf-card p{font-size:.92rem;color:rgba(255,255,255,.72);line-height:1.65;}
 .tf-arrow{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:10;width:52px;height:52px;background:var(--fu);border-radius:50%;box-shadow:0 0 30px var(--fu-glow),0 0 60px rgba(255,38,128,.2);display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:700;color:#fff;}
-
-/* Cost of inaction strip */
 .cost-strip{background:rgba(255,38,128,.06);border-top:1px solid rgba(255,38,128,.12);border-bottom:1px solid rgba(255,38,128,.12);padding:40px 36px;text-align:center;position:relative;z-index:1;}
 .cost-strip p{font-size:1.15rem;font-style:italic;font-family:'Cormorant Garamond',serif;color:rgba(255,255,255,.75);max-width:720px;margin:0 auto;}
 .cost-strip strong{color:var(--text);}
 
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   PRODUCT + MEGA BOOK  light
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* PRODUCT — two column grid */
 .prod-sec{background:var(--lt2);}
 .prod-head{text-align:center;max-width:640px;margin:0 auto 80px;}
 .prod-head h2{font-size:clamp(2rem,4vw,3.6rem);font-weight:300;margin-bottom:16px;color:var(--dk);}
 .prod-head p{color:var(--dk-muted);font-size:1.06rem;line-height:1.8;}
-.book-stage{display:flex;justify-content:center;align-items:flex-start;gap:64px;max-width:1020px;margin:0 auto;flex-wrap:wrap;}
 
-/* FLOATING BADGES */
-.book-zone{position:relative;flex-shrink:0;}
-.fbadge{position:absolute;background:#fff;border:1px solid rgba(0,200,150,.24);border-radius:50px;padding:10px 18px;font-family:'Montserrat',sans-serif;font-size:.75rem;font-weight:600;color:var(--dk);white-space:nowrap;box-shadow:0 4px 24px rgba(0,0,0,.1);display:flex;align-items:center;gap:8px;z-index:10;animation:flt 3.2s ease-in-out infinite;}
-.fbadge .fd{width:8px;height:8px;border-radius:50%;background:var(--fu);box-shadow:0 0 8px var(--fu);flex-shrink:0;}
-.fb1{top:-24px;left:-38px;animation-delay:0s;}
-.fb2{top:75px;right:-58px;animation-delay:.8s;}
-.fb3{bottom:145px;right:-54px;animation-delay:1.6s;}
-.fb4{bottom:44px;left:-50px;animation-delay:.4s;}
+/* ── BOOK STAGE: two columns, book left, card right ── */
+.book-stage{display:grid;grid-template-columns:auto 1fr;gap:80px;align-items:center;max-width:960px;margin:0 auto;}
+
+/* FLOATING BADGES — positioned relative to book-mockup-img */
+.book-zone{position:relative;display:flex;align-items:center;justify-content:center;}
+.book-mockup-img{position:relative;display:inline-block;}
+.fbadge{position:absolute;background:#fff;border:1.5px solid rgba(0,200,150,.2);border-radius:50px;padding:11px 20px;font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:600;color:#0C1E18;white-space:nowrap;box-shadow:0 4px 24px rgba(0,0,0,.13);display:flex;align-items:center;gap:9px;z-index:10;animation:flt 3.2s ease-in-out infinite;}
+.fbadge .fd{width:9px;height:9px;border-radius:50%;background:var(--fu);box-shadow:0 0 8px var(--fu);flex-shrink:0;}
+/* badges: left side stack top/bottom, right side stack top/bottom */
+.fb1{top:10%;left:-168px;animation-delay:0s;}
+.fb2{top:35%;right:-160px;animation-delay:.8s;}
+.fb3{bottom:28%;right:-160px;animation-delay:1.6s;}
+.fb4{bottom:8%;left:-168px;animation-delay:.4s;}
 @keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 
-/* Book cover art container */
-.bk-cover-art{border-radius:0 20px 20px 0;}
-.bk-cover-art svg{border-radius:0 20px 20px 0;}
-/* Pages effect on right edge */
-.book-face::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,rgba(0,200,150,.6),rgba(0,200,150,.12) 60%,transparent);z-index:6;}
-/* Remove old bk-photo styles — now replaced by inline SVG */
-.bk-photo-ov{display:none;}
-/* Strengthen top-of-book pages lines */
-.book-pages-top{position:absolute;top:-1px;left:28px;right:0;height:8px;background:repeating-linear-gradient(to bottom,rgba(255,255,255,.06) 0px,rgba(255,255,255,.06) 1px,rgba(0,0,0,.08) 1px,rgba(0,0,0,.08) 2px);z-index:7;border-radius:0 2px 0 0;}
+/* Book image — clean, no shadow */
+.book-img-wrap{width:320px;max-width:85vw;}
+.book-img-wrap img{width:100%;display:block;border-radius:4px;}
 
-.book-wrap{transform:rotateY(-27deg) rotateX(7deg);transform-style:flat;animation:bkFloat 7s ease-in-out infinite;cursor:pointer;transition:transform .8s cubic-bezier(.23,1,.32,1);}
-.book-wrap:hover{transform:rotateY(-8deg) rotateX(3deg);}
-@keyframes bkFloat{0%,100%{transform:rotateY(-27deg) rotateX(7deg) translateY(0)}50%{transform:rotateY(-27deg) rotateX(7deg) translateY(-20px)}}
-
-.book-face{
-  width:340px;height:476px;
-  border-radius:3px 20px 20px 3px;
-  position:relative;overflow:hidden;
-  box-shadow:
-    -4px 2px 0 #020C07,-8px 4px 0 #030E09,-12px 6px 0 #030D08,
-    -16px 8px 0 #020B06,-20px 10px 0 #010908,-24px 12px 0 #010706,
-    -28px 14px 0 #010504,-32px 16px 0 #010403,-36px 18px 0 #010302,
-    -38px 55px 90px rgba(0,0,0,.85),
-    34px 0 70px rgba(255,38,128,.06),
-    0 24px 100px rgba(0,200,150,.15);
-}
-/* Photo layer */
-.bk-photo{position:absolute;inset:0;z-index:1;}
-.bk-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;}
-/* Dark emerald overlay over photo */
-.bk-photo-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,15,12,.72) 0%,rgba(5,30,20,.55) 40%,rgba(5,15,12,.82) 100%);z-index:2;}
-/* Emerald color wash */
-.bk-wash{position:absolute;inset:0;background:linear-gradient(145deg,rgba(0,200,150,.14) 0%,transparent 50%,rgba(255,38,128,.14) 100%);z-index:3;}
-/* Spine */
-.bk-spine{position:absolute;top:0;left:0;bottom:0;width:28px;background:linear-gradient(to right,rgba(0,0,0,.7) 0%,rgba(0,0,0,.1) 100%);z-index:6;}
-/* Top edge */
-.bk-top-edge{position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,rgba(0,200,150,.7),rgba(0,200,150,.15) 60%,transparent);z-index:6;}
-/* Dot texture */
-.bk-dots{position:absolute;inset:0;opacity:.04;background-image:radial-gradient(circle,var(--em) 1px,transparent 1px);background-size:22px 22px;z-index:4;}
-
-.bk-inner{position:relative;z-index:5;height:100%;display:flex;flex-direction:column;justify-content:space-between;padding:32px 28px 28px 34px;}
-.bk-top{}
-.bk-lbl{background:var(--fu);color:#fff;font-family:'Montserrat',sans-serif;font-size:.48rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;padding:5px 12px;border-radius:4px;display:inline-block;margin-bottom:18px;box-shadow:0 2px 14px rgba(255,38,128,.4);}
-.bk-title{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:300;color:rgba(255,255,255,.9);line-height:1.1;margin-bottom:4px;}
-.bk-title strong{font-weight:600;color:var(--em);display:block;font-size:2.7rem;letter-spacing:-.02em;text-shadow:0 0 30px rgba(0,200,150,.4);}
-.bk-sub{font-family:'Montserrat',sans-serif;font-size:.54rem;color:rgba(255,255,255,.38);letter-spacing:.1em;text-transform:uppercase;margin-top:10px;}
-
-.bk-mid{text-align:center;padding:4px 0;}
-.bk-mid svg{width:100%;}
-
-.bk-foot{display:flex;justify-content:space-between;align-items:flex-end;padding-top:8px;border-top:1px solid rgba(255,255,255,.08);}
-.bk-author-lbl{font-family:'Montserrat',sans-serif;font-size:.54rem;color:rgba(255,255,255,.28);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;}
-.bk-brand{font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:800;color:var(--em);letter-spacing:.14em;text-transform:uppercase;}
-.bk-num{font-family:'Cormorant Garamond',serif;font-size:3.2rem;font-weight:300;color:rgba(0,200,150,.14);line-height:1;}
-
-.book-glow{width:280px;height:28px;background:radial-gradient(ellipse,rgba(0,200,150,.42),transparent 70%);filter:blur(16px);margin:10px auto 0;margin-left:40px;}
-
-/* Chapter preview card */
-.cc{background:#fff;border:1px solid rgba(0,150,100,.14);border-radius:22px;padding:32px 28px;max-width:284px;box-shadow:0 8px 40px rgba(0,0,0,.09);align-self:center;}
+/* Chapter card */
+.cc{background:#fff;border:1px solid rgba(0,150,100,.14);border-radius:22px;padding:36px 32px;width:100%;box-shadow:0 8px 40px rgba(0,0,0,.09);}
 .cc-tag{display:inline-block;background:rgba(255,38,128,.08);border:1px solid rgba(255,38,128,.2);color:var(--fu);font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 13px;border-radius:50px;margin-bottom:16px;}
 .cc-h{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:400;color:var(--dk);margin-bottom:10px;line-height:1.25;}
 .cc-p{font-size:.9rem;color:var(--dk-muted);line-height:1.7;margin-bottom:22px;}
@@ -250,9 +174,7 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 .cc-li{display:flex;align-items:center;gap:10px;font-size:.86rem;color:var(--dk-muted);}
 .cc-dot{width:6px;height:6px;border-radius:50%;background:var(--em);flex-shrink:0;}
 
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   STATS  dark
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* STATS dark */
 .stats-sec{background:var(--bg2);}
 .stat-bar{display:flex;flex-wrap:wrap;max-width:860px;margin:0 auto;border:1px solid rgba(0,200,150,.15);border-radius:20px;overflow:hidden;}
 .si{flex:1;min-width:160px;padding:36px 24px;text-align:center;position:relative;}
@@ -260,9 +182,7 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 .sn{font-family:'Montserrat',sans-serif;font-size:3.4rem;font-weight:800;color:var(--em);line-height:1;margin-bottom:8px;}
 .sl{font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:500;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;}
 
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   BENEFITS  dark
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* BENEFITS dark */
 .ben-sec{background:var(--bg2);}
 .sec-h{text-align:center;max-width:640px;margin:0 auto 64px;}
 .sec-h h2{font-size:clamp(2rem,4vw,3.4rem);font-weight:300;margin-bottom:16px;}
@@ -276,9 +196,7 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 .ben h3{font-family:'Montserrat',sans-serif;font-size:.96rem;font-weight:700;margin-bottom:10px;}
 .ben p{color:var(--muted);font-size:.92rem;line-height:1.72;}
 
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   HOW IT WORKS  light
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* HOW IT WORKS light */
 .how-sec{background:var(--lt);}
 .how-steps{max-width:840px;margin:0 auto;position:relative;}
 .how-steps::before{content:'';position:absolute;left:31px;top:52px;bottom:52px;width:1px;background:linear-gradient(to bottom,rgba(0,200,150,.5),rgba(0,200,150,.06));}
@@ -289,9 +207,7 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 .sb .sb-desc{font-size:1rem;color:var(--dk-muted);line-height:1.8;}
 .sb .sb-desc strong{color:var(--dk);font-weight:600;}
 
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   TESTIMONIALS  dark
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* TESTIMONIALS dark */
 .test-sec{background:var(--bg);}
 .test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(296px,1fr));gap:26px;max-width:1040px;margin:0 auto;}
 .test-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:24px;padding:36px 30px;transition:all .35s;position:relative;overflow:hidden;}
@@ -304,22 +220,16 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 .test-name{font-family:'Montserrat',sans-serif;font-size:.88rem;font-weight:700;margin-bottom:3px;}
 .test-meta{font-family:'Montserrat',sans-serif;font-size:.76rem;color:var(--muted);}
 
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   PRICING  light  + URGENCY
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* PRICING light */
 .price-sec{background:var(--lt2);}
-
-/* Live social proof bar */
-.live-bar{display:flex;align-items:center;justify-content:center;gap:28px;padding:16px 28px;background:rgba(0,200,150,.07);border:1px solid rgba(0,200,150,.18);border-radius:50px;max-width:560px;margin:0 auto 44px;flex-wrap:wrap;gap:16px;}
+.live-bar{display:flex;align-items:center;justify-content:center;gap:16px;padding:16px 28px;background:rgba(0,200,150,.07);border:1px solid rgba(0,200,150,.18);border-radius:50px;max-width:560px;margin:0 auto 44px;flex-wrap:wrap;}
 .lb-item{display:flex;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:500;color:var(--dk-muted);}
 .lb-dot{width:8px;height:8px;border-radius:50%;background:var(--em);box-shadow:0 0 8px var(--em);animation:pulse 1.5s ease-in-out infinite;flex-shrink:0;}
 .lb-num{font-weight:800;color:var(--dk);font-size:.88rem;}
-
 .pw{max-width:540px;margin:0 auto;}
 .pcard{background:#fff;border:1px solid rgba(0,200,150,.2);border-radius:28px;padding:56px 52px;position:relative;overflow:hidden;text-align:center;box-shadow:0 20px 80px rgba(0,0,0,.07);}
 .pcard::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--em),var(--fu));}
 .pcard::after{content:'';position:absolute;bottom:-80px;right:-80px;width:240px;height:240px;background:radial-gradient(circle,rgba(0,200,150,.05),transparent);border-radius:50%;}
-
 .p-launch-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,38,128,.08);border:1px solid rgba(255,38,128,.22);color:var(--fu);padding:7px 18px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:22px;}
 .p-launch-dot{width:6px;height:6px;border-radius:50%;background:var(--fu);box-shadow:0 0 8px var(--fu);animation:pulse 1.5s ease-in-out infinite;}
 .p-orig{font-family:'Montserrat',sans-serif;font-size:.94rem;color:#b0bdb8;text-decoration:line-through;margin-bottom:8px;}
@@ -327,17 +237,13 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 .p-curr{font-size:2.6rem;font-weight:700;vertical-align:super;color:var(--em-soft);}
 .p-note{font-family:'Montserrat',sans-serif;font-size:.84rem;font-weight:500;color:var(--dk-muted);margin-top:6px;margin-bottom:36px;}
 .p-savings{display:inline-block;background:rgba(0,200,150,.1);border:1px solid rgba(0,200,150,.22);color:var(--em-soft);padding:5px 14px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:700;margin-bottom:32px;}
-
 .pi-list{display:flex;flex-direction:column;gap:14px;margin-bottom:38px;text-align:left;}
 .pi-row{display:flex;align-items:center;gap:12px;font-size:.95rem;color:var(--dk);}
 .pi-chk{width:24px;height:24px;min-width:24px;background:rgba(255,38,128,.08);border:1px solid rgba(255,38,128,.28);border-radius:7px;display:flex;align-items:center;justify-content:center;color:var(--fu);font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:700;}
 .p-guar{display:flex;align-items:center;gap:12px;background:rgba(0,200,150,.06);border:1px solid rgba(0,200,150,.18);border-radius:14px;padding:16px 20px;margin-top:24px;font-family:'Montserrat',sans-serif;font-size:.82rem;color:var(--dk-muted);text-align:left;}
-
 .p-launch-note{text-align:center;margin-top:20px;font-family:'Montserrat',sans-serif;font-size:.76rem;color:rgba(0,0,0,.3);font-style:italic;}
 
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   FAQ  dark
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* FAQ dark */
 .faq-sec{background:var(--bg2);}
 .faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
 .faq-item{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:17px;overflow:hidden;transition:border-color .3s;}
@@ -349,9 +255,7 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 .faq-ans{max-height:0;overflow:hidden;transition:max-height .42s ease;}
 .faq-ai{padding:0 28px 24px;color:var(--muted);font-size:.96rem;line-height:1.8;}
 
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   FINAL CTA  dark
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* CTA dark */
 .cta-sec{background:var(--bg);text-align:center;position:relative;overflow:hidden;}
 .cta-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 100%,rgba(0,200,150,.1),transparent),radial-gradient(ellipse 50% 50% at 50% 50%,rgba(255,38,128,.06),transparent);}
 .cta-in{position:relative;z-index:1;max-width:740px;margin:0 auto;}
@@ -369,12 +273,10 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
 .ft-links a:hover{color:var(--em);}
 .ft-copy{font-family:'Montserrat',sans-serif;font-size:.73rem;color:rgba(255,255,255,.16);}
 
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   PURCHASE NOTIFICATION POPUP
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* NOTIFICATION POPUP */
 #notif-popup{position:fixed;bottom:28px;left:24px;z-index:999;transform:translateX(-140%);opacity:0;transition:transform .5s cubic-bezier(.23,1,.32,1),opacity .5s ease;pointer-events:none;max-width:320px;width:calc(100% - 48px);}
 #notif-popup.show{transform:translateX(0);opacity:1;pointer-events:auto;}
-.np-card{background:rgba(7,26,20,.97);backdrop-filter:blur(24px);border:1px solid rgba(0,200,150,.22);border-radius:18px;padding:16px 18px;display:flex;align-items:center;gap:14px;box-shadow:0 8px 40px rgba(0,0,0,.5),0 0 0 1px rgba(0,200,150,.06);}
+.np-card{background:rgba(7,26,20,.97);backdrop-filter:blur(24px);border:1px solid rgba(0,200,150,.22);border-radius:18px;padding:16px 18px;display:flex;align-items:center;gap:14px;box-shadow:0 8px 40px rgba(0,0,0,.5);}
 .np-avatar{width:46px;min-width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,rgba(0,200,150,.2),rgba(255,38,128,.2));border:1.5px solid rgba(0,200,150,.3);display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:.9rem;font-weight:800;color:var(--em);}
 .np-body{flex:1;min-width:0;}
 .np-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.85rem;color:var(--text);margin-bottom:2px;}
@@ -386,16 +288,12 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
 .np-time{font-family:'Montserrat',sans-serif;font-size:.68rem;color:rgba(255,255,255,.25);}
 .np-check{width:28px;min-width:28px;height:28px;background:rgba(0,200,150,.15);border:1px solid rgba(0,200,150,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;color:var(--em);}
 
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   REVEAL
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* REVEAL */
 .rv{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease;}
 .rv.in{opacity:1;transform:none;}
 .d1{transition-delay:.1s;}.d2{transition-delay:.22s;}.d3{transition-delay:.35s;}
 
-/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   MOBILE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* RESPONSIVE */
 @media(max-width:960px){
   .hero{grid-template-columns:1fr;min-height:auto;padding-bottom:60px;}
   .hero-right{display:none;}
@@ -404,10 +302,10 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
   .pain-photo{height:380px;}
   .tf-grid{grid-template-columns:1fr;}
   .tf-arrow{display:none;}
-  .book-stage{flex-direction:column;align-items:center;}
-  .cc{max-width:340px;}
+  .book-stage{grid-template-columns:1fr;justify-items:center;gap:48px;}
   .fbadge{display:none;}
   .sec-h,.prod-head,.tf-head{margin-bottom:44px;}
+  .cc{max-width:420px;}
 }
 @media(max-width:640px){
   .sec{padding:80px 22px;}
@@ -420,79 +318,51 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
 </head>
 <body>
 
-<!-- ━━━━━━━━ TOP ANNOUNCEMENT BANNER ━━━━━━━━ -->
+<!-- TOP BANNER -->
 <div class="top-banner">
-  <div class="tb-track" id="tbtrack">
+  <div class="tb-track">
     <div class="tb-item"><div class="tb-dot"></div><span class="tb-pill">Oferta de lanzamiento</span>&nbsp;&nbsp;Precio especial: <span class="tb-orig">$97</span>&nbsp;<span class="tb-price">$27 USD</span>&nbsp;— eres afortunada de encontrarlo aquí&nbsp;&nbsp;<span class="tb-em">·&nbsp; Acceso inmediato y permanente</span></div>
     <div class="tb-item"><div class="tb-dot"></div>El precio de <span class="tb-price">$27</span> es de lanzamiento — no estará disponible siempre &nbsp;&nbsp;<span class="tb-em">·&nbsp; Empieza a sentir cambios en 7 días</span></div>
     <div class="tb-item"><div class="tb-dot"></div><span class="tb-pill">Precio limitado</span>&nbsp;&nbsp;Más de <span class="tb-hi">500 mujeres</span> ya regularon su sistema nervioso &nbsp;&nbsp;<span class="tb-em">·&nbsp; Esta puede ser tu semana</span></div>
     <div class="tb-item"><div class="tb-dot"></div>El precio de <span class="tb-price">$27</span> puede volver a <span class="tb-orig" style="font-size:.8rem;">$97</span> en cualquier momento &nbsp;&nbsp;<span class="tb-em">·&nbsp; Compra ahora con garantía de 7 días</span></div>
-    <!-- Duplicate for seamless loop -->
     <div class="tb-item"><div class="tb-dot"></div><span class="tb-pill">Oferta de lanzamiento</span>&nbsp;&nbsp;Precio especial: <span class="tb-orig">$97</span>&nbsp;<span class="tb-price">$27 USD</span>&nbsp;— eres afortunada de encontrarlo aquí&nbsp;&nbsp;<span class="tb-em">·&nbsp; Acceso inmediato y permanente</span></div>
-    <div class="tb-item"><div class="tb-dot"></div>El precio de <span class="tb-price">$27</span> es de lanzamiento — no estará disponible siempre &nbsp;&nbsp;<span class="tb-em">·&nbsp; Empieza a sentir cambios en 7 días</span></div>
-    <div class="tb-item"><div class="tb-dot"></div><span class="tb-pill">Precio limitado</span>&nbsp;&nbsp;Más de <span class="tb-hi">500 mujeres</span> ya regularon su sistema nervioso &nbsp;&nbsp;<span class="tb-em">·&nbsp; Esta puede ser tu semana</span></div>
     <div class="tb-item"><div class="tb-dot"></div>El precio de <span class="tb-price">$27</span> puede volver a <span class="tb-orig" style="font-size:.8rem;">$97</span> en cualquier momento &nbsp;&nbsp;<span class="tb-em">·&nbsp; Compra ahora con garantía de 7 días</span></div>
   </div>
 </div>
 
-<!-- ━━━━━━━━ NAV ━━━━━━━━ -->
+<!-- NAV -->
 <nav id="nav">
   <a href="#" class="nav-brand">MARED <span>Reset Nervioso™</span></a>
   <a href="#precio" class="nav-pill">Quiero empezar →</a>
 </nav>
 
-<!-- ━━━━━━━━━━━━━━━━━━━━━━━━
-   HERO  dark · split impact
-━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!-- HERO -->
 <section class="hero" id="inicio">
   <div class="hero-bg"></div>
   <canvas id="nc"></canvas>
-
-  <!-- LEFT -->
   <div class="hero-left">
-    <div class="hero-badge">
-      <span class="hero-badge-dot"></span>
-      Sistema MARED™ · Neurociencia aplicada
-    </div>
-
-    <h1>
-      No estás rota.<br>
-      <span class="accent">Estás desregulada.</span>
-    </h1>
-
+    <div class="hero-badge"><span class="hero-badge-dot"></span>Sistema MARED™ · Neurociencia aplicada</div>
+    <h1>No estás rota.<br><span class="accent">Estás desregulada.</span></h1>
     <div class="hero-line"></div>
-
-    <p class="hero-sub">
-      Tu sistema nervioso aprendió a sobrevivir el caos —<br>
-      <strong>y ahora no sabe cómo parar.</strong>
-    </p>
-    <p class="hero-txt">
-      Reset Nervioso™ es el protocolo de neurociencia que cambia desde adentro la relación con tu cuerpo, tu energía y tu mente — en tan solo 21 días.
-    </p>
-
+    <p class="hero-sub">Tu sistema nervioso aprendió a sobrevivir el caos —<br><strong>y ahora no sabe cómo parar.</strong></p>
+    <p class="hero-txt">Reset Nervioso™ es el protocolo de neurociencia que cambia desde adentro la relación con tu cuerpo, tu energía y tu mente — en tan solo 21 días.</p>
     <div class="hero-proof rv">
       <div class="hp-avatars">
-        <div class="hp-av" style="margin-left:0"><img src="IMG/mared6.jpeg?w=64&h=64&auto=format&fit=crop&crop=face&q=80" alt="" onerror="this.parentElement.style.background='#1a3a30';this.remove()"></div>
-        <div class="hp-av"><img src="IMG/mared7.jpeg?w=64&h=64&auto=format&fit=crop&crop=face&q=80" alt="" onerror="this.parentElement.style.background='#1a3a30';this.remove()"></div>
-        <div class="hp-av"><img src="IMG/mared8.jpeg?w=64&h=64&auto=format&fit=crop&crop=face&q=80" alt="" onerror="this.parentElement.style.background='#1a3a30';this.remove()"></div>
+        <div class="hp-av"><img src="IMG/mared6.jpeg" alt="" onerror="this.parentElement.style.background='#1a3a30';this.remove()"></div>
+        <div class="hp-av"><img src="IMG/mared7.png" alt="" onerror="this.parentElement.style.background='#1a3a30';this.remove()"></div>
+        <div class="hp-av"><img src="IMG/mared8.jpeg" alt="" onerror="this.parentElement.style.background='#1a3a30';this.remove()"></div>
       </div>
       <span class="hp-text"><strong>+500 mujeres</strong> ya hicieron su Reset</span>
     </div>
-
     <div class="hero-ctas">
       <a href="#precio" class="btn">Quiero mi Reset ahora →</a>
       <a href="#producto" class="btn-outline btn-em">Ver qué incluye</a>
     </div>
     <p class="hero-cta-note num">Solo <span class="num" style="color:var(--fu)" id="hero-viewers">23</span> personas viendo esto ahora &nbsp;·&nbsp; Precio de lanzamiento: <span style="color:var(--em)">$27 USD</span></p>
   </div>
-
-  <!-- RIGHT — woman image -->
   <div class="hero-right">
     <div class="hero-woman">
-      <img
-        src="IMG/mared2.jpeg?w=720&h=960&auto=format&fit=crop&crop=top&q=88"
-        alt="Mujer tranquila, serena y equilibrada"
-        onerror="this.src='IMG/mared2.jpeg?w=720&h=960&auto=format&fit=crop&q=88';this.onerror=function(){this.closest('.hero-woman').style.background='linear-gradient(160deg,#071A14,#0D2B20)';this.remove();}">
+      <img src="IMG/mared2.jpeg" alt="Mujer tranquila, serena y equilibrada" onerror="this.closest('.hero-woman').style.background='linear-gradient(160deg,#071A14,#0D2B20)';this.remove()">
       <div class="hero-woman-fade"></div>
       <div class="hero-woman-card rv d2">
         <div class="hwc-label num">Cambio en</div>
@@ -501,15 +371,10 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
       </div>
     </div>
   </div>
-
-  <div class="scroll-hint">
-    <div class="scroll-line"></div>
-    <span>Descubrir</span>
-  </div>
+  <div class="scroll-hint"><div class="scroll-line"></div><span>Descubrir</span></div>
 </section>
 
-
-<!-- ━━━━━━━━ DOLOR  light ━━━━━━━━ -->
+<!-- DOLOR light -->
 <section class="sec s-lt rv" id="dolor">
   <div class="container">
     <div class="pain-layout">
@@ -525,13 +390,9 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
           <div class="pc"><div class="pc-ico">🧩</div><div><h4>"Nada me termina de funcionar"</h4><p>Has probado terapia, meditación, suplementos. Siempre hay algo que falta. Porque aún no has trabajado la raíz.</p></div></div>
         </div>
       </div>
-
       <div class="rv d2">
         <div class="pain-photo">
-          <img
-            src="IMG/mared4.jpeg?w=560&h=700&auto=format&fit=crop&crop=top&q=84"
-            alt="Mujer agotada, desregulada"
-            onerror="this.src='IMG/mared4.jpeg?w=560&h=700&auto=format&fit=crop&q=82';this.onerror=function(){this.closest('.pain-photo').style.background='linear-gradient(135deg,#1a3a30,#0d2b20)';this.remove();}">
+          <img src="IMG/mared4.jpeg" alt="Mujer agotada, desregulada" onerror="this.closest('.pain-photo').style.background='linear-gradient(135deg,#1a3a30,#0d2b20)';this.remove()">
           <div class="pain-photo-ov"></div>
           <div class="pain-tag">
             <h4>"Sentía que algo estaba mal… pero nadie sabía qué."</h4>
@@ -540,7 +401,6 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
         </div>
       </div>
     </div>
-
     <div class="pain-res rv">
       <h3>No está roto nada en ti. <em>Está desregulado.</em></h3>
       <p style="margin-top:14px;">Y esa diferencia lo cambia todo. Porque lo que está desregulado puede regularse. Con las herramientas correctas. Con el sistema correcto. Eso es Reset Nervioso™.</p>
@@ -548,8 +408,7 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
   </div>
 </section>
 
-
-<!-- ━━━━━━━━ TRANSFORMACIÓN  dark ━━━━━━━━ -->
+<!-- TRANSFORMACIÓN dark -->
 <section class="tf-sec sec rv">
   <div class="container">
     <div class="tf-head">
@@ -559,10 +418,7 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
     </div>
     <div class="tf-grid">
       <div class="tf-card rv d1">
-        <img
-          src="https://IMG/mared5.jpeg?w=600&h=700&auto=format&fit=crop&crop=top&q=84"
-          alt="Antes del reset nervioso"
-          onerror="this.src='IMG/mared5.jpeg?w=600&h=700&auto=format&fit=crop&q=82';this.onerror=function(){this.closest('.tf-card').style.background='#1a2820';this.remove();}">
+        <img src="IMG/mared5.jpeg" alt="Antes del reset nervioso" onerror="this.closest('.tf-card').style.background='#1a2820';this.remove()">
         <div class="tf-ov-a"></div>
         <div class="tf-body">
           <span class="tf-pill tf-pill-a">Antes del Reset</span>
@@ -572,10 +428,7 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
       </div>
       <div class="tf-arrow">→</div>
       <div class="tf-card rv d2">
-        <img
-          src="IMG/mared3.jpeg?w=600&h=700&auto=format&fit=crop&crop=top&q=84"
-          alt="Después del reset nervioso"
-          onerror="this.src='IMG/mared3.jpeg?w=600&h=700&auto=format&fit=crop&q=82';this.onerror=function(){this.closest('.tf-card').style.background='#0d2b20';this.remove();}">
+        <img src="IMG/mared3.jpeg" alt="Después del reset nervioso" onerror="this.closest('.tf-card').style.background='#0d2b20';this.remove()">
         <div class="tf-ov-d"></div>
         <div class="tf-body">
           <span class="tf-pill tf-pill-d">Después del Reset</span>
@@ -585,14 +438,12 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
       </div>
     </div>
   </div>
-
   <div class="cost-strip rv">
     <p><strong>"Cada día que tu sistema nervioso pasa en modo alerta es un día de energía, claridad y vida que no recuperas."</strong><br>La buena noticia: puedes cambiarlo. Y antes de lo que crees.</p>
   </div>
 </section>
 
-
-<!-- ━━━━━━━━ PRODUCTO + MEGA BOOK  light ━━━━━━━━ -->
+<!-- PRODUCTO + BOOK — two column grid -->
 <section class="prod-sec sec" id="producto">
   <div class="container">
     <div class="prod-head rv">
@@ -600,26 +451,23 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
       <h2>Reset Nervioso™</h2>
       <p>No es otro libro de autoayuda. Es un protocolo estructurado de neurociencia aplicada que transforma desde la raíz la relación con tu sistema nervioso — en 21 días concretos.</p>
     </div>
- 
+
     <div class="book-stage">
- 
-      <!-- THE BOOK -->
+
+      <!-- columna izquierda: libro con badges -->
       <div class="book-zone rv d1">
         <div class="book-mockup-img" id="book">
           <div class="fbadge fb1"><span class="fd"></span>15 capítulos</div>
           <div class="fbadge fb2"><span class="fd"></span>Método 3C™</div>
           <div class="fbadge fb3"><span class="fd"></span>Plan 21 días</div>
           <div class="fbadge fb4"><span class="fd"></span>Protocolos SOS</div>
-          <div style="width:360px;max-width:90vw;overflow:hidden;border-radius:6px;">
-            <img src="IMG/portadaV1.png"
-              alt="Reset Nervioso — portada del libro"
-              style="width:115%;margin-left:-6%;margin-top:-3%;margin-bottom:-4%;display:block;filter:drop-shadow(-14px 14px 32px rgba(0,0,0,.5)) drop-shadow(0 4px 20px rgba(0,200,150,.1));">
+          <div class="book-img-wrap">
+            <img src="IMG/portadaV1.png" alt="Reset Nervioso — portada del libro" onerror="this.closest('.book-img-wrap').style.background='#0d2b20';">
           </div>
         </div>
       </div>
-      </div>
- 
-      <!-- Chapter card -->
+
+      <!-- columna derecha: card capítulo -->
       <div class="cc rv d2">
         <span class="cc-tag">Capítulo 7</span>
         <h2 class="cc-h">El nervio vago y el interruptor de la calma</h2>
@@ -634,12 +482,12 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
         <p style="font-size:.8rem;color:var(--dk-muted);margin-bottom:12px;font-family:'Montserrat',sans-serif;font-weight:500;">+ 14 capítulos completos incluidos:</p>
         <a href="#precio" class="btn btn-sm" style="width:100%;text-align:center;display:block;">Acceder por $27 →</a>
       </div>
+
     </div>
   </div>
 </section>
 
-
-<!-- ━━━━━━━━ STATS  dark ━━━━━━━━ -->
+<!-- STATS dark -->
 <section class="stats-sec sec rv">
   <div class="container">
     <div class="stat-bar">
@@ -651,8 +499,7 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
   </div>
 </section>
 
-
-<!-- ━━━━━━━━ BENEFICIOS  dark ━━━━━━━━ -->
+<!-- BENEFICIOS dark -->
 <section class="ben-sec sec rv" id="beneficios">
   <div class="container">
     <div class="sec-h">
@@ -671,14 +518,13 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
   </div>
 </section>
 
-
-<!-- ━━━━━━━━ CÓMO FUNCIONA  light ━━━━━━━━ -->
+<!-- CÓMO FUNCIONA light -->
 <section class="how-sec s-lt sec rv" id="como">
   <div class="container">
     <div class="sec-h">
       <span class="lbl">El proceso</span>
       <h2 style="color:var(--dk);">El Método 3C de MARED</h2>
-      <p>Tres etapas concretas y progresivas. Diseñadas para que el cambio sea real, profundo y sostenible — no otro ciclo más de "bien por un tiempo".</p>
+      <p>Tres etapas concretas y progresivas. Diseñadas para que el cambio sea real, profundo y sostenible.</p>
     </div>
     <div class="how-steps">
       <div class="how-step">
@@ -692,22 +538,21 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
         <div class="sn-c">2</div>
         <div class="sb">
           <h3>Calma (C2)</h3>
-          <p class="sb-desc">Implementas técnicas concretas de regulación: respiración neurodirigida, anclaje somático, protocolos SOS. <strong>Herramientas que funcionan en el mundo real</strong> — en el trabajo, en una discusión, en el supermercado — no solo en un cojín de meditación.</p>
+          <p class="sb-desc">Implementas técnicas concretas de regulación: respiración neurodirigida, anclaje somático, protocolos SOS. <strong>Herramientas que funcionan en el mundo real</strong> — en el trabajo, en una discusión, en el supermercado.</p>
         </div>
       </div>
       <div class="how-step">
         <div class="sn-c">3</div>
         <div class="sb">
           <h3>Consolida (C3)</h3>
-          <p class="sb-desc">El plan de 21 días integra los hábitos que <strong>enseñan a tu sistema nervioso un nuevo set point</strong>. Dejas de ir de crisis en crisis. Tu cuerpo aprende que puede existir en calma de forma sostenida — porque tú le enseñaste que es seguro.</p>
+          <p class="sb-desc">El plan de 21 días integra los hábitos que <strong>enseñan a tu sistema nervioso un nuevo set point</strong>. Dejas de ir de crisis en crisis. Tu cuerpo aprende que puede existir en calma de forma sostenida.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- ━━━━━━━━ TESTIMONIOS  dark ━━━━━━━━ -->
+<!-- TESTIMONIOS dark -->
 <section class="test-sec sec rv" id="testimonios">
   <div class="container">
     <div class="sec-h">
@@ -717,10 +562,7 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
     </div>
     <div class="test-grid">
       <div class="test-card rv d1">
-        <img class="test-photo"
-          src="https:IMG/mared2.jpeg?w=160&h=160&auto=format&fit=crop&crop=face&q=84"
-          alt="Valeria R."
-          onerror="this.style.display='none'">
+        <img class="test-photo" src="IMG/mared2.jpeg" alt="Valeria R." onerror="this.style.display='none'">
         <div class="test-stars">★★★★★</div>
         <span class="qm">"</span>
         <p class="test-txt">Por primera vez en años entendí qué me estaba pasando. No era debilidad. Era mi sistema nervioso haciendo lo único que sabía. El Reset me devolvió el lenguaje, las herramientas — y el control.</p>
@@ -728,10 +570,7 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
         <div class="test-meta">Psicóloga · México</div>
       </div>
       <div class="test-card rv d2">
-        <img class="test-photo"
-          src="IMG/mared1.jpeg?w=160&h=160&auto=format&fit=crop&crop=face&q=84"
-          alt="Carolina S."
-          onerror="this.style.display='none'">
+        <img class="test-photo" src="IMG/mared1.jpeg" alt="Carolina S." onerror="this.style.display='none'">
         <div class="test-stars">★★★★★</div>
         <span class="qm">"</span>
         <p class="test-txt">Llevaba 3 años buscando respuestas. Médicos, terapeutas, coaches. Nadie me lo explicó así. En la primera semana ya sentía diferencia real en mi cuerpo. Mi cuerpo dejó de ser mi enemigo.</p>
@@ -739,10 +578,7 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
         <div class="test-meta">Diseñadora · Colombia</div>
       </div>
       <div class="test-card rv d3">
-        <img class="test-photo"
-          src="IMG/mared9.jpeg?w=160&h=160&auto=format&fit=crop&crop=face&q=84"
-          alt="Marcela P."
-          onerror="this.style.display='none'">
+        <img class="test-photo" src="IMG/mared9.jpeg" alt="Marcela P." onerror="this.style.display='none'">
         <div class="test-stars">★★★★★</div>
         <span class="qm">"</span>
         <p class="test-txt">El Método 3C me cambió la vida. Ahora tengo algo concreto que hacer antes de perder el control. El miedo a mis propias reacciones desapareció. Mi cuerpo ya no me asusta.</p>
@@ -753,8 +589,7 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
   </div>
 </section>
 
-
-<!-- ━━━━━━━━ PRECIO  light + urgency ━━━━━━━━ -->
+<!-- PRECIO light -->
 <section class="price-sec s-lt sec rv" id="precio">
   <div class="container">
     <div class="sec-h">
@@ -762,13 +597,11 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
       <h2 style="color:var(--dk);">Un precio que no sea una barrera</h2>
       <p>Esta información transforma vidas. Eso es exactamente por qué está disponible a este precio — por ahora.</p>
     </div>
-
     <div class="live-bar rv">
       <div class="lb-item"><div class="lb-dot"></div><span><span class="lb-num num" id="live-view">23</span> viendo ahora</span></div>
       <div class="lb-item" style="color:var(--dk-muted);opacity:.4;">|</div>
       <div class="lb-item"><span><span class="lb-num num" id="today-buy">47</span> compraron esta semana</span></div>
     </div>
-
     <div class="pw">
       <div class="pcard">
         <div class="p-launch-badge"><div class="p-launch-dot"></div>Precio de lanzamiento activo</div>
@@ -776,7 +609,6 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
         <div class="p-amt num"><span class="p-curr">$</span>27</div>
         <div class="p-note num">USD · Acceso inmediato y permanente</div>
         <div class="p-savings num">Ahorras $70 — precio solo durante lanzamiento</div>
-
         <div class="pi-list">
           <div class="pi-row"><div class="pi-chk">✓</div><span>Ebook Reset Nervioso™ — 15 capítulos completos</span></div>
           <div class="pi-row"><div class="pi-chk">✓</div><span>Plan de implementación de 21 días, paso a paso</span></div>
@@ -784,9 +616,7 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
           <div class="pi-row"><div class="pi-chk">✓</div><span>Método 3C exclusivo — Comprende, Calma, Consolida</span></div>
           <div class="pi-row"><div class="pi-chk">✓</div><span>Acceso permanente — descárgalo, es tuyo para siempre</span></div>
         </div>
-
         <a href="#" class="btn" style="width:100%;text-align:center;display:block;font-size:1rem;">Sí, quiero mi Reset ahora →</a>
-
         <div class="p-guar">
           <span style="font-size:1.5rem;line-height:1">🔒</span>
           <span>Compra 100% segura. Si en 7 días no ves valor real, te devolvemos cada centavo — sin preguntas, sin burocracia.</span>
@@ -797,8 +627,7 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
   </div>
 </section>
 
-
-<!-- ━━━━━━━━ FAQ  dark ━━━━━━━━ -->
+<!-- FAQ dark -->
 <section class="faq-sec sec rv" id="faq">
   <div class="container">
     <div class="sec-h">
@@ -820,7 +649,7 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
       </div>
       <div class="faq-item">
         <button class="faq-q">¿Reemplaza la terapia psicológica?<div class="faq-chev">+</div></button>
-        <div class="faq-ans"><div class="faq-ai">No, y no pretende serlo. Reset Nervioso™ complementa perfectamente cualquier proceso terapéutico. Muchas personas que lo usan están en terapia — y reportan que sus sesiones se vuelven mucho más productivas, porque llegan con más autoconocimiento.</div></div>
+        <div class="faq-ans"><div class="faq-ai">No, y no pretende serlo. Reset Nervioso™ complementa perfectamente cualquier proceso terapéutico. Muchas personas que lo usan están en terapia — y reportan que sus sesiones se vuelven mucho más productivas.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q">¿Cómo recibo el material?<div class="faq-chev">+</div></button>
@@ -834,8 +663,7 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
   </div>
 </section>
 
-
-<!-- ━━━━━━━━ CTA FINAL  dark ━━━━━━━━ -->
+<!-- CTA FINAL dark -->
 <section class="cta-sec sec rv">
   <div class="cta-in">
     <span class="lbl">Es tu momento</span>
@@ -846,22 +674,17 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
   </div>
 </section>
 
-
 <!-- FOOTER -->
 <footer>
   <div class="ft-brand">MARED · Reset Nervioso™</div>
   <p>Este sistema es de carácter educativo e informativo. No reemplaza la atención médica o psicológica profesional. Si estás en crisis, busca apoyo profesional.</p>
   <div class="ft-links">
-    <a href="#">Contacto</a>
-    <a href="#">Privacidad</a>
-    <a href="#">Términos</a>
-    <a href="#">Garantía</a>
+    <a href="#">Contacto</a><a href="#">Privacidad</a><a href="#">Términos</a><a href="#">Garantía</a>
   </div>
   <div class="ft-copy">© 2025 Sistema MARED™. Todos los derechos reservados.</div>
 </footer>
 
-
-<!-- ━━━━━━━━ PURCHASE NOTIFICATION POPUP ━━━━━━━━ -->
+<!-- NOTIFICATION POPUP -->
 <div id="notif-popup">
   <div class="np-card">
     <div class="np-avatar" id="np-av">MG</div>
@@ -878,152 +701,94 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
   </div>
 </div>
 
-
 <script>
-/* ── NAV ── */
-const nav = document.getElementById('nav');
-const bannerH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--banner-h'));
-window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60), {passive:true});
+/* NAV */
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>60),{passive:true});
 
-/* ── REVEAL ── */
+/* REVEAL */
 (function(){
-  const els = document.querySelectorAll('.rv');
-  const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); }), {threshold:0.06});
-  els.forEach(el => io.observe(el));
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');}),{threshold:.06});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 })();
 
-/* ── FAQ ── */
-document.querySelectorAll('.faq-q').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const item = btn.closest('.faq-item');
-    const ans  = item.querySelector('.faq-ans');
-    const open = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i => {
-      i.classList.remove('open');
-      i.querySelector('.faq-ans').style.maxHeight = '0';
-    });
-    if (!open) {
-      item.classList.add('open');
-      ans.style.maxHeight = ans.scrollHeight + 'px';
-    }
+/* FAQ */
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.closest('.faq-item'),ans=item.querySelector('.faq-ans'),open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-ans').style.maxHeight='0';});
+    if(!open){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';}
   });
 });
 
-/* ── NEURAL CANVAS ── */
-const cvs = document.getElementById('nc');
-const ctx = cvs.getContext('2d');
-let nodes = [];
-function resize(){ cvs.width = window.innerWidth; cvs.height = window.innerHeight; }
+/* NEURAL CANVAS */
+const cvs=document.getElementById('nc'),ctx=cvs.getContext('2d');
+let nodes=[];
+function resize(){cvs.width=window.innerWidth;cvs.height=window.innerHeight;}
 resize();
-window.addEventListener('resize', resize, {passive:true});
-for(let i=0;i<55;i++){
-  nodes.push({x:Math.random()*window.innerWidth,y:Math.random()*window.innerHeight,
-    vx:(Math.random()-.5)*.42,vy:(Math.random()-.5)*.42,r:Math.random()*2.2+.8,fu:Math.random()>.64});
-}
+window.addEventListener('resize',resize,{passive:true});
+for(let i=0;i<55;i++)nodes.push({x:Math.random()*window.innerWidth,y:Math.random()*window.innerHeight,vx:(Math.random()-.5)*.42,vy:(Math.random()-.5)*.42,r:Math.random()*2.2+.8,fu:Math.random()>.64});
 (function draw(){
   ctx.clearRect(0,0,cvs.width,cvs.height);
-  nodes.forEach(n => {
-    n.x+=n.vx; n.y+=n.vy;
-    if(n.x<0||n.x>cvs.width)n.vx*=-1;
-    if(n.y<0||n.y>cvs.height)n.vy*=-1;
-  });
-  for(let i=0;i<nodes.length;i++){
-    for(let j=i+1;j<nodes.length;j++){
-      const a=nodes[i],b=nodes[j],d=Math.hypot(a.x-b.x,a.y-b.y);
-      if(d<138){
-        const al=(1-d/138)*.12;
-        ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);
-        ctx.strokeStyle=a.fu?`rgba(255,38,128,${al})`:`rgba(0,200,150,${al})`;
-        ctx.lineWidth=.8;ctx.stroke();
-      }
-    }
-  }
-  nodes.forEach(n => {
-    ctx.beginPath();ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
-    ctx.fillStyle=n.fu?'rgba(255,38,128,.55)':'rgba(0,200,150,.55)';
-    ctx.fill();
-  });
+  nodes.forEach(n=>{n.x+=n.vx;n.y+=n.vy;if(n.x<0||n.x>cvs.width)n.vx*=-1;if(n.y<0||n.y>cvs.height)n.vy*=-1;});
+  for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){const a=nodes[i],b=nodes[j],d=Math.hypot(a.x-b.x,a.y-b.y);if(d<138){const al=(1-d/138)*.12;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.strokeStyle=a.fu?`rgba(255,38,128,${al})`:`rgba(0,200,150,${al})`;ctx.lineWidth=.8;ctx.stroke();}}
+  nodes.forEach(n=>{ctx.beginPath();ctx.arc(n.x,n.y,n.r,0,Math.PI*2);ctx.fillStyle=n.fu?'rgba(255,38,128,.55)':'rgba(0,200,150,.55)';ctx.fill();});
   requestAnimationFrame(draw);
 })();
 
-/* ── BOOK PARALLAX ── */
-const book = document.getElementById('book');
+/* BOOK HOVER */
+const book=document.getElementById('book');
 if(book){
-  let tx=-27,ty=7,cx=-27,cy=7;
-  document.addEventListener('mousemove', e => {
-    tx=-27+((e.clientX-window.innerWidth/2)/window.innerWidth)*18;
-    ty=7-((e.clientY-window.innerHeight/2)/window.innerHeight)*10;
-  });
-  (function ab(){
-    cx+=(tx-cx)*.055;cy+=(ty-cy)*.055;
-    book.style.transform=`rotateY(${cx}deg) rotateX(${cy}deg)`;
-    requestAnimationFrame(ab);
-  })();
+  book.addEventListener('mouseenter',()=>{book.style.transform='translateY(-8px) scale(1.02)';book.style.transition='transform .4s ease';});
+  book.addEventListener('mouseleave',()=>{book.style.transform='translateY(0) scale(1)';});
 }
 
-/* ── PURCHASE NOTIFICATIONS ── */
-const buyers = [
-  {name:'María G.',    initials:'MG', country:'México',         flag:'🇲🇽'},
-  {name:'Valentina R.',initials:'VR', country:'Colombia',       flag:'🇨🇴'},
-  {name:'Sofía L.',    initials:'SL', country:'Argentina',      flag:'🇦🇷'},
-  {name:'Camila M.',   initials:'CM', country:'Chile',          flag:'🇨🇱'},
-  {name:'Daniela P.',  initials:'DP', country:'Perú',           flag:'🇵🇪'},
-  {name:'Isabella C.', initials:'IC', country:'Venezuela',      flag:'🇻🇪'},
-  {name:'Lucía H.',    initials:'LH', country:'España',         flag:'🇪🇸'},
-  {name:'Fernanda V.', initials:'FV', country:'Ecuador',        flag:'🇪🇨'},
-  {name:'Andrea S.',   initials:'AS', country:'Miami, USA',     flag:'🇺🇸'},
-  {name:'Natalia B.',  initials:'NB', country:'Uruguay',        flag:'🇺🇾'},
-  {name:'Alejandra T.',initials:'AT', country:'Costa Rica',     flag:'🇨🇷'},
-  {name:'Mónica D.',   initials:'MD', country:'Guatemala',      flag:'🇬🇹'},
-  {name:'Elena F.',    initials:'EF', country:'Los Ángeles',    flag:'🇺🇸'},
-  {name:'Patricia N.', initials:'PN', country:'Bolivia',        flag:'🇧🇴'},
-  {name:'Diana A.',    initials:'DA', country:'Nueva York',     flag:'🇺🇸'},
-  {name:'Claudia E.',  initials:'CE', country:'México',         flag:'🇲🇽'},
-  {name:'Jimena O.',   initials:'JO', country:'Colombia',       flag:'🇨🇴'},
-  {name:'Adriana Q.',  initials:'AQ', country:'Argentina',      flag:'🇦🇷'},
-  {name:'Mariana Z.',  initials:'MZ', country:'Chile',          flag:'🇨🇱'},
-  {name:'Gabriela W.', initials:'GW', country:'Texas, USA',     flag:'🇺🇸'},
-  {name:'Sara V.',     initials:'SV', country:'Puerto Rico',    flag:'🇵🇷'},
-  {name:'Laura M.',    initials:'LM', country:'Rep. Dominicana',flag:'🇩🇴'},
-  {name:'Carmen R.',   initials:'CR', country:'Paraguay',       flag:'🇵🇾'},
-  {name:'Rebeca S.',   initials:'RS', country:'Honduras',       flag:'🇭🇳'},
-  {name:'Paola N.',    initials:'PN', country:'Colombia',       flag:'🇨🇴'},
+/* NOTIFICATIONS */
+const buyers=[
+  {name:'María G.',initials:'MG',country:'México',flag:'🇲🇽'},
+  {name:'Valentina R.',initials:'VR',country:'Colombia',flag:'🇨🇴'},
+  {name:'Sofía L.',initials:'SL',country:'Argentina',flag:'🇦🇷'},
+  {name:'Camila M.',initials:'CM',country:'Chile',flag:'🇨🇱'},
+  {name:'Daniela P.',initials:'DP',country:'Perú',flag:'🇵🇪'},
+  {name:'Isabella C.',initials:'IC',country:'Venezuela',flag:'🇻🇪'},
+  {name:'Lucía H.',initials:'LH',country:'España',flag:'🇪🇸'},
+  {name:'Fernanda V.',initials:'FV',country:'Ecuador',flag:'🇪🇨'},
+  {name:'Andrea S.',initials:'AS',country:'Miami, USA',flag:'🇺🇸'},
+  {name:'Natalia B.',initials:'NB',country:'Uruguay',flag:'🇺🇾'},
+  {name:'Alejandra T.',initials:'AT',country:'Costa Rica',flag:'🇨🇷'},
+  {name:'Mónica D.',initials:'MD',country:'Guatemala',flag:'🇬🇹'},
+  {name:'Elena F.',initials:'EF',country:'Los Ángeles',flag:'🇺🇸'},
+  {name:'Patricia N.',initials:'PN',country:'Bolivia',flag:'🇧🇴'},
+  {name:'Diana A.',initials:'DA',country:'Nueva York',flag:'🇺🇸'},
+  {name:'Claudia E.',initials:'CE',country:'México',flag:'🇲🇽'},
+  {name:'Jimena O.',initials:'JO',country:'Colombia',flag:'🇨🇴'},
+  {name:'Mariana Z.',initials:'MZ',country:'Chile',flag:'🇨🇱'},
+  {name:'Sara V.',initials:'SV',country:'Puerto Rico',flag:'🇵🇷'},
+  {name:'Laura M.',initials:'LM',country:'Rep. Dominicana',flag:'🇩🇴'},
+  {name:'Carmen R.',initials:'CR',country:'Paraguay',flag:'🇵🇾'},
+  {name:'Paola N.',initials:'PN',country:'Colombia',flag:'🇨🇴'},
 ];
-
-const popup = document.getElementById('notif-popup');
-let lastIdx = -1;
-
+const popup=document.getElementById('notif-popup');
+let lastIdx=-1;
 function showNotif(){
-  let idx;
-  do { idx = Math.floor(Math.random() * buyers.length); } while(idx === lastIdx);
-  lastIdx = idx;
-  const b = buyers[idx];
-  document.getElementById('np-av').textContent      = b.initials;
-  document.getElementById('np-name').textContent    = b.name;
-  document.getElementById('np-flag').textContent    = b.flag;
-  document.getElementById('np-country').textContent = b.country;
+  let idx;do{idx=Math.floor(Math.random()*buyers.length);}while(idx===lastIdx);
+  lastIdx=idx;const b=buyers[idx];
+  document.getElementById('np-av').textContent=b.initials;
+  document.getElementById('np-name').textContent=b.name;
+  document.getElementById('np-flag').textContent=b.flag;
+  document.getElementById('np-country').textContent=b.country;
   popup.classList.add('show');
-  setTimeout(() => popup.classList.remove('show'), 5500);
+  setTimeout(()=>popup.classList.remove('show'),5500);
 }
+setTimeout(function loop(){showNotif();setTimeout(loop,14000+Math.random()*14000);},8000);
 
-// First notification after 8 seconds, then random 14–28s intervals
-setTimeout(function loop(){
-  showNotif();
-  setTimeout(loop, 14000 + Math.random() * 14000);
-}, 8000);
-
-/* ── LIVE COUNTERS (subtle fluctuation) ── */
-function liveCounter(elId, base, range, interval){
-  const el = document.getElementById(elId);
-  if(!el) return;
-  setInterval(() => {
-    const v = base + Math.floor(Math.random() * range * 2) - range;
-    el.textContent = Math.max(base - range, v);
-  }, interval);
+/* LIVE COUNTERS */
+function liveCounter(id,base,range,interval){
+  const el=document.getElementById(id);if(!el)return;
+  setInterval(()=>{el.textContent=Math.max(base-range,base+Math.floor(Math.random()*range*2)-range);},interval);
 }
-liveCounter('live-view', 23, 5, 11000);
-liveCounter('today-buy', 47, 4, 17000);
-liveCounter('hero-viewers', 23, 4, 9000);
+liveCounter('live-view',23,5,11000);
+liveCounter('today-buy',47,4,17000);
+liveCounter('hero-viewers',23,4,9000);
 </script>
 </body>
 </html>
