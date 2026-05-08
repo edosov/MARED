@@ -312,7 +312,7 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
   z-index:1;
   overflow:visible;
 }
-.ep-inc-item{display:flex;align-items:center;gap:10px;font-size:.9rem;color:#0C1E18 !important;font-weight:600;}
+.ep-inc-item{display:flex;align-items:center;gap:10px;font-size:.9rem;color:#0C1E18 !important;font-weight:600;opacity:0;transform:translateX(-18px);animation:incSlide .45s ease forwards;}
 .ep-inc-dot{width:7px;height:7px;border-radius:50%;background:var(--fu);box-shadow:0 0 8px var(--fu);flex-shrink:0;}
 
 /* Mini book mockup */
@@ -342,6 +342,12 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 
 /* Includes list */
 .ep-includes{width:100%;display:flex;flex-direction:column;gap:10px;}
+.ep-inc-item:nth-child(1){animation-delay:.1s;}
+.ep-inc-item:nth-child(2){animation-delay:.25s;}
+.ep-inc-item:nth-child(3){animation-delay:.4s;}
+.ep-inc-item:nth-child(4){animation-delay:.55s;}
+.ep-inc-item:nth-child(5){animation-delay:.7s;}
+@keyframes incSlide{to{opacity:1;transform:translateX(0);}}
 .ep-inc-dot{width:7px;height:7px;border-radius:50%;background:var(--fu);box-shadow:0 0 8px var(--fu);flex-shrink:0;}
 
 /* RIGHT COLUMN */
