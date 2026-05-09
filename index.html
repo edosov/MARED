@@ -14,7 +14,7 @@
 <title>Reset Nervioso™ — Regula tu sistema nervioso en 21 días | MARED</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-/* FAVICON */
+<!-- FAVICON -->
 <link rel="icon" href="./IMG/favicon.ico?v=12" type="image/x-icon">
 <link rel="shortcut icon" href="./IMG/favicon.ico?v=12" type="image/x-icon">
 <link rel="apple-touch-icon" href="./IMG/apple-touch-icon.png?v=12">
@@ -1466,11 +1466,64 @@ window.addEventListener('resize', () => {
   }
 }, {passive:true});
 
-/* NEWSLETTER */
-function handleNL(e){
+/* SYSTEME.IO INTEGRATION
+   IMPORTANTE: NO pongas la API Key de Systeme.io en este archivo.
+   Este HTML debe llamar a un proxy seguro en Cloudflare Worker.
+   Cuando crees el Worker, reemplaza esta URL por la URL real del Worker. */
+const SYSTEME_PROXY_URL = "https://maredsysteme.oikos04.workers.dev";
+
+async function enviarASysteme({ email, nombre = "", etiqueta = "Comunidad MARED" }) {
+  const res = await fetch(SYSTEME_PROXY_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      email,
+      firstName: nombre,
+      tag: etiqueta
+    })
+  });
+
+  if (!res.ok) {
+    const errorText = await res.text().catch(() => "");
+    console.error("Error Systeme.io:", errorText);
+    throw new Error("No se pudo registrar el contacto");
+  }
+
+  return res.json().catch(() => ({}));
+}
+
+/* NEWSLETTER / COMUNIDAD MARED */
+async function handleNL(e){
   e.preventDefault();
-  document.querySelector('.nl-form').style.display='none';
-  document.getElementById('nl-thanks').style.display='block';
+
+  const form = e.target;
+  const email = form.querySelector('input[type="email"]').value.trim();
+  const button = form.querySelector('button[type="submit"]');
+  const originalText = button ? button.textContent : "";
+
+  if (!email) return;
+
+  try {
+    if (button) {
+      button.disabled = true;
+      button.textContent = "Registrando...";
+    }
+
+    await enviarASysteme({
+      email,
+      nombre: "",
+      etiqueta: "Comunidad MARED"
+    });
+
+    form.style.display='none';
+    document.getElementById('nl-thanks').style.display='block';
+  } catch (err) {
+    alert("No pudimos registrarte en este momento. Inténtalo de nuevo.");
+    if (button) {
+      button.disabled = false;
+      button.textContent = originalText || "Quiero unirme →";
+    }
+  }
 }
 
 /* EXIT INTENT POPUP */
@@ -1494,10 +1547,36 @@ function closePopup(){
   document.body.style.overflow = '';
 }
 
-function handleEP(e){
+/* POPUP KIT SOS: también se registra en Comunidad MARED */
+async function handleEP(e){
   e.preventDefault();
-  document.querySelector('.ep-form').style.display = 'none';
-  document.getElementById('ep-thanks').style.display = 'block';
+
+  const form = e.target;
+  const nombre = document.getElementById('ep-name')?.value.trim() || "";
+  const email = document.getElementById('ep-email')?.value.trim() || "";
+  const span = form.querySelector('button[type="submit"] span');
+  const button = form.querySelector('button[type="submit"]');
+  const originalText = span ? span.textContent : "Sí, quiero mi Kit SOS gratis →";
+
+  if (!email) return;
+
+  try {
+    if (button) button.disabled = true;
+    if (span) span.textContent = "Registrando...";
+
+    await enviarASysteme({
+      email,
+      nombre,
+      etiqueta: "Comunidad MARED"
+    });
+
+    form.style.display = 'none';
+    document.getElementById('ep-thanks').style.display = 'block';
+  } catch (err) {
+    alert("No pudimos enviarte el acceso en este momento. Inténtalo de nuevo.");
+    if (button) button.disabled = false;
+    if (span) span.textContent = originalText;
+  }
 }
 
 // Trigger 1: Exit intent — mouse leaves viewport toward top
