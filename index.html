@@ -122,10 +122,10 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 .pain-tag{position:absolute;bottom:24px;left:20px;right:20px;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-radius:14px;padding:18px 20px;border:1px solid rgba(0,200,150,.18);}
 .pain-tag h4{font-family:'Cormorant Garamond',serif;font-size:1.08rem;color:var(--dk);margin-bottom:4px;font-style:italic;}
 .pain-tag p{font-size:.83rem;color:var(--dk-muted);line-height:1.5;}
-.pain-res{text-align:center;background:#fff;border:1px solid rgba(0,200,150,.15);border-radius:24px;padding:64px 88px;max-width:900px;margin:64px auto 0;box-shadow:0 8px 48px rgba(0,0,0,.06);}
-.pain-res h3{font-size:clamp(1.9rem,3.4vw,2.9rem);font-weight:300;margin-bottom:20px;}
+.pain-res{text-align:center;background:linear-gradient(135deg,rgba(0,200,150,.08),rgba(0,200,150,.03));border:1px solid rgba(0,200,150,.22);border-radius:22px;padding:80px 120px;max-width:1000px;margin:64px auto 0;}
+.pain-res h3{font-size:clamp(2.2rem,4vw,3.6rem);font-weight:300;margin-bottom:20px;}
 .pain-res h3 em{font-style:italic;color:var(--em-soft);}
-.pain-res p{font-size:1.05rem;color:var(--dk-muted);max-width:580px;margin:0 auto;line-height:1.9;}
+.pain-res p{font-size:1.15rem;color:var(--dk-muted);max-width:660px;margin:0 auto;line-height:1.85;}
 
 /* TRANSFORMATION dark */
 .tf-sec{background:var(--bg);position:relative;overflow:hidden;padding-bottom:0;}
@@ -800,7 +800,7 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
     </div>
     <div class="pain-res rv">
       <h3>No está roto nada en ti. <em>Está desregulado.</em></h3>
-      <p style="margin-top:16px;">Y esa diferencia lo cambia todo. Lo que está desregulado no necesita arreglarse — solo necesita las herramientas correctas. <strong>Eso es exactamente lo que Reset Nervioso™ te da.</strong></p>
+      <p style="margin-top:14px;">Y esa diferencia lo cambia todo. Lo que está roto, requiere arreglarse. Lo que está desregulado, solo necesita las herramientas correctas. <strong>Eso es exactamente lo que Reset Nervioso™ te da.</strong></p>
     </div>
   </div>
 </section>
@@ -1526,11 +1526,36 @@ window.addEventListener('resize', () => {
   }
 }, {passive:true});
 
+/* ── SYSTEME.IO PROXY ── */
+const SYSTEME_PROXY_URL = "https://mared-proxy.oikos04.workers.dev";
+
+async function enviarASysteme({ email, nombre = "", etiqueta = "Comunidad MARED" }) {
+  const res = await fetch(SYSTEME_PROXY_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, firstName: nombre, tag: etiqueta })
+  });
+  if (!res.ok) throw new Error("Error Systeme.io: " + await res.text().catch(()=>""));
+  return res.json().catch(() => ({}));
+}
+
 /* NEWSLETTER */
-function handleNL(e){
+async function handleNL(e){
   e.preventDefault();
-  document.querySelector('.nl-form').style.display='none';
-  document.getElementById('nl-thanks').style.display='block';
+  const form = e.target;
+  const email = form.querySelector('input[type="email"]').value.trim();
+  const btn = form.querySelector('button[type="submit"]');
+  const orig = btn ? btn.textContent : "";
+  if (!email) return;
+  try {
+    if (btn) { btn.disabled = true; btn.textContent = "Registrando..."; }
+    await enviarASysteme({ email, etiqueta: "Comunidad MARED" });
+    form.style.display = 'none';
+    document.getElementById('nl-thanks').style.display = 'block';
+  } catch {
+    alert("No pudimos registrarte ahora. Inténtalo de nuevo.");
+    if (btn) { btn.disabled = false; btn.textContent = orig; }
+  }
 }
 
 /* EXIT INTENT POPUP */
@@ -1554,10 +1579,26 @@ function closePopup(){
   document.body.style.overflow = '';
 }
 
-function handleEP(e){
+async function handleEP(e){
   e.preventDefault();
-  document.querySelector('.ep-form').style.display = 'none';
-  document.getElementById('ep-thanks').style.display = 'block';
+  const form = e.target;
+  const nombre = document.getElementById('ep-name')?.value.trim() || "";
+  const email  = document.getElementById('ep-email')?.value.trim() || "";
+  const btn  = form.querySelector('button[type="submit"]');
+  const span = btn?.querySelector('span');
+  const orig = span ? span.textContent : "Sí, quiero mi Kit SOS gratis →";
+  if (!email) return;
+  try {
+    if (btn) btn.disabled = true;
+    if (span) span.textContent = "Registrando...";
+    await enviarASysteme({ email, nombre, etiqueta: "Comunidad MARED" });
+    form.style.display = 'none';
+    document.getElementById('ep-thanks').style.display = 'block';
+  } catch {
+    alert("No pudimos enviarte el acceso. Inténtalo de nuevo.");
+    if (btn) btn.disabled = false;
+    if (span) span.textContent = orig;
+  }
 }
 
 // Trigger 1: Exit intent — mouse leaves viewport toward top
