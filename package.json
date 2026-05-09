@@ -1,0 +1,28 @@
+{
+  "name": "mared-reset-nervioso",
+  "version": "1.0.0",
+  "description": "Reset Nervioso™ — Sistema MARED | Landing page de venta · Archivo HTML estático",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx http-server -p 3000",
+    "test": "echo \"No tests specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edosov/MARED.git"
+  },
+  "keywords": [
+    "landing-page",
+    "static-site",
+    "vercel-analytics"
+  ],
+  "author": "Sistema MARED",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edosov/MARED/issues"
+  },
+  "homepage": "https://github.com/edosov/MARED#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
