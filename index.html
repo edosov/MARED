@@ -128,7 +128,7 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 .pain-res p{font-size:1.15rem;color:var(--dk-muted);max-width:660px;margin:0 auto;line-height:1.85;}
 
 /* TRANSFORMATION dark */
-.tf-sec{background:var(--bg);position:relative;overflow:hidden;}
+.tf-sec{background:var(--bg);position:relative;overflow:hidden;padding-bottom:0;}
 .tf-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(0,200,150,.05),transparent);}
 .tf-head{text-align:center;max-width:640px;margin:0 auto 64px;position:relative;z-index:1;}
 .tf-head h2{font-size:clamp(2rem,4vw,3.4rem);font-weight:300;margin-bottom:16px;}
@@ -146,9 +146,63 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 .tf-card h3 em{font-style:italic;}
 .tf-card p{font-size:.92rem;color:rgba(255,255,255,.72);line-height:1.65;}
 .tf-arrow{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:10;width:52px;height:52px;background:var(--fu);border-radius:50%;box-shadow:0 0 30px var(--fu-glow),0 0 60px rgba(255,38,128,.2);display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:700;color:#fff;}
-.cost-strip{background:var(--fu);border-top:none;border-bottom:none;padding:72px 120px;text-align:center;position:relative;z-index:1;}
-.cost-strip p{font-size:1.55rem;font-style:italic;font-family:'Cormorant Garamond',serif;color:#fff;max-width:780px;margin:0 auto;line-height:1.7;}
-.cost-strip strong{color:#fff;font-weight:700;}
+.cost-strip{background:var(--bg);padding:80px 36px;position:relative;z-index:1;}
+.cs-inner{position:relative;max-width:820px;margin:0 auto;text-align:center;border-radius:28px;padding:72px 64px;
+  background:linear-gradient(145deg,rgba(5,20,15,.96) 0%,rgba(10,32,22,.98) 50%,rgba(5,18,13,.96) 100%);
+  box-shadow:0 24px 80px rgba(0,0,0,.45),0 4px 24px rgba(0,200,150,.06),inset 0 1px 0 rgba(255,255,255,.05);}
+/* Animated shimmer border — same as popup */
+.cs-inner::before{content:'';position:absolute;inset:0;border-radius:28px;padding:1.5px;
+  background:linear-gradient(90deg,var(--em),var(--fu),var(--em),var(--fu),var(--em));
+  background-size:300% 100%;animation:shimmer 4s linear infinite;
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;z-index:0;}
+
+/* Animated orbs */
+.cs-orb{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none;animation:csOrb 8s ease-in-out infinite;z-index:1;}
+.cs-orb1{width:280px;height:280px;background:rgba(0,200,150,.05);top:-60px;left:-40px;animation-delay:0s;}
+.cs-orb2{width:220px;height:220px;background:rgba(255,38,128,.04);bottom:-50px;right:-40px;animation-delay:4s;}
+@keyframes csOrb{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(20px,-20px) scale(1.08);}}
+
+/* Animated lines */
+.cs-line{position:absolute;height:1px;background:linear-gradient(to right,transparent,rgba(0,200,150,.2),transparent);animation:csLine 4s ease-in-out infinite;}
+.cs-line1{width:80%;left:10%;top:28px;animation-delay:0s;}
+.cs-line2{width:60%;left:20%;bottom:28px;animation-delay:2s;}
+@keyframes csLine{0%,100%{opacity:.4;transform:scaleX(1);}50%{opacity:1;transform:scaleX(1.1);}}
+
+.cs-content{position:relative;z-index:2;}
+
+/* Opening quote mark */
+.cs-quote-mark{font-family:'Cormorant Garamond',serif;font-size:7rem;line-height:.4;color:rgba(0,200,150,.18);margin-bottom:12px;display:block;animation:csQuote 3s ease-in-out infinite alternate;}
+@keyframes csQuote{from{transform:translateY(0) rotate(-3deg);}to{transform:translateY(-6px) rotate(0deg);}}
+
+/* Main quote */
+.cs-quote{font-family:'Cormorant Garamond',serif;font-size:clamp(1.35rem,2.8vw,2rem);font-style:italic;color:var(--text);line-height:1.65;margin-bottom:32px;font-weight:300;}
+.cs-quote em{color:var(--em);font-style:italic;border-bottom:1.5px solid rgba(0,200,150,.4);padding-bottom:2px;}
+
+/* Divider with dots */
+.cs-divider{display:flex;align-items:center;justify-content:center;gap:10px;margin:0 auto 32px;}
+.cs-dot{width:6px;height:6px;border-radius:50%;background:rgba(0,200,150,.6);animation:csDot 2s ease-in-out infinite;}
+.cs-dot:last-child{animation-delay:.4s;}
+.cs-dash{width:48px;height:1px;background:rgba(0,200,150,.25);}
+@keyframes csDot{0%,100%{transform:scale(1);opacity:.6;}50%{transform:scale(1.5);opacity:1;}}
+
+/* Body text */
+.cs-body{font-family:'Cormorant Garamond',serif;font-size:clamp(1.05rem,2vw,1.35rem);color:var(--muted);line-height:1.75;margin-bottom:16px;font-style:italic;}
+.cs-body2{font-style:normal;font-family:'DM Sans',sans-serif;font-size:clamp(.92rem,1.7vw,1.08rem);color:var(--muted);margin-bottom:40px;}
+.cs-body2 strong{color:#fff;font-weight:600;}
+
+/* Signature */
+.cs-signature{display:flex;align-items:center;justify-content:center;gap:16px;animation:csSig 4s ease-in-out infinite;}
+.cs-sig-line{flex:1;max-width:80px;height:1px;background:linear-gradient(to right,transparent,rgba(0,200,150,.3));}
+.cs-sig-line:last-child{background:linear-gradient(to left,transparent,rgba(0,200,150,.3));}
+.cs-signature span{font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:700;color:var(--em);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;}
+@keyframes csSig{0%,100%{opacity:.85;}50%{opacity:1;}}
+
+@media(max-width:640px){
+  .cs-inner{padding:60px 22px;}
+  .cs-quote-mark{font-size:5rem;}
+  .cs-line1,.cs-line2{display:none;}
+}
 
 /* PRODUCT — two column grid */
 .prod-sec{background:var(--lt2);}
@@ -554,7 +608,7 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
   .sec-h,.prod-head,.tf-head{margin-bottom:36px;}
   .sec-h h2,.prod-head h2,.tf-head h2{font-size:clamp(1.6rem,6vw,2.2rem);}
   .pain-res{padding:36px 24px;}
-  .cost-strip{padding:44px 22px;}
+  .cost-strip{padding:44px 18px;}
   .stat-bar{border-radius:14px;}
   .si{min-width:130px;padding:24px 12px;}
   .sn{font-size:2.4rem;}
@@ -593,8 +647,8 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
   .tf-head h2{font-size:1.75rem;}
   .tf-card h3{font-size:1.35rem;}
   .tf-card p{font-size:.84rem;}
-  .cost-strip{padding:40px 18px;}
-  .cost-strip p{font-size:1.05rem;line-height:1.65;}
+  .cost-strip{padding:40px 14px;}
+  .cs-inner{padding:48px 24px;border-radius:18px;}
   .prod-head h2{font-size:1.85rem;}
   .prod-head p{font-size:.92rem;}
   .book-img-wrap{width:230px;}
@@ -782,7 +836,30 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
     </div>
   </div>
   <div class="cost-strip rv">
-    <p><strong>"Cada día que tu sistema nervioso pasa en modo alerta es un día de energía, claridad y vida que no recuperas."</strong><br><br>No es solo cansancio. Es tiempo real. Relaciones reales. Oportunidades reales. <em>Puedes cambiarlo — y antes de lo que crees.</em></p>
+    <div class="cs-inner">
+      <!-- Decorative elements -->
+      <div class="cs-orb cs-orb1"></div>
+      <div class="cs-orb cs-orb2"></div>
+      <div class="cs-line cs-line1"></div>
+      <div class="cs-line cs-line2"></div>
+
+      <div class="cs-content">
+        <div class="cs-quote-mark">"</div>
+        <p class="cs-quote">Cada día que tu sistema nervioso pasa en modo alerta<br>es un día de energía, claridad y vida que <em>no recuperas.</em></p>
+        <div class="cs-divider">
+          <span class="cs-dot"></span>
+          <span class="cs-dash"></span>
+          <span class="cs-dot"></span>
+        </div>
+        <p class="cs-body">Y lo sabemos — porque muchos de nosotros también lo hemos vivido.<br>El agotamiento que no cede. El cuerpo que no descansa.<br>La sensación de que algo está mal y nadie lo entiende del todo.</p>
+        <p class="cs-body cs-body2">No estás sola en esto. Nunca lo has estado.<br><strong>Estamos aquí — y esta vez, tenemos las herramientas.</strong></p>
+        <div class="cs-signature">
+          <div class="cs-sig-line"></div>
+          <span>Att: Tu familia MARED 💚</span>
+          <div class="cs-sig-line"></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
