@@ -9,19 +9,11 @@
 <meta property="og:description" content="¿Tu cuerpo está en alerta constante? No estás rota — estás desregulada. Reset Nervioso™ te da las herramientas para cambiar eso en 21 días.">
 <meta property="og:image" content="IMG/portadaV1.png">
 <meta property="og:type" content="product">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<link rel="shortcut icon" href="favicon.png">
 <title>Reset Nervioso™ — Regula tu sistema nervioso en 21 días | MARED</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<!-- FAVICON -->
-<link rel="icon" href="./IMG/favicon.ico?v=12" type="image/x-icon">
-<link rel="shortcut icon" href="./IMG/favicon.ico?v=12" type="image/x-icon">
-<link rel="apple-touch-icon" href="./IMG/apple-touch-icon.png?v=12">
-<link rel="icon" type="image/png" sizes="32x32" href="./IMG/favicon-32x32.png?v=12">
-<link rel="icon" type="image/png" sizes="16x16" href="./IMG/favicon-16x16.png?v=12">
-<meta name="theme-color" content="#050F0C">
-  
 <style>
 :root{
   --bg:#050F0C;--bg2:#071A14;--bg3:#0D2B20;
@@ -41,7 +33,7 @@ img{display:block;max-width:100%;}
 .container{max-width:1120px;margin:0 auto;padding:0 36px;}
 .sec{padding:112px 36px;}
 .lbl{display:inline-block;font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--fu);margin-bottom:20px;}
-  
+
 /* BUTTONS */
 .btn{display:inline-block;background:var(--fu);color:#fff;padding:20px 50px;border-radius:50px;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.95rem;letter-spacing:.04em;transition:all .3s;box-shadow:0 0 40px var(--fu-glow),0 0 80px rgba(255,38,128,.15);position:relative;overflow:hidden;}
 .btn::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.24),transparent);transition:left .5s;}
@@ -470,24 +462,46 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 }
 
 /* PAYMENT METHODS BAND */
-.pay-band{background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:18px;padding:22px 32px;box-shadow:0 2px 16px rgba(0,0,0,.05);}
-.pay-label{font-family:'Montserrat',sans-serif;font-size:.72rem;color:var(--dk-muted);text-align:center;margin-bottom:16px;letter-spacing:.02em;}
+.pay-sec{background:var(--lt2);padding:0 36px 72px;}
+.pay-band{background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:20px;padding:28px 32px 20px;box-shadow:0 2px 20px rgba(0,0,0,.06);}
+.pay-label{font-family:'Montserrat',sans-serif;font-size:.72rem;color:var(--dk-muted);text-align:center;margin-bottom:20px;letter-spacing:.02em;}
 .pay-label strong{color:var(--dk);}
-.pay-logos{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:14px;}
-.pay-logo{display:flex;align-items:center;justify-content:center;height:28px;}
-.pay-logo-pill{background:#f0f0f0;border-radius:6px;padding:5px 10px;height:auto;min-width:44px;}
-.pay-divider{width:1px;height:22px;background:rgba(0,0,0,.1);}
-.pay-ssl{display:flex;align-items:center;gap:5px;font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:600;color:#00856A;}
-.pay-logo-group{display:flex;flex-direction:column;gap:6px;align-items:center;}
-.pay-logo-img{display:flex;align-items:center;justify-content:center;height:32px;min-width:40px;padding:4px 8px;background:#f8f8f8;border-radius:8px;border:1px solid rgba(0,0,0,.06);}
-.pay-logo-img img{max-height:24px;width:auto;object-fit:contain;}
-.pay-fallback{font-family:'Montserrat',sans-serif;font-size:.8rem;}
-.pay-fallback-pill{font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:800;padding:5px 10px;border-radius:6px;white-space:nowrap;letter-spacing:.03em;}
-.pay-group-label{font-family:'Montserrat',sans-serif;font-size:.58rem;font-weight:600;color:var(--dk-muted);letter-spacing:.06em;text-align:center;}
-.pay-group-items{display:flex;gap:5px;flex-wrap:wrap;justify-content:center;}
-.pay-logos{display:flex;align-items:flex-start;justify-content:center;flex-wrap:wrap;gap:12px 16px;}
 
-/* FOOTER */
+/* Main row of logos */
+.pay-row{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px 14px;}
+
+/* Each logo cell — fixed height, flex center */
+.pay-cell{display:flex;align-items:center;justify-content:center;height:36px;}
+.pay-img{max-height:28px;width:auto;max-width:72px;object-fit:contain;display:block;}
+
+/* Fallback text / pill */
+.pf{font-family:'Montserrat',sans-serif;font-size:.85rem;}
+.pay-pill{font-family:'Montserrat',sans-serif;font-size:.64rem;font-weight:800;padding:5px 10px;border-radius:6px;white-space:nowrap;letter-spacing:.03em;line-height:1;display:inline-flex;align-items:center;height:28px;}
+
+/* Vertical divider between groups */
+.pay-vdivider{width:1px;height:28px;background:rgba(0,0,0,.1);flex-shrink:0;}
+
+/* SSL */
+.pay-ssl{display:flex;align-items:center;gap:5px;font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:700;color:#00856A;white-space:nowrap;}
+
+/* Country label row */
+.pay-country-row{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:14px;padding-top:14px;border-top:1px solid rgba(0,0,0,.06);}
+.pay-country-tag{font-family:'Montserrat',sans-serif;font-size:.62rem;font-weight:600;color:var(--dk-muted);letter-spacing:.06em;padding:3px 10px;border-radius:50px;background:rgba(0,0,0,.04);}
+
+/* Mobile: wrap gracefully */
+@media(max-width:640px){
+  .pay-sec{padding:0 18px 52px;}
+  .pay-band{padding:22px 18px 16px;}
+  .pay-row{gap:8px 10px;}
+  .pay-img{max-height:22px;max-width:56px;}
+  .pay-pill{font-size:.58rem;padding:4px 8px;height:24px;}
+  .pay-cell{height:28px;}
+  .pay-vdivider{height:22px;}
+  .pay-country-row{gap:6px;}
+  .pay-country-tag{font-size:.58rem;}
+}
+
+/* FOOTER *//* FOOTER */
 footer{background:#020A07;padding:48px 28px;text-align:center;border-top:1px solid rgba(255,255,255,.04);}
 .ft-brand{font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--em);margin-bottom:16px;}
 footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 auto 18px;line-height:1.7;}
@@ -927,7 +941,7 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
   <div class="container">
     <div class="sec-h">
       <span class="lbl">Tu inversión</span>
-      <h2 style="color:var(--dk);">Accede hoy por $37 USD</h2>
+      <h2 style="color:var(--dk);">Accede hoy por $27 USD</h2>
       <p>El mismo protocolo que cuesta cientos en sesiones individuales. Una sola inversión, tuya para siempre.</p>
     </div>
     <div class="live-bar rv">
@@ -970,140 +984,106 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
 </section>
 
 <!-- ━━━━━━━━ PAYMENT METHODS BAND ━━━━━━━━ -->
-<section style="background:var(--lt2);padding:0 36px 72px;">
+<section class="pay-sec">
   <div class="container">
     <div class="pay-band rv">
-      <p class="pay-label">Pago 100% seguro a través de <strong>Hotmart</strong> · +20 métodos de pago disponibles</p>
-      <div class="pay-logos">
+      <p class="pay-label">Pago 100% seguro vía <strong>Hotmart</strong> · +20 métodos disponibles en toda Latinoamérica</p>
 
-        <!-- International cards via SVG paths -->
-        <!-- VISA -->
-        <div class="pay-logo">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png"
-               alt="Visa" height="22"
-               onerror="this.outerHTML='<span class=pay-fallback style=color:#1A1F71;font-weight:900;font-style:italic;font-size:1.1rem;>VISA</span>'">
+      <!-- FILA 1: Tarjetas internacionales -->
+      <div class="pay-row">
+        <div class="pay-cell">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" class="pay-img"
+               onerror="this.outerHTML='<span class=pf style=color:#1A1F71;font-weight:900;font-style:italic;font-size:1.15rem;letter-spacing:-1px;>VISA</span>'">
+        </div>
+        <div class="pay-cell">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" class="pay-img"
+               onerror="this.parentElement.innerHTML='<svg viewBox=&quot;0 0 42 28&quot; width=&quot;42&quot; height=&quot;28&quot;><circle cx=&quot;15&quot; cy=&quot;14&quot; r=&quot;13&quot; fill=&quot;#EB001B&quot;/><circle cx=&quot;27&quot; cy=&quot;14&quot; r=&quot;13&quot; fill=&quot;#F79E1B&quot;/><path d=&quot;M21 5.5a13 13 0 0 1 0 17A13 13 0 0 1 21 5.5z&quot; fill=&quot;#FF5F00&quot;/></svg>'">
+        </div>
+        <div class="pay-cell">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/American_Express_logo_%282018%29.svg" alt="American Express" class="pay-img"
+               onerror="this.outerHTML='<span class=pf style=color:#016FD0;font-weight:900;font-size:.7rem;>AMEX</span>'">
+        </div>
+        <div class="pay-cell">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" class="pay-img"
+               onerror="this.outerHTML='<span class=pf><b style=color:#003087;>Pay</b><b style=color:#009CDE;>Pal</b></span>'">
         </div>
 
-        <!-- MASTERCARD -->
-        <div class="pay-logo">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
-               alt="Mastercard" height="36"
-               onerror="this.parentElement.innerHTML='<svg viewBox=&quot;0 0 44 28&quot; width=&quot;44&quot; height=&quot;28&quot;><circle cx=&quot;16&quot; cy=&quot;14&quot; r=&quot;13&quot; fill=&quot;#EB001B&quot;/><circle cx=&quot;28&quot; cy=&quot;14&quot; r=&quot;13&quot; fill=&quot;#F79E1B&quot;/><path d=&quot;M22 5.6a13 13 0 0 1 0 16.8A13 13 0 0 1 22 5.6z&quot; fill=&quot;#FF5F00&quot;/></svg>'">
+        <div class="pay-vdivider"></div>
+
+        <!-- Colombia -->
+        <div class="pay-cell">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Nequi_logo.svg" alt="Nequi" class="pay-img"
+               onerror="this.outerHTML='<span class=pay-pill style=background:#FF0066;color:#fff;>Nequi</span>'">
+        </div>
+        <div class="pay-cell">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/PSE-Colombia.png" alt="PSE" class="pay-img"
+               onerror="this.outerHTML='<span class=pay-pill style=background:#004F9F;color:#fff;>PSE</span>'">
+        </div>
+        <div class="pay-cell">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Efecty_logo.svg" alt="Efecty" class="pay-img"
+               onerror="this.outerHTML='<span class=pay-pill style=background:#FFD200;color:#000;>Efecty</span>'">
         </div>
 
-        <!-- AMEX -->
-        <div class="pay-logo">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/American_Express_logo_%282018%29.svg"
-               alt="American Express" height="32"
-               onerror="this.outerHTML='<span class=pay-fallback style=color:#016FD0;font-weight:900;font-size:.75rem;>AMEX</span>'">
+        <div class="pay-vdivider"></div>
+
+        <!-- México -->
+        <div class="pay-cell">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/OXXO_Logo.svg" alt="OXXO" class="pay-img"
+               onerror="this.outerHTML='<span class=pay-pill style=background:#E8003D;color:#fff;>OXXO</span>'">
+        </div>
+        <div class="pay-cell">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/SPEI_logo.svg/200px-SPEI_logo.svg.png" alt="SPEI" class="pay-img"
+               onerror="this.outerHTML='<span class=pay-pill style=background:#00A3E0;color:#fff;>SPEI</span>'">
         </div>
 
-        <!-- PAYPAL -->
-        <div class="pay-logo">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
-               alt="PayPal" height="22"
-               onerror="this.outerHTML='<span class=pay-fallback><span style=color:#003087;font-weight:900;>Pay</span><span style=color:#009CDE;font-weight:900;>Pal</span></span>'">
+        <div class="pay-vdivider"></div>
+
+        <!-- Brasil -->
+        <div class="pay-cell">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Logo%E2%80%94pix_powered_by_Banco_Central_%28Brazil%2C_2020%29.svg" alt="PIX" class="pay-img"
+               onerror="this.outerHTML='<span class=pay-pill style=background:#32BCAD;color:#fff;>PIX</span>'">
+        </div>
+        <div class="pay-cell">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Boleto-logo.png/120px-Boleto-logo.png" alt="Boleto" class="pay-img"
+               onerror="this.outerHTML='<span class=pay-pill style=background:#4A4A8A;color:#fff;>Boleto</span>'">
         </div>
 
-        <div class="pay-divider"></div>
+        <div class="pay-vdivider"></div>
 
-        <!-- COLOMBIA -->
-        <div class="pay-logo-group">
-          <div class="pay-group-label">🇨🇴 Colombia</div>
-          <div class="pay-group-items">
-            <!-- Nequi -->
-            <div class="pay-logo pay-logo-img" title="Nequi">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Nequi_logo.svg"
-                   alt="Nequi" height="24"
-                   onerror="this.closest('.pay-logo-img').innerHTML='<span class=pay-fallback-pill style=background:#FF0066;color:#fff;>Nequi</span>'">
-            </div>
-            <!-- PSE -->
-            <div class="pay-logo pay-logo-img" title="PSE">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/PSE-Colombia.png"
-                   alt="PSE" height="24"
-                   onerror="this.closest('.pay-logo-img').innerHTML='<span class=pay-fallback-pill style=background:#004F9F;color:#fff;>PSE</span>'">
-            </div>
-            <!-- Efecty -->
-            <div class="pay-logo pay-logo-img" title="Efecty">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Efecty_logo.svg"
-                   alt="Efecty" height="20"
-                   onerror="this.closest('.pay-logo-img').innerHTML='<span class=pay-fallback-pill style=background:#FFD200;color:#000;>Efecty</span>'">
-            </div>
-          </div>
+        <!-- Otros -->
+        <div class="pay-cell">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Webpay_logo.svg/200px-Webpay_logo.svg.png" alt="Webpay" class="pay-img"
+               onerror="this.outerHTML='<span class=pay-pill style=background:#0070BA;color:#fff;>Webpay</span>'">
+        </div>
+        <div class="pay-cell">
+          <span class="pay-pill" style="background:#4A7A6A;color:#fff;">Transf.</span>
         </div>
 
-        <!-- MEXICO -->
-        <div class="pay-logo-group">
-          <div class="pay-group-label">🇲🇽 México</div>
-          <div class="pay-group-items">
-            <!-- OXXO -->
-            <div class="pay-logo pay-logo-img" title="OXXO">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/OXXO_Logo.svg"
-                   alt="OXXO" height="22"
-                   onerror="this.closest('.pay-logo-img').innerHTML='<span class=pay-fallback-pill style=background:#E8003D;color:#fff;>OXXO</span>'">
-            </div>
-            <!-- SPEI -->
-            <div class="pay-logo pay-logo-img" title="SPEI · Transferencia">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/SPEI_logo.svg/200px-SPEI_logo.svg.png"
-                   alt="SPEI" height="22"
-                   onerror="this.closest('.pay-logo-img').innerHTML='<span class=pay-fallback-pill style=background:#00A3E0;color:#fff;>SPEI</span>'">
-            </div>
-          </div>
-        </div>
+        <div class="pay-vdivider"></div>
 
-        <!-- BRASIL -->
-        <div class="pay-logo-group">
-          <div class="pay-group-label">🇧🇷 Brasil</div>
-          <div class="pay-group-items">
-            <!-- PIX -->
-            <div class="pay-logo pay-logo-img" title="PIX">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Logo%E2%80%94pix_powered_by_Banco_Central_%28Brazil%2C_2020%29.svg"
-                   alt="PIX" height="28"
-                   onerror="this.closest('.pay-logo-img').innerHTML='<span class=pay-fallback-pill style=background:#32BCAD;color:#fff;>PIX</span>'">
-            </div>
-            <!-- Boleto -->
-            <div class="pay-logo pay-logo-img" title="Boleto Bancário">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Boleto-logo.png/120px-Boleto-logo.png"
-                   alt="Boleto" height="20"
-                   onerror="this.closest('.pay-logo-img').innerHTML='<span class=pay-fallback-pill style=background:#4A4A8A;color:#fff;>Boleto</span>'">
-            </div>
-          </div>
-        </div>
-
-        <!-- OTROS -->
-        <div class="pay-logo-group">
-          <div class="pay-group-label">🌎 Otros</div>
-          <div class="pay-group-items">
-            <!-- Webpay Chile -->
-            <div class="pay-logo pay-logo-img" title="Webpay · Chile">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Webpay_logo.svg/200px-Webpay_logo.svg.png"
-                   alt="Webpay" height="22"
-                   onerror="this.closest('.pay-logo-img').innerHTML='<span class=pay-fallback-pill style=background:#0070BA;color:#fff;>Webpay</span>'">
-            </div>
-            <!-- Transferencia -->
-            <div class="pay-logo pay-logo-img" title="Transferencia bancaria">
-              <span class="pay-fallback-pill" style="background:#4A7A6A;color:#fff;">Transferencia</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="pay-divider"></div>
-
-        <!-- SSL -->
         <div class="pay-ssl">
-          <svg viewBox="0 0 14 18" width="16" height="20" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 14 18" width="15" height="19" xmlns="http://www.w3.org/2000/svg">
             <path d="M7 0L1 2.5V8c0 4.2 2.6 7.4 6 8.5C10.4 15.4 13 12.2 13 8V2.5L7 0z" fill="#00856A"/>
             <path d="M5.5 9.5l1.5 1.5 3-4" stroke="#fff" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          <span>Pago SSL Seguro</span>
+          <span>SSL Seguro</span>
         </div>
-
       </div>
+
+      <!-- FILA 2: etiquetas de países -->
+      <div class="pay-country-row">
+        <div class="pay-country-tag">🌍 Internacional</div>
+        <div class="pay-country-tag">🇨🇴 Colombia</div>
+        <div class="pay-country-tag">🇲🇽 México</div>
+        <div class="pay-country-tag">🇧🇷 Brasil</div>
+        <div class="pay-country-tag">🌎 Otros</div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- FAQ dark -->
+<!-- FAQ dark --><!-- FAQ dark -->
 <section class="faq-sec sec rv" id="faq">
   <div class="container">
     <div class="sec-h">
@@ -1466,64 +1446,11 @@ window.addEventListener('resize', () => {
   }
 }, {passive:true});
 
-/* SYSTEME.IO INTEGRATION
-   IMPORTANTE: NO pongas la API Key de Systeme.io en este archivo.
-   Este HTML debe llamar a un proxy seguro en Cloudflare Worker.
-   Cuando crees el Worker, reemplaza esta URL por la URL real del Worker. */
-const SYSTEME_PROXY_URL = "https://maredsysteme.oikos04.workers.dev";
-
-async function enviarASysteme({ email, nombre = "", etiqueta = "Comunidad MARED" }) {
-  const res = await fetch(SYSTEME_PROXY_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      email,
-      firstName: nombre,
-      tag: etiqueta
-    })
-  });
-
-  if (!res.ok) {
-    const errorText = await res.text().catch(() => "");
-    console.error("Error Systeme.io:", errorText);
-    throw new Error("No se pudo registrar el contacto");
-  }
-
-  return res.json().catch(() => ({}));
-}
-
-/* NEWSLETTER / COMUNIDAD MARED */
-async function handleNL(e){
+/* NEWSLETTER */
+function handleNL(e){
   e.preventDefault();
-
-  const form = e.target;
-  const email = form.querySelector('input[type="email"]').value.trim();
-  const button = form.querySelector('button[type="submit"]');
-  const originalText = button ? button.textContent : "";
-
-  if (!email) return;
-
-  try {
-    if (button) {
-      button.disabled = true;
-      button.textContent = "Registrando...";
-    }
-
-    await enviarASysteme({
-      email,
-      nombre: "",
-      etiqueta: "Comunidad MARED"
-    });
-
-    form.style.display='none';
-    document.getElementById('nl-thanks').style.display='block';
-  } catch (err) {
-    alert("No pudimos registrarte en este momento. Inténtalo de nuevo.");
-    if (button) {
-      button.disabled = false;
-      button.textContent = originalText || "Quiero unirme →";
-    }
-  }
+  document.querySelector('.nl-form').style.display='none';
+  document.getElementById('nl-thanks').style.display='block';
 }
 
 /* EXIT INTENT POPUP */
@@ -1547,36 +1474,10 @@ function closePopup(){
   document.body.style.overflow = '';
 }
 
-/* POPUP KIT SOS: también se registra en Comunidad MARED */
-async function handleEP(e){
+function handleEP(e){
   e.preventDefault();
-
-  const form = e.target;
-  const nombre = document.getElementById('ep-name')?.value.trim() || "";
-  const email = document.getElementById('ep-email')?.value.trim() || "";
-  const span = form.querySelector('button[type="submit"] span');
-  const button = form.querySelector('button[type="submit"]');
-  const originalText = span ? span.textContent : "Sí, quiero mi Kit SOS gratis →";
-
-  if (!email) return;
-
-  try {
-    if (button) button.disabled = true;
-    if (span) span.textContent = "Registrando...";
-
-    await enviarASysteme({
-      email,
-      nombre,
-      etiqueta: "Comunidad MARED"
-    });
-
-    form.style.display = 'none';
-    document.getElementById('ep-thanks').style.display = 'block';
-  } catch (err) {
-    alert("No pudimos enviarte el acceso en este momento. Inténtalo de nuevo.");
-    if (button) button.disabled = false;
-    if (span) span.textContent = originalText;
-  }
+  document.querySelector('.ep-form').style.display = 'none';
+  document.getElementById('ep-thanks').style.display = 'block';
 }
 
 // Trigger 1: Exit intent — mouse leaves viewport toward top
