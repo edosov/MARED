@@ -1552,8 +1552,7 @@ window.addEventListener('resize', () => {
   }
 }, {passive:true});
 
-/* ── SYSTEME.IO PROXY ── */
-const SYSTEME_PROXY_URL = "https://mared-proxy.oikos04.workers.dev";
+const SYSTEME_PROXY_URL = "/api/subscribe";
 
 async function enviarASysteme({ email, nombre = "", etiqueta = "Comunidad MARED" }) {
   const res = await fetch(SYSTEME_PROXY_URL, {
@@ -1576,6 +1575,7 @@ async function handleNL(e){
   try {
     if (btn) { btn.disabled = true; btn.textContent = "Registrando..."; }
     await enviarASysteme({ email, etiqueta: "Comunidad MARED" });
+    fbq('track', 'Lead');
     form.style.display = 'none';
     document.getElementById('nl-thanks').style.display = 'block';
   } catch {
@@ -1618,6 +1618,7 @@ async function handleEP(e){
     if (btn) btn.disabled = true;
     if (span) span.textContent = "Registrando...";
     await enviarASysteme({ email, nombre, etiqueta: "Comunidad MARED" });
+    fbq('track', 'Lead');
     form.style.display = 'none';
     document.getElementById('ep-thanks').style.display = 'block';
   } catch {
