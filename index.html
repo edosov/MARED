@@ -15,6 +15,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="IMG/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="IMG/favicon-16x16.png">
 <title>Reset Nervioso™ — Regula tu sistema nervioso en 21 días | MARED</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -42,6 +44,7 @@ img{display:block;max-width:100%;}
 .btn:hover::after{left:100%;}
 .btn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 0 60px var(--fu-glow),0 0 120px rgba(255,38,128,.28);}
 .btn-sm{padding:14px 32px;font-size:.85rem;}
+.btn-cta-final{font-size:1.05rem;padding:22px 58px;}
 .btn-outline{display:inline-block;background:transparent;padding:16px 36px;border-radius:50px;border:1.5px solid;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:600;font-size:.88rem;letter-spacing:.04em;transition:all .3s;}
 .btn-em{border-color:var(--em);color:var(--em);}
 .btn-em:hover{background:var(--em);color:var(--bg);}
@@ -678,7 +681,8 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
   .faq-ai{padding:0 18px 18px;font-size:.88rem;}
   .cta-in h2{font-size:1.9rem;}
   .cta-in .cta-sub{font-size:.92rem;}
-  .cta-sec .btn{font-size:.86rem;padding:17px 26px;white-space:nowrap;}
+  .cta-sec .btn{font-size:.86rem;padding:16px 24px;white-space:normal;}
+  .btn-cta-final{font-size:.86rem;padding:16px 20px;width:100%;display:block;box-sizing:border-box;}
   .nl-card{padding:38px 20px;border-radius:20px;}
   .nl-title{font-size:1.75rem;}
   .nl-sub{font-size:.9rem;}
@@ -731,6 +735,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','1722233108795656');
 fbq('track','PageView');
+fbq('track','ViewContent',{value:37,currency:'USD',content_name:'Reset Nervioso',content_ids:['reset-nervioso'],content_type:'product'});
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></noscript>
@@ -776,7 +781,7 @@ src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></
       <span class="hp-text"><strong>+500 personas</strong> ya hicieron su Reset</span>
     </div>
     <div class="hero-ctas">
-      <a href="https://pay.hotmart.com/F104149440C?off=dt2vyjbl&checkoutMode=10&bid=1778297736175" target="_blank" rel="noopener" onclick="fbq('track','InitiateCheckout')" class="btn">Empezar mi Reset por $37 →</a>
+      <a href="https://pay.hotmart.com/F104149440C?off=dt2vyjbl&checkoutMode=10&bid=1778297736175" target="_blank" rel="noopener" onclick="fbq('track','InitiateCheckout',{value:37,currency:'USD',content_name:'Reset Nervioso',content_ids:['reset-nervioso'],content_type:'product'})" class="btn">Empezar mi Reset por $37 →</a>
       <a href="#producto" class="btn-outline btn-em">Ver qué incluye</a>
     </div>
     <p class="hero-cta-note num"><span class="num" style="color:var(--fu)" id="hero-viewers">23</span> personas viendo esto ahora &nbsp;·&nbsp; <span style="color:var(--em)">$37 USD</span> precio de lanzamiento</p>
@@ -814,7 +819,7 @@ src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></
       </div>
       <div class="rv d2">
         <div class="pain-photo">
-          <img src="IMG/mared4.jpeg" alt="Mujer agotada, desregulada" onerror="this.closest('.pain-photo').style.background='linear-gradient(135deg,#1a3a30,#0d2b20)';this.remove()">
+          <img src="IMG/mared4.jpeg" alt="Mujer agotada, desregulada" loading="lazy" onerror="this.closest('.pain-photo').style.background='linear-gradient(135deg,#1a3a30,#0d2b20)';this.remove()">
           <div class="pain-photo-ov"></div>
           <div class="pain-tag">
             <h4>"Sentía que algo estaba mal… pero nadie sabía qué."</h4>
@@ -840,7 +845,7 @@ src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></
     </div>
     <div class="tf-grid">
       <div class="tf-card rv d1">
-        <img src="IMG/mared5.jpeg" alt="Antes del reset nervioso" onerror="this.closest('.tf-card').style.background='#1a2820';this.remove()">
+        <img src="IMG/mared5.jpeg" alt="Antes del reset nervioso" loading="lazy" onerror="this.closest('.tf-card').style.background='#1a2820';this.remove()">
         <div class="tf-ov-a"></div>
         <div class="tf-body">
           <span class="tf-pill tf-pill-a">Antes del Reset</span>
@@ -850,7 +855,7 @@ src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></
       </div>
       <div class="tf-arrow">→</div>
       <div class="tf-card rv d2">
-        <img src="IMG/mared3.jpeg" alt="Después del reset nervioso" onerror="this.closest('.tf-card').style.background='#0d2b20';this.remove()">
+        <img src="IMG/mared3.jpeg" alt="Después del reset nervioso" loading="lazy" onerror="this.closest('.tf-card').style.background='#0d2b20';this.remove()">
         <div class="tf-ov-d"></div>
         <div class="tf-body">
           <span class="tf-pill tf-pill-d">Después del Reset</span>
@@ -907,7 +912,7 @@ src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></
           <div class="fbadge fb3"><span class="fd"></span>Plan 21 días</div>
           <div class="fbadge fb4"><span class="fd"></span>Protocolos SOS</div>
           <div class="book-img-wrap">
-            <img src="IMG/portadaV1.png" alt="Reset Nervioso — portada del libro" onerror="this.closest('.book-img-wrap').style.background='#0d2b20';">
+            <img src="IMG/portadaV1.png" alt="Reset Nervioso — portada del libro" loading="lazy" onerror="this.closest('.book-img-wrap').style.background='#0d2b20';">
           </div>
         </div>
       </div>
@@ -925,7 +930,7 @@ src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></
           <div class="cc-li"><div class="cc-dot"></div>La ciencia detrás de cada técnica</div>
         </div>
         <p style="font-size:.8rem;color:var(--dk-muted);margin-bottom:12px;font-family:'Montserrat',sans-serif;font-weight:500;">Incluido en los 15 capítulos del protocolo:</p>
-        <a href="https://pay.hotmart.com/F104149440C?off=dt2vyjbl&checkoutMode=10&bid=1778297736175" target="_blank" rel="noopener" onclick="fbq('track','InitiateCheckout')" class="btn btn-sm" style="width:100%;text-align:center;display:block;">Acceder por $37 →</a>
+        <a href="https://pay.hotmart.com/F104149440C?off=dt2vyjbl&checkoutMode=10&bid=1778297736175" target="_blank" rel="noopener" onclick="fbq('track','InitiateCheckout',{value:37,currency:'USD',content_name:'Reset Nervioso',content_ids:['reset-nervioso'],content_type:'product'})" class="btn btn-sm" style="width:100%;text-align:center;display:block;">Acceder por $37 →</a>
       </div>
 
     </div>
@@ -1016,7 +1021,7 @@ src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></
         <div class="test-meta">Psicóloga · México</div>
       </div>
       <div class="test-card rv d2">
-        <img class="test-photo" src="IMG/mared1.jpeg" alt="Carolina S." onerror="this.style.display='none'">
+        <img class="test-photo" src="IMG/mared1.jpeg" alt="Carolina S." loading="lazy" onerror="this.style.display='none'">
         <div class="test-stars">★★★★★</div>
         <span class="qm">"</span>
         <p class="test-txt">Llevaba 3 años buscando respuestas. Médicos, terapeutas, coaches — nada. En el día 7 del protocolo sentí algo que no había sentido en mucho tiempo: calma real. No la calma de estar agotada. Calma de verdad.</p>
@@ -1024,7 +1029,7 @@ src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></
         <div class="test-meta">Diseñadora · Colombia</div>
       </div>
       <div class="test-card rv d3">
-        <img class="test-photo" src="IMG/mared9.jpeg" alt="Marcela P." onerror="this.style.display='none'">
+        <img class="test-photo" src="IMG/mared9.jpeg" alt="Marcela P." loading="lazy" onerror="this.style.display='none'">
         <div class="test-stars">★★★★★</div>
         <span class="qm">"</span>
         <p class="test-txt">Antes de Reset Nervioso tenía 2–3 crisis de ansiedad por semana. En 21 días bajaron a cero. Ahora tengo un protocolo claro para cuando siento que me desborda — y funciona en minutos.</p>
@@ -1069,7 +1074,7 @@ src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></
           <div class="pi-row"><div class="pi-chk">✓</div><span>Método 3C exclusivo — Comprende, Calma, Consolida</span></div>
           <div class="pi-row"><div class="pi-chk">✓</div><span>Acceso permanente — descárgalo, es tuyo para siempre</span></div>
         </div>
-        <a href="https://pay.hotmart.com/F104149440C?off=dt2vyjbl&checkoutMode=10&bid=1778297736175" target="_blank" rel="noopener" onclick="fbq('track','InitiateCheckout')" class="btn" style="width:100%;text-align:center;display:block;font-size:1rem;">Sí, quiero mi Reset ahora →</a>
+        <a href="https://pay.hotmart.com/F104149440C?off=dt2vyjbl&checkoutMode=10&bid=1778297736175" target="_blank" rel="noopener" onclick="fbq('track','InitiateCheckout',{value:37,currency:'USD',content_name:'Reset Nervioso',content_ids:['reset-nervioso'],content_type:'product'})" class="btn" style="width:100%;text-align:center;display:block;font-size:1rem;">Sí, quiero mi Reset ahora →</a>
         <div class="p-guar" style="flex-direction:column;text-align:center;gap:8px;padding:20px 24px;">
           <span style="font-size:2rem;">🔒</span>
           <strong style="color:var(--dk);font-size:1rem;">Garantía incondicional de 7 días</strong>
@@ -1234,7 +1239,7 @@ src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></
     <span class="lbl">Es tu momento</span>
     <h2>Tu cuerpo no es<br>tu <em>enemigo.</em></h2>
     <p class="cta-sub">Es el mensajero más honesto que tienes.<br>Es hora de aprender su idioma — y enseñarle que puede estar en paz.</p>
-    <a href="https://pay.hotmart.com/F104149440C?off=dt2vyjbl&checkoutMode=10&bid=1778297736175" target="_blank" rel="noopener" onclick="fbq('track','InitiateCheckout')" class="btn" style="font-size:1.05rem;padding:22px 58px;">Comenzar mi Reset · $37 USD →</a>
+    <a href="https://pay.hotmart.com/F104149440C?off=dt2vyjbl&checkoutMode=10&bid=1778297736175" target="_blank" rel="noopener" onclick="fbq('track','InitiateCheckout',{value:37,currency:'USD',content_name:'Reset Nervioso',content_ids:['reset-nervioso'],content_type:'product'})" class="btn btn-cta-final">Comenzar mi Reset · $37 USD →</a>
     <p class="cta-meta num">✓ Acceso inmediato · ✓ Garantía 7 días · ✓ PDF descargable · ✓ Sin suscripción</p>
   </div>
 </section>
