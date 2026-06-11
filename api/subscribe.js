@@ -124,15 +124,18 @@ module.exports = async function handler(req, res) {
       .from('leads')
       .insert([{ email: email.toLowerCase().trim(), nombre, etiqueta: tag }]);
 
-    if (dbError && dbError.code !== '23505') {
-      console.error('Supabase error:', dbError);
+    if (dbError) {
+      if (dbError.code !== '23505') {
+        console.error('Supabase error:', JSON.stringify(dbError));
+        throw new Error('DB error: ' + dbError.message);
+      }
     }
 
     // 2. Send email with PDF
     await transporter.sendMail({
-      from: `MARED · Reset Nervioso™ <${process.env.GMAIL_USER}>`,
+      from: `MARED Reset Nervioso <${process.env.GMAIL_USER}>`,
       to: email,
-      subject: '✨ Tu Kit SOS del Sistema Nervioso está aquí — MARED',
+      subject: 'Tu Kit SOS del Sistema Nervioso esta aqui - MARED',
       html: emailHtml(nombre)
     });
 
