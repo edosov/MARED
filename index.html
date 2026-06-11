@@ -68,10 +68,10 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 .nav-pill:hover{background:var(--fu);color:#fff;box-shadow:0 0 20px var(--fu-glow);}
 
 /* HERO */
-.hero{min-height:100vh;display:grid;grid-template-columns:1.1fr 1fr;gap:0;align-items:center;position:relative;overflow:hidden;padding-top:calc(var(--banner-h) + 70px);}
+.hero{min-height:100vh;display:grid;grid-template-columns:1.1fr 1fr;gap:0;align-items:center;position:relative;overflow:hidden;}
 #nc{position:absolute;inset:0;z-index:0;}
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 90% 70% at 20% 50%,rgba(0,200,150,.11) 0%,transparent 60%),radial-gradient(ellipse 60% 60% at 90% 80%,rgba(255,38,128,.1) 0%,transparent 50%),radial-gradient(ellipse 50% 50% at 80% 20%,rgba(0,200,150,.07) 0%,transparent 50%);z-index:0;}
-.hero-left{position:relative;z-index:2;padding:60px 64px 60px 52px;}
+.hero-left{position:relative;z-index:2;padding:calc(var(--banner-h) + 130px) 64px 60px 52px;}
 .hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,38,128,.1);border:1px solid rgba(255,38,128,.32);color:var(--fu);padding:8px 20px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;margin-bottom:36px;}
 .hero-badge-dot{width:7px;height:7px;border-radius:50%;background:var(--fu);box-shadow:0 0 10px var(--fu);animation:pulse 1.5s ease-in-out infinite;}
 .hero h1{font-size:clamp(3rem,5.5vw,5.6rem);font-weight:300;margin-bottom:10px;color:var(--text);}
@@ -592,7 +592,7 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
 @media(max-width:960px){
   .hero{grid-template-columns:1fr;min-height:auto;padding-bottom:50px;}
   .hero-right{display:none;}
-  .hero-left{padding:100px 22px 44px;}
+  .hero-left{padding:calc(var(--banner-h) + 70px) 22px 44px;}
   .hero h1{font-size:2.4rem;}
   .hero-sub{font-size:1rem;}
   .hero-txt{font-size:.9rem;margin-bottom:28px;}
@@ -623,8 +623,7 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.26);max-width:520px;margin:0 a
   nav{padding:11px 16px !important;}
   .nav-brand{font-size:.95rem;}
   .nav-pill{padding:8px 14px;font-size:.7rem;letter-spacing:.02em;white-space:nowrap;}
-  .hero{padding-top:calc(var(--banner-h) + 56px);}
-  .hero-left{padding:0 18px 32px;}
+  .hero-left{padding:calc(var(--banner-h) + 56px) 18px 32px;}
   .hero h1{font-size:1.95rem;line-height:1.2;}
   .hero-badge{font-size:.6rem;padding:6px 14px;margin-bottom:20px;}
   .hero-sub{font-size:.92rem;margin-bottom:8px;}
@@ -1658,110 +1657,14 @@ document.getElementById('exit-overlay').addEventListener('click', function(e){
 document.addEventListener('keydown', e => { if(e.key === 'Escape') closePopup(); });
 </script>
 
-<!-- Anime.js v4 — A+B+C+D -->
+<!-- Anime.js v4 — B+C + scroll reveal -->
 <script type="module">
 import { animate, stagger, utils } from 'https://cdn.jsdelivr.net/npm/animejs@4/+esm';
 
 /* ══════════════════════════════════════════════════════
-   D — PARTÍCULAS FLOTANTES EN EL HERO
+   HERO H1 — entrada suave
 ══════════════════════════════════════════════════════ */
-(function spawnParticles() {
-  const hero = document.querySelector('.hero-bg');
-  if (!hero) return;
-  const canvas = document.createElement('canvas');
-  Object.assign(canvas.style, {
-    position:'absolute', inset:'0', width:'100%', height:'100%',
-    pointerEvents:'none', opacity:'0.45', zIndex:'0'
-  });
-  hero.appendChild(canvas);
-  const ctx = canvas.getContext('2d');
-  const dots = [];
-  const N = 55;
-
-  function resize() {
-    canvas.width  = hero.offsetWidth;
-    canvas.height = hero.offsetHeight;
-  }
-  resize();
-  window.addEventListener('resize', resize, { passive: true });
-
-  for (let i = 0; i < N; i++) {
-    dots.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      r: Math.random() * 1.8 + 0.4,
-      vx: (Math.random() - 0.5) * 0.28,
-      vy: (Math.random() - 0.5) * 0.28,
-      a: Math.random() * 0.6 + 0.2,
-    });
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    dots.forEach(d => {
-      d.x += d.vx; d.y += d.vy;
-      if (d.x < 0) d.x = canvas.width;
-      if (d.x > canvas.width) d.x = 0;
-      if (d.y < 0) d.y = canvas.height;
-      if (d.y > canvas.height) d.y = 0;
-      ctx.beginPath();
-      ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(0,200,150,${d.a})`;
-      ctx.fill();
-    });
-    requestAnimationFrame(draw);
-  }
-  draw();
-})();
-
-/* ══════════════════════════════════════════════════════
-   A — TEXT SCRAMBLE EN HERO H1
-══════════════════════════════════════════════════════ */
-(function scrambleHero() {
-  const h1 = document.querySelector('.hero h1');
-  if (!h1) return;
-  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#%&*';
-  const original = h1.innerHTML;
-
-  // Extrae solo nodos de texto (preserva el <span class="accent">)
-  function scramble(el, onDone) {
-    const nodes = [];
-    el.childNodes.forEach(node => {
-      if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
-        nodes.push({ node, text: node.textContent });
-      } else if (node.nodeType === Node.ELEMENT_NODE) {
-        node.childNodes.forEach(n => {
-          if (n.nodeType === Node.TEXT_NODE && n.textContent.trim())
-            nodes.push({ node: n, text: n.textContent, parent: node });
-        });
-      }
-    });
-
-    let frame = 0;
-    const totalFrames = 38;
-    function tick() {
-      nodes.forEach(({ node, text }) => {
-        const progress = frame / totalFrames;
-        node.textContent = text.split('').map((ch, i) => {
-          if (ch === ' ') return ' ';
-          return Math.random() < progress
-            ? ch
-            : chars[Math.floor(Math.random() * chars.length)];
-        }).join('');
-      });
-      frame++;
-      if (frame <= totalFrames) requestAnimationFrame(tick);
-      else {
-        nodes.forEach(({ node, text }) => { node.textContent = text; });
-        if (onDone) onDone();
-      }
-    }
-    setTimeout(tick, 280);
-  }
-
-  h1.style.opacity = '1';
-  scramble(h1);
-})();
+animate('.hero h1', { opacity:[0,1], y:[28,0], duration:900, ease:'outExpo', delay:150 });
 
 /* ══════════════════════════════════════════════════════
    HERO — resto del hero con anime.js
