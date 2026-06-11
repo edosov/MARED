@@ -91,7 +91,8 @@ function emailHtml(nombre) {
       <tr>
         <td style="background:#050F0C;padding:24px 40px;text-align:center;border-top:1px solid rgba(0,200,150,0.08);">
           <p style="margin:0 0 8px;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#4A7A6A;">MARED · Reset Nervioso™</p>
-          <p style="margin:0;font-size:11px;color:#2a5a4a;line-height:1.6;">Este mensaje fue enviado porque solicitaste el Kit SOS en nuestra página.<br>Si crees que es un error, ignora este correo.</p>
+          <p style="margin:0 0 8px;font-size:11px;color:#2a5a4a;line-height:1.6;">Este mensaje fue enviado porque solicitaste el Kit SOS en nuestra pagina.</p>
+          <p style="margin:0;font-size:11px;color:#2a5a4a;">Para cancelar tu suscripcion, <a href="mailto:somos.mared@gmail.com?subject=Cancelar suscripcion" style="color:#4A7A6A;">escríbenos aqui</a>.</p>
         </td>
       </tr>
 
@@ -132,10 +133,17 @@ module.exports = async function handler(req, res) {
     }
 
     // 2. Send email with PDF
+    const saludo = nombre || 'amiga';
     await transporter.sendMail({
       from: `MARED Reset Nervioso <${process.env.GMAIL_USER}>`,
+      replyTo: process.env.GMAIL_USER,
       to: email,
-      subject: 'Tu Kit SOS del Sistema Nervioso esta aqui - MARED',
+      subject: 'Tu Kit SOS del Sistema Nervioso - MARED',
+      headers: {
+        'List-Unsubscribe': `<mailto:${process.env.GMAIL_USER}?subject=Cancelar suscripcion>`,
+        'X-Mailer': 'MARED Mailer'
+      },
+      text: `Hola ${saludo},\n\nGracias por unirte a MARED. Tu Kit SOS del Sistema Nervioso esta listo.\n\nDescarga tu PDF aqui:\n${PDF_DOWNLOAD}\n\nSi el link no funciona, copia y pega este en tu navegador:\n${PDF_URL}\n\n---\nQue hay en tu Kit:\n- Tecnicas de regulacion inmediata\n- Protocolo SOS para momentos de crisis\n- Introduccion al Metodo 3C de MARED\n- Plan de primeros pasos\n\nSi deseas dejar de recibir correos, responde este mensaje con el asunto "Cancelar".\n\nMARED Reset Nervioso\nsomos.mared@gmail.com`,
       html: emailHtml(nombre)
     });
 
