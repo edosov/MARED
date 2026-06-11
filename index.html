@@ -1657,5 +1657,79 @@ document.getElementById('exit-overlay').addEventListener('click', function(e){
 // Close on ESC
 document.addEventListener('keydown', e => { if(e.key === 'Escape') closePopup(); });
 </script>
+
+<!-- Anime.js entrance animations -->
+<script type="module">
+import { animate, stagger } from 'https://cdn.jsdelivr.net/npm/animejs@4/+esm';
+
+// ── Hero (on load) ──────────────────────────────────────
+animate('.hero-badge', { opacity:[0,1], y:[16,0], duration:600, ease:'outExpo', delay:100 });
+animate('.hero h1',    { opacity:[0,1], y:[32,0], duration:700, ease:'outExpo', delay:220 });
+animate('.hero-line',  { scaleX:[0,1], opacity:[0,1], duration:600, ease:'outExpo', delay:380, transformOrigin:'left center' });
+animate('.hero-sub, .hero-txt', { opacity:[0,1], y:[20,0], duration:600, ease:'outExpo', delay:stagger(100, {start:420}) });
+animate('.hero-ctas',  { opacity:[0,1], y:[16,0], duration:500, ease:'outExpo', delay:680 });
+animate('.hero-right', { opacity:[0,1], x:[30,0], duration:800, ease:'outExpo', delay:300 });
+
+// ── Scroll observer ─────────────────────────────────────
+const seen = new WeakSet();
+
+function reveal(entries, observer) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting || seen.has(entry.target)) return;
+    seen.add(entry.target);
+    observer.unobserve(entry.target);
+    entry.target.style.opacity = '1';
+    animate(entry.target, {
+      opacity: [0, 1],
+      y: [28, 0],
+      duration: 580,
+      ease: 'outExpo',
+    });
+  });
+}
+
+function revealStagger(entries, observer) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting || seen.has(entry.target)) return;
+    seen.add(entry.target);
+    observer.unobserve(entry.target);
+    const items = entry.target.querySelectorAll(':scope > *');
+    animate(items.length ? items : [entry.target], {
+      opacity: [0, 1],
+      y: [32, 0],
+      delay: stagger(80),
+      duration: 560,
+      ease: 'outExpo',
+    });
+  });
+}
+
+const ioSingle  = new IntersectionObserver(reveal,        { threshold: 0.12 });
+const ioStagger = new IntersectionObserver(revealStagger, { threshold: 0.08 });
+
+// Headings
+document.querySelectorAll('.sec-h, .sec h2, .sec h3:not(.ben h3):not(.pc h4)').forEach(el => {
+  el.style.opacity = '0';
+  ioSingle.observe(el);
+});
+
+// Grids (animate children with stagger)
+document.querySelectorAll('.pc-grid, .ben-grid, .stats-grid, .how-steps, .sb-features').forEach(el => {
+  el.querySelectorAll(':scope > *').forEach(child => { child.style.opacity = '0'; });
+  ioStagger.observe(el);
+});
+
+// Individual cards
+document.querySelectorAll('.tf-card, .test-card, .faq-item').forEach(el => {
+  el.style.opacity = '0';
+  ioSingle.observe(el);
+});
+
+// Pricing box
+document.querySelectorAll('.price-box, .pi-card, .cs-card').forEach(el => {
+  el.style.opacity = '0';
+  ioSingle.observe(el);
+});
+</script>
 </body>
 </html>
