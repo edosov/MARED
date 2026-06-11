@@ -1658,78 +1658,222 @@ document.getElementById('exit-overlay').addEventListener('click', function(e){
 document.addEventListener('keydown', e => { if(e.key === 'Escape') closePopup(); });
 </script>
 
-<!-- Anime.js entrance animations -->
+<!-- Anime.js v4 — A+B+C+D -->
 <script type="module">
-import { animate, stagger } from 'https://cdn.jsdelivr.net/npm/animejs@4/+esm';
+import { animate, stagger, utils } from 'https://cdn.jsdelivr.net/npm/animejs@4/+esm';
 
-// ── Hero (on load) ──────────────────────────────────────
-animate('.hero-badge', { opacity:[0,1], y:[16,0], duration:600, ease:'outExpo', delay:100 });
-animate('.hero h1',    { opacity:[0,1], y:[32,0], duration:700, ease:'outExpo', delay:220 });
-animate('.hero-line',  { scaleX:[0,1], opacity:[0,1], duration:600, ease:'outExpo', delay:380, transformOrigin:'left center' });
-animate('.hero-sub, .hero-txt', { opacity:[0,1], y:[20,0], duration:600, ease:'outExpo', delay:stagger(100, {start:420}) });
-animate('.hero-ctas',  { opacity:[0,1], y:[16,0], duration:500, ease:'outExpo', delay:680 });
-animate('.hero-right', { opacity:[0,1], x:[30,0], duration:800, ease:'outExpo', delay:300 });
+/* ══════════════════════════════════════════════════════
+   D — PARTÍCULAS FLOTANTES EN EL HERO
+══════════════════════════════════════════════════════ */
+(function spawnParticles() {
+  const hero = document.querySelector('.hero-bg');
+  if (!hero) return;
+  const canvas = document.createElement('canvas');
+  Object.assign(canvas.style, {
+    position:'absolute', inset:'0', width:'100%', height:'100%',
+    pointerEvents:'none', opacity:'0.45', zIndex:'0'
+  });
+  hero.appendChild(canvas);
+  const ctx = canvas.getContext('2d');
+  const dots = [];
+  const N = 55;
 
-// ── Scroll observer ─────────────────────────────────────
-const seen = new WeakSet();
+  function resize() {
+    canvas.width  = hero.offsetWidth;
+    canvas.height = hero.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize, { passive: true });
 
-function reveal(entries, observer) {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting || seen.has(entry.target)) return;
-    seen.add(entry.target);
-    observer.unobserve(entry.target);
-    entry.target.style.opacity = '1';
-    animate(entry.target, {
-      opacity: [0, 1],
-      y: [28, 0],
-      duration: 580,
-      ease: 'outExpo',
+  for (let i = 0; i < N; i++) {
+    dots.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.8 + 0.4,
+      vx: (Math.random() - 0.5) * 0.28,
+      vy: (Math.random() - 0.5) * 0.28,
+      a: Math.random() * 0.6 + 0.2,
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    dots.forEach(d => {
+      d.x += d.vx; d.y += d.vy;
+      if (d.x < 0) d.x = canvas.width;
+      if (d.x > canvas.width) d.x = 0;
+      if (d.y < 0) d.y = canvas.height;
+      if (d.y > canvas.height) d.y = 0;
+      ctx.beginPath();
+      ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(0,200,150,${d.a})`;
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ══════════════════════════════════════════════════════
+   A — TEXT SCRAMBLE EN HERO H1
+══════════════════════════════════════════════════════ */
+(function scrambleHero() {
+  const h1 = document.querySelector('.hero h1');
+  if (!h1) return;
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#%&*';
+  const original = h1.innerHTML;
+
+  // Extrae solo nodos de texto (preserva el <span class="accent">)
+  function scramble(el, onDone) {
+    const nodes = [];
+    el.childNodes.forEach(node => {
+      if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
+        nodes.push({ node, text: node.textContent });
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+        node.childNodes.forEach(n => {
+          if (n.nodeType === Node.TEXT_NODE && n.textContent.trim())
+            nodes.push({ node: n, text: n.textContent, parent: node });
+        });
+      }
+    });
+
+    let frame = 0;
+    const totalFrames = 38;
+    function tick() {
+      nodes.forEach(({ node, text }) => {
+        const progress = frame / totalFrames;
+        node.textContent = text.split('').map((ch, i) => {
+          if (ch === ' ') return ' ';
+          return Math.random() < progress
+            ? ch
+            : chars[Math.floor(Math.random() * chars.length)];
+        }).join('');
+      });
+      frame++;
+      if (frame <= totalFrames) requestAnimationFrame(tick);
+      else {
+        nodes.forEach(({ node, text }) => { node.textContent = text; });
+        if (onDone) onDone();
+      }
+    }
+    setTimeout(tick, 280);
+  }
+
+  h1.style.opacity = '1';
+  scramble(h1);
+})();
+
+/* ══════════════════════════════════════════════════════
+   HERO — resto del hero con anime.js
+══════════════════════════════════════════════════════ */
+animate('.hero-badge', { opacity:[0,1], y:[20,0], duration:550, ease:'outExpo', delay:80 });
+animate('.hero-line',  { scaleX:[0,1], opacity:[0,1], duration:700, ease:'outExpo', delay:350, transformOrigin:'left center' });
+animate('.hero-sub',   { opacity:[0,1], y:[24,0], duration:600, ease:'outExpo', delay:460 });
+animate('.hero-txt',   { opacity:[0,1], y:[20,0], duration:600, ease:'outExpo', delay:560 });
+animate('.hero-ctas',  { opacity:[0,1], y:[20,0], duration:550, ease:'outExpo', delay:680 });
+animate('.hero-proof', { opacity:[0,1], y:[16,0], duration:500, ease:'outExpo', delay:780 });
+animate('.hero-right', { opacity:[0,1], x:[40,0], duration:900, ease:'outExpo', delay:260 });
+
+/* ══════════════════════════════════════════════════════
+   B — NÚMEROS CONTANDO EN STATS
+══════════════════════════════════════════════════════ */
+(function countStats() {
+  const statNums = document.querySelectorAll('.sn');
+  if (!statNums.length) return;
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      io.unobserve(entry.target);
+      statNums.forEach(el => {
+        const raw   = el.textContent.trim();
+        const plus  = raw.startsWith('+');
+        const num   = parseInt(raw.replace('+',''), 10);
+        const obj   = { val: 0 };
+        animate(obj, {
+          val: num,
+          duration: 1800,
+          ease: 'outExpo',
+          onUpdate: () => {
+            el.textContent = (plus ? '+' : '') + Math.round(obj.val);
+          },
+          onComplete: () => {
+            el.textContent = raw; // restaura exacto
+          }
+        });
+      });
+    });
+  }, { threshold: 0.5 });
+
+  const statsSection = document.querySelector('.stats-sec');
+  if (statsSection) io.observe(statsSection);
+})();
+
+/* ══════════════════════════════════════════════════════
+   C — BOTONES MAGNÉTICOS
+══════════════════════════════════════════════════════ */
+(function magneticButtons() {
+  document.querySelectorAll('.btn, .nav-pill').forEach(btn => {
+    btn.addEventListener('mousemove', e => {
+      const r  = btn.getBoundingClientRect();
+      const cx = r.left + r.width  / 2;
+      const cy = r.top  + r.height / 2;
+      const dx = (e.clientX - cx) * 0.28;
+      const dy = (e.clientY - cy) * 0.28;
+      animate(btn, { x: dx, y: dy, duration: 280, ease: 'outExpo' });
+    });
+    btn.addEventListener('mouseleave', () => {
+      animate(btn, { x: 0, y: 0, duration: 500, ease: 'outElastic(1, .5)' });
     });
   });
-}
+})();
 
-function revealStagger(entries, observer) {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting || seen.has(entry.target)) return;
-    seen.add(entry.target);
-    observer.unobserve(entry.target);
-    const items = entry.target.querySelectorAll(':scope > *');
-    animate(items.length ? items : [entry.target], {
-      opacity: [0, 1],
-      y: [32, 0],
-      delay: stagger(80),
-      duration: 560,
-      ease: 'outExpo',
+/* ══════════════════════════════════════════════════════
+   SCROLL REVEAL — resto de secciones
+══════════════════════════════════════════════════════ */
+(function scrollReveal() {
+  const seen = new WeakSet();
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting || seen.has(entry.target)) return;
+      seen.add(entry.target);
+      io.unobserve(entry.target);
+
+      const el    = entry.target;
+      const items = el.dataset.stagger
+        ? el.querySelectorAll(':scope > *')
+        : [el];
+
+      animate(items, {
+        opacity: [0, 1],
+        y: [40, 0],
+        delay: stagger(90),
+        duration: 600,
+        ease: 'outExpo',
+      });
+    });
+  }, { threshold: 0.08 });
+
+  const single = ['.sec-h', '.tf-card', '.test-card', '.faq-item',
+                  '.price-box', '.pi-card', '.cs-card', '.cc-card'];
+  const grids  = ['.pc-grid', '.ben-grid', '.how-steps', '.sb-features'];
+
+  single.forEach(sel => {
+    document.querySelectorAll(sel).forEach(el => {
+      el.style.opacity = '0';
+      io.observe(el);
     });
   });
-}
 
-const ioSingle  = new IntersectionObserver(reveal,        { threshold: 0.12 });
-const ioStagger = new IntersectionObserver(revealStagger, { threshold: 0.08 });
-
-// Headings
-document.querySelectorAll('.sec-h, .sec h2, .sec h3:not(.ben h3):not(.pc h4)').forEach(el => {
-  el.style.opacity = '0';
-  ioSingle.observe(el);
-});
-
-// Grids (animate children with stagger)
-document.querySelectorAll('.pc-grid, .ben-grid, .stats-grid, .how-steps, .sb-features').forEach(el => {
-  el.querySelectorAll(':scope > *').forEach(child => { child.style.opacity = '0'; });
-  ioStagger.observe(el);
-});
-
-// Individual cards
-document.querySelectorAll('.tf-card, .test-card, .faq-item').forEach(el => {
-  el.style.opacity = '0';
-  ioSingle.observe(el);
-});
-
-// Pricing box
-document.querySelectorAll('.price-box, .pi-card, .cs-card').forEach(el => {
-  el.style.opacity = '0';
-  ioSingle.observe(el);
-});
+  grids.forEach(sel => {
+    document.querySelectorAll(sel).forEach(el => {
+      el.dataset.stagger = '1';
+      el.querySelectorAll(':scope > *').forEach(c => { c.style.opacity = '0'; });
+      io.observe(el);
+    });
+  });
+})();
 </script>
 </body>
 </html>
