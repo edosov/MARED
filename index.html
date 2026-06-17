@@ -318,14 +318,16 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 
 /* OBJECIONES dark */
 .obj-sec{background:var(--bg);}
-.obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;max-width:1000px;margin:0 auto 52px;}
-.obj-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:28px 26px;transition:all .35s;}
-.obj-card:hover{border-color:rgba(0,200,150,.28);transform:translateY(-5px);background:rgba(0,200,150,.03);}
-.obj-q{font-family:'Cormorant Garamond',serif;font-size:1.06rem;font-style:italic;color:rgba(255,255,255,.45);margin-bottom:18px;line-height:1.65;display:flex;gap:11px;align-items:flex-start;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.06);}
-.obj-a{font-size:.94rem;color:var(--muted);line-height:1.78;display:flex;gap:11px;align-items:flex-start;}
-.obj-a strong{color:var(--text);}
-.obj-x{color:rgba(255,38,128,.55);font-weight:800;font-style:normal;font-family:'Montserrat',sans-serif;flex-shrink:0;font-size:.8rem;margin-top:3px;}
-.obj-chk{color:var(--em);font-weight:800;font-style:normal;font-family:'Montserrat',sans-serif;flex-shrink:0;font-size:.8rem;margin-top:3px;}
+.obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px;max-width:1000px;margin:0 auto 52px;}
+.obj-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:28px 24px;transition:all .35s;}
+.obj-card:hover{border-color:rgba(0,200,150,.28);transform:translateY(-5px);}
+.obj-q{display:flex;gap:10px;align-items:flex-start;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.06);}
+.obj-q-text{font-family:'Cormorant Garamond',serif;font-size:1.04rem;font-style:italic;color:rgba(255,255,255,.42);line-height:1.6;}
+.obj-a{display:flex;gap:10px;align-items:flex-start;}
+.obj-a-text{font-size:.93rem;color:var(--muted);line-height:1.78;}
+.obj-a-text strong{color:var(--text);font-weight:600;}
+.obj-x{width:20px;min-width:20px;height:20px;border-radius:50%;background:rgba(255,38,128,.12);border:1px solid rgba(255,38,128,.3);display:flex;align-items:center;justify-content:center;color:rgba(255,38,128,.7);font-size:.55rem;font-weight:900;flex-shrink:0;margin-top:2px;}
+.obj-chk{width:20px;min-width:20px;height:20px;border-radius:50%;background:rgba(0,200,150,.12);border:1px solid rgba(0,200,150,.3);display:flex;align-items:center;justify-content:center;color:var(--em);font-size:.55rem;font-weight:900;flex-shrink:0;margin-top:2px;}
 .obj-cta{text-align:center;max-width:560px;margin:0 auto;}
 .obj-cta p{color:var(--muted);font-size:.96rem;margin-bottom:28px;line-height:1.75;}
 
@@ -1074,33 +1076,69 @@ src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></
     <div class="obj-grid">
 
       <div class="obj-card rv d1">
-        <div class="obj-q"><span class="obj-x">✗</span>"Ya lo intenté todo — meditación, terapia, suplementos. Nada me funciona."</div>
-        <div class="obj-a"><span class="obj-chk">✓</span>Ninguna de esas herramientas trabaja directamente el <strong>sistema nervioso autónomo</strong>. MARED sí. No es más de lo mismo — es exactamente lo que faltaba en tu proceso.</div>
+        <div class="obj-q">
+          <span class="obj-x">✗</span>
+          <span class="obj-q-text">"Ya lo intenté todo — meditación, terapia, suplementos. Nada me funciona."</span>
+        </div>
+        <div class="obj-a">
+          <span class="obj-chk">✓</span>
+          <span class="obj-a-text">Ninguna de esas herramientas trabaja directamente el <strong>sistema nervioso autónomo</strong>. MARED sí. No es más de lo mismo — es exactamente lo que faltaba en tu proceso.</span>
+        </div>
       </div>
 
       <div class="obj-card rv d2">
-        <div class="obj-q"><span class="obj-x">✗</span>"Un libro de $12 no puede cambiar algo que llevo años sintiendo."</div>
-        <div class="obj-a"><span class="obj-chk">✓</span>El precio refleja accesibilidad, no valor. Es el mismo protocolo de neurociencia que se aplica en <strong>terapias de $80–$100 por sesión</strong>. Y la garantía cubre el riesgo completo.</div>
+        <div class="obj-q">
+          <span class="obj-x">✗</span>
+          <span class="obj-q-text">"Un libro de $12 no puede cambiar algo que llevo años sintiendo."</span>
+        </div>
+        <div class="obj-a">
+          <span class="obj-chk">✓</span>
+          <span class="obj-a-text">El precio refleja accesibilidad, no valor. Es el mismo protocolo de neurociencia que se aplica en <strong>terapias de $80–$100 por sesión</strong>. Y la garantía cubre el riesgo completo.</span>
+        </div>
       </div>
 
       <div class="obj-card rv d3">
-        <div class="obj-q"><span class="obj-x">✗</span>"No tengo tiempo para un protocolo de 21 días."</div>
-        <div class="obj-a"><span class="obj-chk">✓</span>Son <strong>15–20 minutos al día</strong>. En la mañana, en el transporte, antes de dormir. Si tienes tiempo para la ansiedad crónica, tienes tiempo para esto.</div>
+        <div class="obj-q">
+          <span class="obj-x">✗</span>
+          <span class="obj-q-text">"No tengo tiempo para un protocolo de 21 días."</span>
+        </div>
+        <div class="obj-a">
+          <span class="obj-chk">✓</span>
+          <span class="obj-a-text">Son <strong>15–20 minutos al día</strong>. En la mañana, en el transporte, antes de dormir. Si tienes tiempo para la ansiedad crónica, tienes tiempo para esto.</span>
+        </div>
       </div>
 
       <div class="obj-card rv d1">
-        <div class="obj-q"><span class="obj-x">✗</span>"¿Y si no funciona para mí específicamente?"</div>
-        <div class="obj-a"><span class="obj-chk">✓</span><strong>Garantía incondicional de 7 días.</strong> Si no sientes que vale cada centavo, te devolvemos el 100% sin preguntas, sin formularios, sin espera. El riesgo es completamente nuestro.</div>
+        <div class="obj-q">
+          <span class="obj-x">✗</span>
+          <span class="obj-q-text">"¿Y si no funciona para mí específicamente?"</span>
+        </div>
+        <div class="obj-a">
+          <span class="obj-chk">✓</span>
+          <span class="obj-a-text"><strong>Garantía incondicional de 7 días.</strong> Si no sientes que vale cada centavo, te devolvemos el 100% sin preguntas, sin formularios, sin espera. El riesgo es nuestro.</span>
+        </div>
       </div>
 
       <div class="obj-card rv d2">
-        <div class="obj-q"><span class="obj-x">✗</span>"¿Necesito un diagnóstico o historial médico para esto?"</div>
-        <div class="obj-a"><span class="obj-chk">✓</span>No. Si sientes tu cuerpo en alerta constante — ansiedad, agotamiento, síntomas sin causa clara — <strong>esto es para ti</strong>. Sin diagnóstico previo, sin requisitos.</div>
+        <div class="obj-q">
+          <span class="obj-x">✗</span>
+          <span class="obj-q-text">"¿Necesito un diagnóstico o historial médico para esto?"</span>
+        </div>
+        <div class="obj-a">
+          <span class="obj-chk">✓</span>
+          <span class="obj-a-text">No. Si sientes tu cuerpo en alerta constante — ansiedad, agotamiento, síntomas sin causa clara — <strong>esto es para ti</strong>. Sin diagnóstico previo, sin requisitos.</span>
+        </div>
       </div>
 
       <div class="obj-card rv d3">
-        <div class="obj-q"><span class="obj-x">✗</span>"Prefiero hablar con un psicólogo o terapeuta."</div>
-        <div class="obj-a"><span class="obj-chk">✓</span>Perfecto — y Reset Nervioso™ potencia ese proceso. <strong>Muchas terapeutas ya lo recomiendan</strong> porque acelera el trabajo somático. No compite con la terapia: la profundiza.</div>
+        <div class="obj-q">
+          <span class="obj-x">✗</span>
+          <span class="obj-q-text">"Prefiero hablar con un psicólogo o terapeuta."</span>
+        </div>
+        <div class="obj-a">
+          <span class="obj-chk">✓</span>
+          <span class="obj-a-text">Perfecto — y Reset Nervioso™ potencia ese proceso. <strong>Muchas terapeutas ya lo recomiendan</strong> porque acelera el trabajo somático. No compite con la terapia: la profundiza.</span>
+        </div>
       </div>
 
     </div>
