@@ -37,7 +37,7 @@ h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;line-height:1.15;}
 .num{font-family:'Montserrat',sans-serif;}
 img{display:block;max-width:100%;}
 .container{max-width:1120px;margin:0 auto;padding:0 36px;}
-.sec{padding:112px 36px;}
+.sec{padding:88px 36px;}
 .lbl{display:inline-block;font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--fu);margin-bottom:20px;}
 
 /* BUTTONS */
@@ -121,7 +121,7 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 .pc-ico{width:42px;min-width:42px;height:42px;background:rgba(255,38,128,.08);border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;}
 .pc h3{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.88rem;margin-bottom:4px;color:var(--dk);}
 .pc p{font-size:.9rem;line-height:1.65;color:var(--dk-muted);}
-.pain-photo{position:relative;border-radius:22px;overflow:hidden;height:610px;}
+.pain-photo{position:relative;border-radius:22px;overflow:hidden;height:clamp(420px,60vh,640px);}
 .pain-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;}
 .pain-photo-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,30,24,.7) 0%,transparent 45%);}
 .pain-tag{position:absolute;bottom:24px;left:20px;right:20px;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-radius:14px;padding:18px 20px;border:1px solid rgba(0,200,150,.18);}
@@ -289,11 +289,20 @@ nav.scrolled{background:rgba(5,15,12,.95);backdrop-filter:blur(24px);border-bott
 .test-card::after{content:'';position:absolute;bottom:-40px;right:-40px;width:120px;height:120px;background:radial-gradient(circle,rgba(0,200,150,.08),transparent);border-radius:50%;}
 .test-card:hover{transform:translateY(-5px);border-color:rgba(0,200,150,.4);box-shadow:0 12px 40px rgba(0,0,0,.1);}
 .test-photo{width:76px;height:76px;border-radius:50%;object-fit:cover;object-position:center top;margin-bottom:22px;border:2.5px solid rgba(0,200,150,.4);box-shadow:0 4px 16px rgba(0,0,0,.12);}
-.test-stars{color:var(--fu);font-size:.88rem;letter-spacing:2px;margin-bottom:10px;font-family:'Montserrat',sans-serif;}
+.test-stars{color:#F5C030;font-size:.9rem;letter-spacing:2px;margin-bottom:10px;font-family:'Montserrat',sans-serif;}
 .qm{font-family:'Cormorant Garamond',serif;font-size:5rem;line-height:.55;color:rgba(255,38,128,.22);display:block;margin-bottom:14px;}
 .test-txt{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--dk);font-style:italic;line-height:1.8;margin-bottom:26px;}
 .test-name{font-family:'Montserrat',sans-serif;font-size:.88rem;font-weight:700;color:var(--dk);margin-bottom:3px;}
 .test-meta{font-family:'Montserrat',sans-serif;font-size:.76rem;color:var(--dk-muted);}
+.test-verified{display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:600;color:#00856A;letter-spacing:.04em;}
+.test-verified svg{width:13px;height:13px;flex-shrink:0;}
+/* TRUST BAR above testimonials */
+.test-trust-bar{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;border:1px solid rgba(0,150,100,.2);border-radius:50px;padding:14px 32px;max-width:720px;margin:0 auto 48px;background:rgba(0,200,150,.04);}
+.ttb-item{display:flex;align-items:center;gap:7px;font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:600;color:var(--dk-muted);}
+.ttb-stars{color:#F5C030;letter-spacing:1px;}
+.ttb-rating{color:var(--dk);font-weight:800;font-size:.85rem;}
+.ttb-div{width:1px;height:16px;background:rgba(0,150,100,.2);}
+@media(max-width:600px){.test-trust-bar{gap:14px;padding:12px 20px;}.ttb-div{display:none;}}
 
 /* PRICING light */
 .price-sec{background:var(--lt2);}
@@ -763,7 +772,7 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.52);max-width:520px;margin:0 a
 /* MINI TESTIMONIAL IN PRICE */
 .price-mini-test{display:flex;align-items:flex-start;gap:12px;background:rgba(0,200,150,.07);border:1px solid rgba(0,200,150,.2);border-radius:14px;padding:16px 18px;margin-bottom:22px;}
 .pmt-photo{width:42px;min-width:42px;height:42px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid rgba(0,200,150,.4);}
-.pmt-stars{color:var(--fu);font-size:.68rem;margin-bottom:4px;letter-spacing:1px;}
+.pmt-stars{color:#F5C030;font-size:.72rem;margin-bottom:4px;letter-spacing:1px;}
 .pmt-text{font-family:'Cormorant Garamond',serif;font-size:.96rem;font-style:italic;color:var(--dk);line-height:1.6;}
 .pmt-name{font-family:'Montserrat',sans-serif;font-size:.7rem;color:var(--dk-muted);margin-top:5px;}
 
@@ -1225,6 +1234,17 @@ src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></
       <h2>Ellas ya hicieron su Reset</h2>
       <p style="color:var(--dk-muted);">Experiencias reales de personas que aplicaron el protocolo. Los resultados individuales pueden variar según el punto de partida y el nivel de compromiso.</p>
     </div>
+    <!-- Trust bar aggregate -->
+    <div class="test-trust-bar rv">
+      <div class="ttb-item"><span class="ttb-stars">★★★★★</span><span class="ttb-rating">4.9/5</span></div>
+      <div class="ttb-div"></div>
+      <div class="ttb-item">+500 reseñas verificadas</div>
+      <div class="ttb-div"></div>
+      <div class="ttb-item">México · Colombia · Argentina</div>
+      <div class="ttb-div"></div>
+      <div class="ttb-item">✓ Testimonios verificados</div>
+    </div>
+
     <div class="test-carousel" id="test-carousel">
       <div class="test-track" id="test-track">
       <div class="test-card rv d1">
@@ -1234,6 +1254,7 @@ src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></
         <p class="test-txt">En la primera semana ya dormía diferente. Para el día 14 dejé de tener esa ansiedad de fondo que me acompañaba todo el día. El Reset me devolvió el lenguaje, las herramientas — y el control.</p>
         <div class="test-name">Valeria R.</div>
         <div class="test-meta">Psicóloga · México</div>
+        <div class="test-verified"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="#00856A" opacity=".15"/><path d="M5 8l2 2 4-4" stroke="#00856A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Experiencia verificada</div>
       </div>
       <div class="test-card rv d2">
         <img class="test-photo" src="IMG/avatar3.jpg" alt="Carolina S." loading="lazy">
@@ -1242,6 +1263,7 @@ src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></
         <p class="test-txt">Llevaba 3 años buscando respuestas. Médicos, terapeutas, coaches — nada. En el día 7 del protocolo sentí algo que no había sentido en mucho tiempo: calma real. No la calma de estar agotada. Calma de verdad.</p>
         <div class="test-name">Carolina S.</div>
         <div class="test-meta">Diseñadora · Colombia</div>
+        <div class="test-verified"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="#00856A" opacity=".15"/><path d="M5 8l2 2 4-4" stroke="#00856A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Experiencia verificada</div>
       </div>
       <div class="test-card rv d3">
         <img class="test-photo" src="IMG/avatar2.jpg" alt="Marcela P." loading="lazy">
@@ -1250,6 +1272,7 @@ src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></
         <p class="test-txt">Antes de Reset Nervioso tenía 2–3 crisis de ansiedad por semana. En 21 días bajaron a cero. Ahora tengo un protocolo claro para cuando siento que me desborda — y funciona en minutos.</p>
         <div class="test-name">Marcela P.</div>
         <div class="test-meta">Mamá y emprendedora · Argentina</div>
+        <div class="test-verified"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="#00856A" opacity=".15"/><path d="M5 8l2 2 4-4" stroke="#00856A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Experiencia verificada</div>
       </div>
       </div>
       <div class="carousel-dots" id="carousel-dots">
@@ -1401,7 +1424,7 @@ src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></
           <span class="pi-total-you">$12 USD — ahorra $110</span>
         </div>
         <div class="price-mini-test">
-          <img class="pmt-photo" src="IMG/mared1.webp" alt="Carolina S." onerror="this.style.display='none'">
+          <img class="pmt-photo" src="IMG/avatar3.jpg" alt="Carolina S." loading="lazy">
           <div>
             <div class="pmt-stars">★★★★★</div>
             <p class="pmt-text">"En el día 7 sentí algo que no había sentido en mucho tiempo: calma real. No la calma del agotamiento. Calma de verdad."</p>
