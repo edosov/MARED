@@ -1053,7 +1053,7 @@ src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></
   <div class="container">
     <div class="sec-h">
       <span class="lbl">Tu inversión</span>
-      <h2 style="color:var(--dk);">Accede hoy por $37 USD</h2>
+      <h2 style="color:var(--dk);">Empieza hoy — solo <span style="color:var(--fu);">$12 USD</span></h2>
       <p>El mismo protocolo que cuesta cientos en sesiones individuales. Una sola inversión, tuya para siempre.</p>
     </div>
     <div class="live-bar rv">
@@ -1063,7 +1063,7 @@ src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></
     </div>
     <div class="pw">
       <div class="pcard">
-        <div class="p-launch-badge"><div class="p-launch-dot"></div>Precio de lanzamiento — quedan pocas horas</div>
+        <div class="p-launch-badge" style="gap:10px;"><div class="p-launch-dot"></div><span>Precio sube a $37 en:</span><span style="font-weight:800;letter-spacing:.04em;"><span id="cd-h">48</span>h <span id="cd-m">00</span>m <span id="cd-s">00</span>s</span></div>
         <div class="p-orig num">$37 USD</div>
         <div class="p-amt num"><span class="p-curr">$</span>12</div>
         <div class="p-note num">USD · Acceso inmediato · Tuyo para siempre</div>
@@ -1667,6 +1667,31 @@ document.getElementById('exit-overlay').addEventListener('click', function(e){
 
 // Close on ESC
 document.addEventListener('keydown', e => { if(e.key === 'Escape') closePopup(); });
+
+// COUNTDOWN — 48h desde primera visita, persiste en localStorage
+(function(){
+  const KEY='mared_cd_end', HOURS=48;
+  let end=parseInt(localStorage.getItem(KEY)||'0',10);
+  if(!end||end<Date.now()){end=Date.now()+HOURS*3600000;localStorage.setItem(KEY,end);}
+  const hEl=document.getElementById('cd-h'),mEl=document.getElementById('cd-m'),sEl=document.getElementById('cd-s');
+  function tick(){
+    const d=Math.max(0,end-Date.now());
+    if(hEl)hEl.textContent=String(Math.floor(d/3600000)).padStart(2,'0');
+    if(mEl)mEl.textContent=String(Math.floor((d%3600000)/60000)).padStart(2,'0');
+    if(sEl)sEl.textContent=String(Math.floor((d%60000)/1000)).padStart(2,'0');
+    if(d>0)setTimeout(tick,1000);
+  }
+  tick();
+})();
+
+// HOTMART PURCHASE TRACKING — configura en Hotmart > Producto > Página de agradecimiento
+// Pon esta URL: https://TU-DOMINIO.com/?bought=1
+// El pixel disparará Purchase automáticamente al regresar
+(function(){
+  if(new URLSearchParams(location.search).get('bought')==='1'){
+    fbq('track','Purchase',{value:12,currency:'USD',content_name:'Reset Nervioso',content_ids:['reset-nervioso'],content_type:'product'});
+  }
+})();
 </script>
 
 <!-- Anime.js v4 — B+C + scroll reveal -->
