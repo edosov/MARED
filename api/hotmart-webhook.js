@@ -27,17 +27,30 @@ async function getSubscriberId(email) {
 }
 
 async function processApprovedPurchase(email, name) {
-  // 1. Add/update subscriber in MailerLite
   await mlFetch('/subscribers', 'POST', {
     email: email.toLowerCase().trim(),
     fields: { name: name || '' },
     groups: [COMPRADORES_GROUP],
   });
 
-  // 2. Remove from leads group if present
   const id = await getSubscriberId(email.toLowerCase().trim());
   if (id) {
     await mlFetch(`/subscribers/${id}/groups/${LEADS_GROUP}`, 'DELETE');
+  }
+}
+
+async function processRefund(email) {
+  const clean = email.toLowerCase().trim();
+
+  // Move back to leads
+  await mlFetch('/subscribers', 'POST', {
+    email: clean,
+    groups: [LEADS_GROUP],
+  });
+
+  const id = await getSubscriberId(clean);
+  if (id) {
+    await mlFetch(`/subscribers/${id}/groups/${COMPRADORES_GROUP}`, 'DELETE');
   }
 }
 
@@ -69,9 +82,18 @@ module.exports = async function handler(req, res) {
       status === 'APPROVED' ||
       status === 'COMPLETE';
 
+    const isRefund =
+      event === 'PURCHASE_REFUNDED' ||
+      event === 'PURCHASE_REFUND_REQUEST' ||
+      status === 'REFUNDED' ||
+      status === 'REFUND_REQUEST';
+
     if (email && isApproved) {
       await processApprovedPurchase(email, name);
       console.log(`Processed buyer: ${email} → Compradores`);
+    } else if (email && isRefund) {
+      await processRefund(email);
+      console.log(`Processed refund: ${email} → Leads`);
     }
 
     return res.status(200).json({ received: true });
