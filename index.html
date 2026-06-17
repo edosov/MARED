@@ -713,6 +713,97 @@ footer p{font-size:.83rem;color:rgba(255,255,255,.52);max-width:520px;margin:0 a
   .ep-content{padding:36px 22px;}
   .ep-title{font-size:1.8rem;}
 }
+
+/* HERO STARS */
+.hp-stars{font-size:.8rem;color:var(--fu);letter-spacing:1px;margin-bottom:3px;font-family:'Montserrat',sans-serif;font-weight:700;}
+.hp-stars span{color:var(--muted);font-weight:400;font-size:.72rem;margin-left:4px;}
+
+/* FUNDADORA */
+.founder-sec{background:var(--lt2);}
+.founder-layout{display:grid;grid-template-columns:380px 1fr;gap:72px;align-items:start;max-width:1040px;margin:0 auto;}
+.founder-photo-wrap{position:relative;border-radius:24px;overflow:hidden;}
+.founder-photo-wrap img{width:100%;display:block;border-radius:24px;}
+.founder-photo-badge{position:absolute;bottom:0;left:0;right:0;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);padding:18px 22px;border-top:1px solid rgba(0,200,150,.18);}
+.founder-photo-badge h3{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--dk);font-style:italic;margin-bottom:3px;}
+.founder-photo-badge p{font-size:.74rem;color:var(--dk-muted);font-family:'Montserrat',sans-serif;line-height:1.4;}
+.founder-content h2{font-size:clamp(1.7rem,3vw,2.6rem);font-weight:300;color:var(--dk);margin-bottom:24px;line-height:1.2;}
+.founder-content h2 em{font-style:italic;color:var(--fu);}
+.founder-story p{font-size:.98rem;color:var(--dk-muted);line-height:1.88;margin-bottom:16px;}
+.founder-story p strong{color:var(--dk);font-weight:600;}
+.founder-quote{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:var(--dk);border-left:3px solid var(--fu);padding:14px 0 14px 20px;margin:24px 0;background:rgba(255,38,128,.04);border-radius:0 10px 10px 0;}
+.founder-sign{margin-top:28px;padding-top:20px;border-top:1px solid rgba(0,150,100,.14);}
+.founder-sign-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.9rem;color:var(--dk);}
+.founder-sign-role{font-family:'Montserrat',sans-serif;font-size:.74rem;color:var(--dk-muted);margin-top:3px;}
+@media(max-width:960px){
+  .founder-layout{grid-template-columns:1fr;}
+  .founder-photo-wrap{max-width:360px;margin:0 auto;}
+}
+
+/* MINI CAPTURE */
+.mc-sec{background:var(--bg2);padding:56px 36px;}
+.mc-inner{max-width:820px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+.mc-label{font-family:'Montserrat',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:10px;}
+.mc-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:300;color:var(--text);margin-bottom:10px;line-height:1.2;}
+.mc-title em{font-style:italic;color:var(--em);}
+.mc-desc{font-size:.9rem;color:var(--muted);line-height:1.7;}
+.mc-form{display:flex;flex-direction:column;gap:10px;}
+.mc-input{background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.14);border-radius:12px;padding:14px 18px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:.94rem;outline:none;transition:border-color .3s;}
+.mc-input::placeholder{color:rgba(255,255,255,.38);}
+.mc-input:focus{border-color:rgba(0,200,150,.5);}
+.mc-fine{font-family:'Montserrat',sans-serif;font-size:.68rem;color:rgba(255,255,255,.28);text-align:center;}
+@media(max-width:720px){.mc-inner{grid-template-columns:1fr;gap:24px;}}
+
+/* PRICE VALUE STACK */
+.pi-val{margin-left:auto;font-family:'Montserrat',sans-serif;font-size:.72rem;color:var(--dk-muted);text-decoration:line-through;opacity:.5;white-space:nowrap;padding-left:8px;}
+.pi-total-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0 4px;border-top:1px dashed rgba(0,150,100,.2);margin-top:4px;}
+.pi-total-label{font-family:'Montserrat',sans-serif;font-size:.8rem;color:var(--dk-muted);}
+.pi-total-strike{font-family:'Montserrat',sans-serif;font-size:.8rem;color:var(--dk-muted);text-decoration:line-through;}
+.pi-total-you{font-family:'Montserrat',sans-serif;font-size:.88rem;font-weight:800;color:var(--fu);}
+
+/* MINI TESTIMONIAL IN PRICE */
+.price-mini-test{display:flex;align-items:flex-start;gap:12px;background:rgba(0,200,150,.07);border:1px solid rgba(0,200,150,.2);border-radius:14px;padding:16px 18px;margin-bottom:22px;}
+.pmt-photo{width:42px;min-width:42px;height:42px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid rgba(0,200,150,.4);}
+.pmt-stars{color:var(--fu);font-size:.68rem;margin-bottom:4px;letter-spacing:1px;}
+.pmt-text{font-family:'Cormorant Garamond',serif;font-size:.96rem;font-style:italic;color:var(--dk);line-height:1.6;}
+.pmt-name{font-family:'Montserrat',sans-serif;font-size:.7rem;color:var(--dk-muted);margin-top:5px;}
+
+/* POST PURCHASE */
+.postbuy-sec{background:var(--bg);padding:72px 36px;}
+.postbuy-inner{max-width:680px;margin:0 auto;text-align:center;}
+.postbuy-inner h3{font-size:clamp(1.7rem,3vw,2.3rem);font-weight:300;color:var(--text);margin-bottom:10px;}
+.postbuy-inner h3 em{font-style:italic;color:var(--em);}
+.postbuy-inner > p{color:var(--muted);font-size:.96rem;margin-bottom:44px;line-height:1.8;}
+.postbuy-steps{display:flex;justify-content:center;gap:0;max-width:580px;margin:0 auto 36px;position:relative;}
+.postbuy-steps::before{content:'';position:absolute;top:27px;left:16%;right:16%;height:1px;background:linear-gradient(to right,rgba(255,38,128,.4),rgba(0,200,150,.4));z-index:0;}
+.pbs{display:flex;flex-direction:column;align-items:center;gap:14px;flex:1;position:relative;z-index:1;}
+.pbs-num{width:54px;height:54px;border-radius:50%;background:var(--bg2);border:2px solid var(--fu);display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:800;color:var(--fu);}
+.pbs:nth-child(2) .pbs-num{border-color:rgba(200,100,0,.6);color:rgba(220,150,0,1);}
+.pbs:nth-child(3) .pbs-num{border-color:var(--em);color:var(--em);}
+.pbs-label{font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:600;color:var(--muted);text-align:center;max-width:110px;line-height:1.45;letter-spacing:.04em;text-transform:uppercase;}
+@media(max-width:560px){
+  .postbuy-steps{flex-direction:column;gap:18px;align-items:flex-start;padding-left:0;max-width:280px;}
+  .postbuy-steps::before{display:none;}
+  .pbs{flex-direction:row;gap:16px;}
+  .pbs-label{max-width:200px;text-align:left;}
+}
+
+/* STICKY CTA BAR */
+#sticky-bar{position:fixed;bottom:0;left:0;right:0;z-index:500;transform:translateY(100%);transition:transform .4s cubic-bezier(.23,1,.32,1);background:rgba(5,13,10,.97);backdrop-filter:blur(20px);border-top:1px solid rgba(0,200,150,.18);padding:13px 24px;}
+#sticky-bar.visible{transform:translateY(0);}
+.sb-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.sb-left{display:flex;flex-direction:column;gap:2px;}
+.sb-title{font-family:'Montserrat',sans-serif;font-size:.74rem;font-weight:600;color:rgba(255,255,255,.55);letter-spacing:.04em;}
+.sb-price{display:flex;align-items:baseline;gap:8px;}
+.sb-orig{font-family:'Montserrat',sans-serif;font-size:.72rem;color:rgba(255,255,255,.3);text-decoration:line-through;}
+.sb-amt{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:800;color:var(--em);}
+.sb-guar{font-family:'Montserrat',sans-serif;font-size:.66rem;color:rgba(255,255,255,.3);}
+.sb-btn{background:var(--fu);color:#fff;padding:12px 26px;border-radius:50px;text-decoration:none;font-family:'Montserrat',sans-serif;font-size:.84rem;font-weight:700;letter-spacing:.04em;white-space:nowrap;box-shadow:0 0 20px var(--fu-glow);transition:all .3s;flex-shrink:0;}
+.sb-btn:hover{transform:scale(1.04);box-shadow:0 0 36px var(--fu-glow);}
+@media(max-width:600px){
+  #sticky-bar{padding:10px 16px;}
+  .sb-title,.sb-guar{display:none;}
+  .sb-btn{padding:11px 20px;font-size:.8rem;}
+}
 </style>
 <script type="application/ld+json">
 {
@@ -801,7 +892,10 @@ src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></
         <div class="hp-av"><img src="IMG/mared7.webp" alt="" onerror="this.parentElement.style.background='#1a3a30';this.remove()"></div>
         <div class="hp-av"><img src="IMG/mared8.webp" alt="" onerror="this.parentElement.style.background='#1a3a30';this.remove()"></div>
       </div>
-      <span class="hp-text"><strong>+500 personas</strong> ya hicieron su Reset</span>
+      <div>
+        <div class="hp-stars">★★★★★ <span>4.9/5 · +500 reseñas</span></div>
+        <span class="hp-text"><strong>+500 personas</strong> ya hicieron su Reset</span>
+      </div>
     </div>
     <div class="hero-ctas">
       <a href="https://pay.hotmart.com/F104149440C?off=fybr2mpq&checkoutMode=10" target="_blank" rel="noopener" onclick="fbq('track','InitiateCheckout',{value:12,currency:'USD',content_name:'Reset Nervioso',content_ids:['reset-nervioso'],content_type:'product'})" class="btn">Empezar mi Reset por $12 →</a>
@@ -1025,6 +1119,38 @@ src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></
   </div>
 </section>
 
+<!-- FUNDADORA -->
+<section class="founder-sec sec rv" id="fundadora">
+  <div class="container">
+    <div class="founder-layout">
+      <div class="founder-photo-wrap rv d1">
+        <img src="IMG/marisol.jpg" alt="Marisol Ochoa — Co-fundadora de MARED" loading="lazy">
+        <div class="founder-photo-badge">
+          <h3>Marisol Ochoa</h3>
+          <p>Co-fundadora &amp; desarrolladora del Sistema MARED™</p>
+        </div>
+      </div>
+      <div class="founder-content rv d2">
+        <span class="lbl">Quién está detrás de MARED</span>
+        <h2>El día que los médicos me dijeron<br>que estaba bien — y yo sabía que<br>me estaba <em>apagando.</em></h2>
+        <div class="founder-story">
+          <p>Durante años fui hija, madre, amiga, mujer. Lo daba todo — hasta que un día ya no quedó nada que dar.</p>
+          <p>Los exámenes salían perfectos. "Estás completamente sana", me decían. Pero había algo que no cuadraba: yo sentía que algo en mí se había roto. La energía no regresaba. El enfoque se fue. Hubo días — demasiados — en los que <strong>perdí el sentido de avanzar.</strong></p>
+          <blockquote class="founder-quote">"No era una enfermedad con nombre. Era algo más silencioso y más devastador: mi sistema nervioso llevaba años en modo supervivencia — y nadie, ni yo misma, sabía cómo salir de ahí."</blockquote>
+          <p>Entonces empecé a buscar. Desesperadamente. Leí, estudié, llegué a especialistas en neurobiología, trauma somático y Teoría Polivagal. Cada pieza del rompecabezas me acercaba más a entender lo que había vivido — y a descubrir que <strong>no estaba sola.</strong></p>
+          <p>De ese camino — de esas lágrimas, de esa búsqueda, de esa reconstrucción — nació MARED. Junto a un equipo de profesionales de la salud y la neurociencia, construimos el protocolo que yo necesité y que nadie me supo dar a tiempo: <strong>Reset Nervioso™.</strong></p>
+          <p>Si estás leyendo esto, probablemente conoces ese cansancio que el descanso no cura. Esa alerta que no cede. Esa sensación de que algo está mal aunque todos te digan que estás bien.</p>
+          <p><strong>Te entiendo. Lo viví. Y encontré el camino de regreso.</strong></p>
+        </div>
+        <div class="founder-sign">
+          <div class="founder-sign-name">— Marisol Ochoa</div>
+          <div class="founder-sign-role">Co-fundadora de MARED · Desarrolladora del Sistema Reset Nervioso™</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- TESTIMONIOS dark -->
 <section class="test-sec sec rv" id="testimonios">
   <div class="container">
@@ -1065,6 +1191,24 @@ src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></
         <button class="cdot" onclick="goSlide(1)" aria-label="Testimonio 2"></button>
         <button class="cdot" onclick="goSlide(2)" aria-label="Testimonio 3"></button>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- MINI CAPTURA -->
+<section class="mc-sec rv">
+  <div class="container">
+    <div class="mc-inner">
+      <div>
+        <span class="mc-label">¿Aún no estás lista para comprar?</span>
+        <h3 class="mc-title">Llévate el Kit SOS — <em>completamente gratis</em></h3>
+        <p class="mc-desc">Técnicas de regulación inmediata en PDF + acceso a nuestra comunidad privada de WhatsApp. Sin compromisos.</p>
+      </div>
+      <form class="mc-form" onsubmit="handleNL(event)">
+        <input type="email" class="mc-input" placeholder="Tu correo electrónico" required>
+        <button type="submit" class="btn btn-sm" style="width:100%;text-align:center;">Quiero el Kit SOS gratis →</button>
+        <p class="mc-fine">Sin spam · Cancela cuando quieras</p>
+      </form>
     </div>
   </div>
 </section>
@@ -1176,11 +1320,27 @@ src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></
         <div style="background:rgba(0,200,150,.08);border:1px solid rgba(0,200,150,.2);border-radius:10px;padding:10px 14px;margin-bottom:12px;font-family:'Montserrat',sans-serif;font-size:.76rem;color:var(--dk-muted);line-height:1.5;"><strong style="color:var(--em-soft);">💡 Para comparar:</strong> Una sola sesión con psicólogo online cuesta $49 USD. Reset Nervioso™ cuesta cuatro veces menos — y es tuyo para siempre.</div>
         <div class="p-savings num">Ahorras $25 — precio exclusivo de lanzamiento</div>
         <div class="pi-list">
-          <div class="pi-row"><div class="pi-chk">✓</div><span>Ebook Reset Nervioso™ — 15 capítulos completos</span></div>
-          <div class="pi-row"><div class="pi-chk">✓</div><span>Plan de implementación de 21 días, paso a paso</span></div>
-          <div class="pi-row"><div class="pi-chk">✓</div><span>Protocolo SOS — técnicas de regulación inmediata</span></div>
-          <div class="pi-row"><div class="pi-chk">✓</div><span>Método 3C exclusivo — Comprende, Calma, Consolida</span></div>
+          <div class="pi-row"><div class="pi-chk">✓</div><span>Ebook Reset Nervioso™ — 15 capítulos completos</span><span class="pi-val">$47</span></div>
+          <div class="pi-row"><div class="pi-chk">✓</div><span>Plan de implementación de 21 días, paso a paso</span><span class="pi-val">$27</span></div>
+          <div class="pi-row"><div class="pi-chk">✓</div><span>Protocolo SOS — técnicas de regulación inmediata</span><span class="pi-val">$19</span></div>
+          <div class="pi-row"><div class="pi-chk">✓</div><span>Método 3C exclusivo — Comprende, Calma, Consolida</span><span class="pi-val">$29</span></div>
           <div class="pi-row"><div class="pi-chk">✓</div><span>Acceso permanente — descárgalo, es tuyo para siempre</span></div>
+        </div>
+        <div class="pi-total-row">
+          <span class="pi-total-label">Valor total</span>
+          <span class="pi-total-strike">$122 USD</span>
+        </div>
+        <div class="pi-total-row" style="padding-top:6px;border-top:none;margin-top:-8px;margin-bottom:20px;">
+          <span class="pi-total-label" style="font-weight:700;color:var(--dk);">Tu precio hoy</span>
+          <span class="pi-total-you">$12 USD — ahorra $110</span>
+        </div>
+        <div class="price-mini-test">
+          <img class="pmt-photo" src="IMG/mared1.webp" alt="Carolina S." onerror="this.style.display='none'">
+          <div>
+            <div class="pmt-stars">★★★★★</div>
+            <p class="pmt-text">"En el día 7 sentí algo que no había sentido en mucho tiempo: calma real. No la calma del agotamiento. Calma de verdad."</p>
+            <p class="pmt-name">— Carolina S., Diseñadora · Colombia</p>
+          </div>
         </div>
         <a href="https://pay.hotmart.com/F104149440C?off=fybr2mpq&checkoutMode=10" target="_blank" rel="noopener" onclick="fbq('track','InitiateCheckout',{value:12,currency:'USD',content_name:'Reset Nervioso',content_ids:['reset-nervioso'],content_type:'product'})" class="btn" style="width:100%;text-align:center;display:block;font-size:1rem;">Descargar Reset Nervioso · $12 USD →</a>
         <div class="p-guar" style="flex-direction:column;text-align:center;gap:8px;padding:20px 24px;">
@@ -1198,6 +1358,21 @@ src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></
         <p class="p-launch-note">El precio de $12 sube a $37 cuando termine el lanzamiento. Sin aviso previo.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- QUÉ PASA DESPUÉS -->
+<section class="postbuy-sec rv">
+  <div class="postbuy-inner">
+    <span class="lbl" style="display:block;margin-bottom:14px;">Sin sorpresas · Sin complicaciones</span>
+    <h3>¿Qué pasa después<br>de hacer clic en <em>Comprar</em>?</h3>
+    <p>En menos de 2 minutos tienes acceso completo. Sin cuentas nuevas, sin apps, sin esperas.</p>
+    <div class="postbuy-steps">
+      <div class="pbs"><div class="pbs-num">1</div><span class="pbs-label">Pago seguro en Hotmart</span></div>
+      <div class="pbs"><div class="pbs-num">2</div><span class="pbs-label">PDF llega a tu correo al instante</span></div>
+      <div class="pbs"><div class="pbs-num">3</div><span class="pbs-label">Abres el Capítulo 1 hoy</span></div>
+    </div>
+    <p style="font-size:.82rem;color:rgba(255,255,255,.28);font-family:'Montserrat',sans-serif;">Compatible con celular, tablet y computador. Sin instalaciones.</p>
   </div>
 </section>
 
@@ -1481,6 +1656,21 @@ src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></
       <button class="ep-skip" onclick="closePopup()">No gracias, prefiero seguir sin el regalo</button>
     </div>
 
+  </div>
+</div>
+
+<!-- STICKY CTA BAR -->
+<div id="sticky-bar">
+  <div class="sb-inner">
+    <div class="sb-left">
+      <span class="sb-title">Reset Nervioso™ — Sistema MARED</span>
+      <div class="sb-price">
+        <span class="sb-orig">$37</span>
+        <span class="sb-amt">$12 USD</span>
+        <span class="sb-guar">&nbsp;· Garantía 7 días · Acceso inmediato</span>
+      </div>
+    </div>
+    <a href="https://pay.hotmart.com/F104149440C?off=fybr2mpq&checkoutMode=10" target="_blank" rel="noopener" onclick="fbq('track','InitiateCheckout',{value:12,currency:'USD',content_name:'Reset Nervioso',content_ids:['reset-nervioso'],content_type:'product'})" class="sb-btn">Empezar mi Reset →</a>
   </div>
 </div>
 
@@ -1788,6 +1978,20 @@ document.addEventListener('keydown', e => { if(e.key === 'Escape') closePopup();
     if(d>0)setTimeout(tick,1000);
   }
   tick();
+})();
+
+/* STICKY BAR */
+(function(){
+  const bar=document.getElementById('sticky-bar');
+  const hero=document.querySelector('.hero');
+  const price=document.getElementById('precio');
+  if(!bar||!hero)return;
+  function update(){
+    const hb=hero.getBoundingClientRect().bottom;
+    const pv=price&&price.getBoundingClientRect().top<window.innerHeight&&price.getBoundingClientRect().bottom>0;
+    bar.classList.toggle('visible',hb<0&&!pv);
+  }
+  window.addEventListener('scroll',update,{passive:true});
 })();
 
 // HOTMART PURCHASE TRACKING — configura en Hotmart > Producto > Página de agradecimiento
