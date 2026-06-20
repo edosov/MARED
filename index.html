@@ -1056,8 +1056,7 @@ src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></
     waves:[{amplitude:30,frequency:0.003,speed:0.02,offset:0,opacity:0.9},{amplitude:25,frequency:0.004,speed:0.015,offset:Math.PI*0.5,opacity:0.7},{amplitude:20,frequency:0.005,speed:0.025,offset:Math.PI,opacity:0.5},{amplitude:35,frequency:0.002,speed:0.01,offset:Math.PI*1.5,opacity:0.6}],
     postProcessing:{filmGrainIntensity:0.04,vignetteIntensity:0.4,chromaticAberration:0.8,scanlineIntensity:0.02}};
   let grainFX,temp,tctx;
-  function resize(){const w=heroEl.clientWidth||window.innerWidth,h=heroEl.clientHeight||window.innerHeight;canvas.width=w;canvas.height=h;if(!grainFX)grainFX=new FilmGrain(w,h);else grainFX.resize(w,h);if(!temp){temp=document.createElement('canvas');tctx=temp.getContext('2d');}temp.width=w;temp.height=h;}
-  resize(); addEventListener('resize',resize,{passive:true});
+  function resize(){const cw=heroEl.clientWidth||window.innerWidth,ch=heroEl.clientHeight||window.innerHeight;const s=isMobile?0.62:1;const w=Math.max(1,Math.round(cw*s)),h=Math.max(1,Math.round(ch*s));canvas.width=w;canvas.height=h;if(!grainFX)grainFX=new FilmGrain(w,h);else grainFX.resize(w,h);if(!temp){temp=document.createElement('canvas');tctx=temp.getContext('2d');}temp.width=w;temp.height=h;}
   const lerp=(a,b,t)=>a+(b-a)*t;
   let agit=1,agitTarget=1,fxOn=true,lastM=0,heart=0,prevNow=performance.now();
   const btnEl=document.getElementById('rn-reg');
@@ -1115,11 +1114,21 @@ src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></
     ctx.save();ctx.globalCompositeOperation='overlay';ctx.globalAlpha=0.1;
     const cg=ctx.createLinearGradient(0,0,0,H);cg.addColorStop(0,'rgb(255,240,220)');cg.addColorStop(0.5,'rgb(255,255,255)');cg.addColorStop(1,'rgb(220,230,255)');ctx.fillStyle=cg;ctx.fillRect(0,0,W,H);ctx.restore();
   }
-  if(reduce){agit=0;agitTarget=0;}
-  requestAnimationFrame(animate);
-  // pausa cuando el hero sale de pantalla (ahorra CPU/batería)
-  if('IntersectionObserver' in window){
-    new IntersectionObserver(es=>{es.forEach(e=>{fxOn=e.isIntersecting;if(fxOn){prevNow=performance.now();lastM=0;}});},{threshold:0.01}).observe(heroEl);
+  let started=false;
+  function start(){
+    if(started)return; started=true;
+    resize(); addEventListener('resize',resize,{passive:true});
+    prevNow=performance.now();
+    requestAnimationFrame(animate);
+    // pausa cuando el hero sale de pantalla (ahorra CPU/batería)
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(es=>{es.forEach(e=>{fxOn=e.isIntersecting;if(fxOn){prevNow=performance.now();lastM=0;}});},{threshold:0.01}).observe(heroEl);
+    }
+  }
+  // respeta reduced-motion (sin canvas animado) y arranca DESPUÉS del primer pintado
+  if(!reduce){
+    if('requestIdleCallback' in window) requestIdleCallback(start,{timeout:1500});
+    else setTimeout(start,250);
   }
   document.addEventListener('visibilitychange',()=>{if(!document.hidden){prevNow=performance.now();lastM=0;}});
   // interacción regular
