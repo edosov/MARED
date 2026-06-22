@@ -890,6 +890,23 @@ src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></
 (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","x8lx0iwsv4");
 </script>
 <!-- End Microsoft Clarity -->
+
+<!-- A/B HERO · 50/50 (A = experiencial canvas · B = claro de conversión) -->
+<script type="text/javascript">
+(function(){
+  var KEY='ab_hero_v1', v=null;
+  try{ v=localStorage.getItem(KEY); }catch(e){}
+  // override por URL ?hero=a|b (para QA/forzar variante)
+  var q=(location.search.match(/[?&]hero=(a|b)/i)||[])[1];
+  if(q){ v=q.toUpperCase(); }
+  if(v!=='A'&&v!=='B'){ v=Math.random()<0.5?'A':'B'; }
+  try{ localStorage.setItem(KEY,v); }catch(e){}
+  window.__hero=v;
+  document.documentElement.setAttribute('data-hero',v); // CSS oculta la variante inactiva sin parpadeo
+  // etiqueta para Clarity (filtrable en dashboard) — reintenta hasta que cargue
+  (function tag(n){ if(window.clarity){ clarity('set','hero_variant',v); } else if(n<40){ setTimeout(function(){tag(n+1);},250); } })(0);
+})();
+</script>
 </head>
 <body>
 
@@ -1036,9 +1053,83 @@ src="https://www.facebook.com/tr?id=1722233108795656&ev=PageView&noscript=1"/></
     </div>
   </div>
 </section>
+
+<!-- HERO · Variante B (claro de conversión · A/B test) -->
+<style>
+/* visibilidad A/B: B oculto por defecto (no-JS muestra A) */
+.cv-hero{display:none;}
+html[data-hero="B"] .cv-hero{display:flex;}
+html[data-hero="B"] .rn-hero{display:none!important;}
+.cv-hero{min-height:100svh; min-height:100vh; background:var(--bg); align-items:stretch;
+  padding-top:var(--banner-h); overflow:hidden;}
+.cv-grid{display:grid; grid-template-columns:1.04fr .96fr; width:100%;}
+.cv-copy{display:flex; flex-direction:column; justify-content:center; gap:clamp(15px,2.4vh,22px);
+  padding:clamp(30px,5vw,76px); max-width:710px; margin-left:auto;}
+.cv-kicker{font-family:'Montserrat',sans-serif; font-weight:700; text-transform:uppercase;
+  font-size:clamp(.6rem,1.7vw,.74rem); letter-spacing:.28em; color:var(--muted); margin:0;}
+.cv-kicker b{color:var(--em); font-weight:800;}
+.cv-h1{font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(2.45rem,5.3vw,4.3rem);
+  line-height:1.03; letter-spacing:-.01em; color:#fff; margin:0;}
+.cv-h1 em{font-style:italic; color:var(--fu);}
+.cv-sub{font-family:'DM Sans',sans-serif; font-weight:300; font-size:clamp(1rem,2.3vw,1.18rem);
+  line-height:1.55; color:var(--muted); max-width:55ch; margin:0;}
+.cv-sub b{color:var(--text); font-weight:600;}
+.cv-bullets{list-style:none; padding:0; margin:2px 0; display:flex; flex-direction:column; gap:11px;}
+.cv-bullets li{position:relative; padding-left:31px; font-family:'Montserrat',sans-serif;
+  font-size:clamp(.9rem,2.1vw,1rem); font-weight:500; color:var(--text); line-height:1.4;}
+.cv-bullets li::before{content:'✓'; position:absolute; left:0; top:0; width:21px; height:21px;
+  border-radius:50%; background:color-mix(in srgb,var(--em) 20%, transparent); color:var(--em);
+  font-size:.72rem; font-weight:800; display:grid; place-items:center;}
+.cv-cta{align-self:flex-start; margin-top:8px; background:var(--fu); color:#fff;
+  font-family:'Montserrat',sans-serif; font-weight:700; font-size:clamp(.95rem,2.3vw,1.08rem);
+  letter-spacing:.02em; text-decoration:none; padding:18px 46px; border-radius:50px;
+  box-shadow:0 10px 40px rgba(255,38,128,.42),0 0 70px rgba(255,38,128,.16); transition:transform .25s, box-shadow .25s;}
+.cv-cta:hover{transform:translateY(-3px); box-shadow:0 14px 54px rgba(255,38,128,.5),0 0 110px rgba(255,38,128,.26);}
+.cv-trust{font-family:'Montserrat',sans-serif; font-size:clamp(.74rem,1.9vw,.84rem); color:var(--muted); margin:2px 0 0;}
+.cv-trust .st{color:#F5C030; letter-spacing:.06em;} .cv-trust b{color:var(--text); font-weight:600;}
+.cv-media{position:relative; min-height:100%;}
+.cv-media img{width:100%; height:100%; object-fit:cover; object-position:54% 32%; display:block;}
+.cv-media::before{content:''; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(90deg, var(--bg) 0%, rgba(5,15,12,.35) 16%, transparent 34%),
+             radial-gradient(120% 80% at 70% 100%, rgba(5,15,12,.55), transparent 60%);}
+.cv-tag{position:absolute; left:clamp(18px,3vw,30px); bottom:clamp(18px,3vw,30px); margin:0;
+  font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(1.02rem,2.3vw,1.45rem);
+  color:#fff; text-shadow:0 2px 14px rgba(0,0,0,.75); max-width:58%; line-height:1.3;}
+@media(max-width:860px){
+  .cv-hero{min-height:auto;}
+  .cv-grid{grid-template-columns:1fr;}
+  .cv-media{height:44svh; order:-1; min-height:0;}
+  .cv-media img{object-position:54% 26%;}
+  .cv-media::before{background:linear-gradient(0deg, var(--bg) 2%, transparent 40%);}
+  .cv-tag{font-size:clamp(1.05rem,4vw,1.3rem); max-width:78%;}
+  .cv-copy{margin:0; padding:clamp(26px,7vw,40px) 22px clamp(40px,9vw,56px);}
+  .cv-cta{align-self:stretch; text-align:center;}
+}
+</style>
+<section class="cv-hero" id="inicio-b">
+  <div class="cv-grid">
+    <div class="cv-copy">
+      <p class="cv-kicker"><b>MARED®</b> · Reset Nervioso™</p>
+      <h1 class="cv-h1">Vives <em>agotada</em> aunque duermas 8 horas.</h1>
+      <p class="cv-sub">No es pereza ni falta de voluntad: es tu <b>sistema nervioso en alerta</b>. Reset Nervioso™ es el protocolo de <b>21 días</b> para que tu cuerpo aprenda a soltar — <b>10 minutos al día</b>, sin terapia ni pastillas.</p>
+      <ul class="cv-bullets">
+        <li>Duerme profundo y despierta con energía</li>
+        <li>Calma la ansiedad y ese pecho apretado</li>
+        <li>Protocolo + Kit SOS + Diario · acceso inmediato</li>
+      </ul>
+      <a class="cv-cta" href="https://pay.hotmart.com/F104149440C?off=fybr2mpq&checkoutMode=10" target="_blank" rel="noopener" onclick="fbq('track','InitiateCheckout',{value:12,currency:'USD',content_name:'Reset Nervioso',content_category:'hero_B',content_ids:['reset-nervioso'],content_type:'product'})">Empezar mi Reset · $12 USD →</a>
+      <p class="cv-trust"><span class="st">★★★★★</span> <b>4.9/5</b> · +500 mujeres ya hicieron su Reset · <b>Garantía 7 días</b></p>
+    </div>
+    <div class="cv-media">
+      <img src="IMG/mared4.webp" alt="Mujer agotada sentada en el piso de la cocina con la mano en la frente" loading="eager" fetchpriority="high" width="1280" height="853">
+      <p class="cv-tag">«Así me sentía cada tarde… hasta que mi cuerpo aprendió a parar.»</p>
+    </div>
+  </div>
+</section>
 <script>
 (function(){
   'use strict';
+  if(window.__hero==='B') return; // Variante B (hero claro): no se monta el canvas
   const canvas=document.getElementById('rn-fx'); if(!canvas) return;
   const ctx=canvas.getContext('2d');
   const heroEl=document.querySelector('.rn-hero');
@@ -2410,7 +2501,7 @@ document.addEventListener('keydown', e => { if(e.key === 'Escape') closePopup();
 /* STICKY BAR */
 (function(){
   const bar=document.getElementById('sticky-bar');
-  const hero=document.querySelector('.rn-hero');
+  const hero=document.querySelector(window.__hero==='B'?'.cv-hero':'.rn-hero'); // hero activo según A/B
   const price=document.getElementById('precio');
   if(!bar||!hero)return;
   function update(){
